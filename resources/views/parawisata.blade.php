@@ -19,7 +19,7 @@
                     </h1>
                     <p class="text-xl font-light leading-relaxed text-center description">
                         Temukan lokasi-lokasi menarik yang anda bisa kunjungi untuk menemani libur pekan anda di
-                        desa koto mesjid
+                        kelurahan tuwung
                     </p>
                 </div>
             </section>

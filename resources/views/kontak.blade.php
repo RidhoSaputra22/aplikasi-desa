@@ -20,7 +20,7 @@
                     </h1>
                     <p class="text-xl font-light leading-relaxed text-center description">
                         Cari tahu alamat kantor serta ikuti kami diberbagai media sosial untuk kemudahan
-                        mendapatkan informasi seputar desa koto mesjid
+                        mendapatkan informasi seputar kelurahan tuwung
                     </p>
                 </div>
             </section>
@@ -33,7 +33,7 @@
                                 alamat dan kontak
                             </h6>
                             <p class="text-xl font-light leading-relaxed text-center lg:text-left content">
-                                Kantor desa koto mesjid beralamatkan Jl. Poros Desa Koto Mesjid Kec. XIII Koto
+                                Kantor kelurahan tuwung beralamatkan Jl. Poros Kelurahan Tuwung Kec. XIII Koto
                                 Kampar, Kabupaten Kampar, Riau
                             </p>
                             <div
@@ -93,8 +93,8 @@
                                 saran dan masukan
                             </h6>
                             <p class="text-xl font-light leading-relaxed text-center lg:text-left description">
-                                Sampaikan saran dan masukkan anda untuk kemajuan layanan yang ada di desa koto
-                                mesjid pada formulir di bawah ini
+                                Sampaikan saran dan masukkan anda untuk kemajuan layanan yang ada di kelurahan tuwung
+                                pada formulir di bawah ini
                             </p>
                             <div
                                 class="max-w-lg p-6 mx-auto border-2 border-green-600 form lg:ml-0 md:p-10 lg:p-14 rounded-xl">
@@ -166,7 +166,7 @@
                         </div>
                         <div class="order-1 hidden lg:block">
                             <img src="https://kotomesjid.com/storage/image/hero/kantor-desa-koto-mesjid.jpg"
-                                alt="kantor-desa-koto-mesjid" class="object-cover w-full h-96 rounded-xl hero-image">
+                                alt="kantor-kelurahan-tuwung" class="object-cover w-full h-96 rounded-xl hero-image">
                         </div>
                     </div>
                 </div>

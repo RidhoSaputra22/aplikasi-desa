@@ -20,8 +20,8 @@
                             pengaduan masyarakat
                         </h1>
                         <p class="text-xl font-light leading-relaxed text-center description">
-                            Kini anda dapat memuat laporan pengaduan seputar permasalahan desa koto mesjid, dan
-                            pihak desa akan menanggapi pengaduan serta anda dapat memantau apakah laporan sudah
+                            Kini anda dapat memuat laporan pengaduan seputar permasalahan kelurahan tuwung, dan
+                            pihak kelurahan akan menanggapi pengaduan serta anda dapat memantau apakah laporan sudah
                             ditindaklanjuti atau belum secara <span class="italic">real-time</span>
                         </p>
                     </div>
@@ -82,10 +82,11 @@
                     <div class="max-w-6xl py-20 mx-auto relative z-[1]">
                         <div class="w-full mx-auto lg:w-2/3">
                             <h1 class="text-4xl font-light leading-tight text-center text-white title">
-                                Ayo sampaikan pengaduan anda untuk desa koto mesjid menjadi lebih baik lagi
+                                Ayo sampaikan pengaduan anda untuk kelurahan tuwung menjadi lebih baik lagi
                             </h1>
                             <div class="flex justify-center mt-12 description">
-                                <a href="#" wire:click.prevent="$emit('openModal', 'guest.public-complaint.create')"
+                                <a href="#"
+                                    onclick="Livewire.dispatch('openModal', { component: 'guest.public-complain.create' })"
                                     class="px-6 py-3 text-lg text-green-600 bg-white rounded-lg hover:bg-white/95 focus:ring-4 focus:ring-white/20">
                                     Buat pengaduan sekarang
                                 </a>

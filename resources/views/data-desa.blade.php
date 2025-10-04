@@ -20,7 +20,7 @@
                         </h1>
                         <p class="text-xl font-light leading-relaxed text-center description">
                             Kami memiliki sistem yang memungkinkan untuk melakukan pendataan secara cepat,
-                            akurat dan terpercaya. Berikut kami sajikan statistik data dari desa koto mesjid
+                            akurat dan terpercaya. Berikut kami sajikan statistik data dari kelurahan tuwung
                         </p>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                                     kependudukan
                                 </h6>
                                 <p class="text-xl font-light leading-relaxed text-center lg:text-left">
-                                    Statistik penduduk yang berada di desa koto mesjid berjumlah <span
+                                    Statistik penduduk yang berada di kelurahan tuwung berjumlah <span
                                         class="text-green-600">693 kk</span> dan <span class="text-green-600">2.467 jiwa
                                     </span>
                                     dengan rincian 1.239 jiwa
@@ -128,7 +128,7 @@
                                     lahan wilayah
                                 </h6>
                                 <p class="text-xl font-light leading-relaxed text-center lg:text-left">
-                                    Desa koto mesjid memiliki luas lahan sejumlah <span class="text-green-600">425,5
+                                    Kelurahan tuwung memiliki luas lahan sejumlah <span class="text-green-600">425,5
                                         ha</span>
                                     yang dimana luas sebesar 120
                                     digunakan sebagai lokasi pemukiman dan luas sebesar 305,5 ha digunakan
@@ -164,7 +164,7 @@
                                     sarana dan parasarana
                                 </h6>
                                 <p class="text-xl font-light leading-relaxed text-center lg:text-left">
-                                    Jumlah keseluruhan sarana dan prasarana yang ada pada desa koto mesjid
+                                    Jumlah keseluruhan sarana dan prasarana yang ada pada kelurahan tuwung
                                     berjumlah <span class="text-green-600">0 unit</span> dengan rincian 0 unit
                                     berkondisikan baik, 0 unit berkondisikan rusak sedang dan 0 unit
                                     berkondisikan rusak parah

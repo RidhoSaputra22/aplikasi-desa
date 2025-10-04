@@ -6,37 +6,43 @@
                 class="w-12 md:w-14">
         </a>
         <div class="hidden lg:block">
-            <div class="flex items-center justify-end space-x-5">
+            <div
+                class="flex items-center justify-end space-x-5 {{ request()->routeIs('home') ? 'text-white' : 'text-black' }}">
+                @php
+                    $activeClass = 'text-green-600 font-semibold';
+                    $inactiveClass = 'hover:text-green-600 transition';
+                @endphp
+
                 <a href="{{ route('profil-desa') }}"
-                    class="tracking-wide capitalize transition {{ request()->is('/') ? 'hover:text-white/75' : 'hover:text-green-800' }} {{ request()->is('/') ? 'text-white/75' : 'text-black' }}">
+                    class="tracking-wide capitalize transition {{ request()->routeIs('profil-desa') ? $activeClass : $inactiveClass }}">
                     profil
                 </a>
                 <a href="{{ route('data-desa') }}"
-                    class="tracking-wide capitalize transition {{ request()->is('/') ? 'hover:text-white/75' : 'hover:text-green-800' }} {{ request()->is('/') ? 'text-white/75' : 'text-black' }}">
+                    class="tracking-wide capitalize transition {{ request()->routeIs('data-desa') ? $activeClass : $inactiveClass }}">
                     data desa
                 </a>
                 <a href="{{ route('surat-online') }}"
-                    class="tracking-wide capitalize transition {{ request()->is('/') ? 'hover:text-white/75' : 'hover:text-green-800' }} {{ request()->is('/') ? 'text-white/75' : 'text-black' }}">
+                    class="tracking-wide capitalize transition {{ request()->routeIs('surat-online') ? $activeClass : $inactiveClass }}">
                     surat online
                 </a>
                 <a href="{{ route('publikasi') }}"
-                    class="tracking-wide capitalize trans   ition {{ request()->is('/') ? 'hover:text-white/75' : 'hover:text-green-800' }} {{ request()->is('/') ? 'text-white/75' : 'text-black' }}">
+                    class="tracking-wide capitalize transition {{ request()->routeIs('publikasi') ? $activeClass : $inactiveClass }}">
                     publikasi
                 </a>
                 <a href="{{ route('parawisata') }}"
-                    class="tracking-wide capitalize transition {{ request()->is('/') ? 'hover:text-white/75' : 'hover:text-green-800' }} {{ request()->is('/') ? 'text-white/75' : 'text-black' }}">
+                    class="tracking-wide capitalize transition {{ request()->routeIs('parawisata') ? $activeClass : $inactiveClass }}">
                     pariwisata
                 </a>
                 <a href="{{ route('produk-umkm') }}"
-                    class="tracking-wide capitalize transition {{ request()->is('/') ? 'hover:text-white/75' : 'hover:text-green-800' }} {{ request()->is('/') ? 'text-white/75' : 'text-black' }}">
+                    class="tracking-wide capitalize transition {{ request()->routeIs('produk-umkm') ? $activeClass : $inactiveClass }}">
                     umkm
                 </a>
                 <a href="{{ route('pengaduan-masyarakat') }}"
-                    class="tracking-wide capitalize transition {{ request()->is('/') ? 'hover:text-white/75' : 'hover:text-green-800' }} {{ request()->is('/') ? 'text-white/75' : 'text-black' }}">
+                    class="tracking-wide capitalize transition {{ request()->routeIs('pengaduan-masyarakat') ? $activeClass : $inactiveClass }}">
                     pengaduan
                 </a>
                 <a href="{{ route('kontak') }}"
-                    class="tracking-wide capitalize transition {{ request()->is('/') ? 'hover:text-white/75' : 'hover:text-green-800' }} {{ request()->is('/') ? 'text-white/75' : 'text-black' }}">
+                    class="tracking-wide capitalize transition {{ request()->routeIs('kontak') ? $activeClass : $inactiveClass }}">
                     kontak
                 </a>
             </div>

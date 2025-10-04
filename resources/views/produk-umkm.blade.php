@@ -18,16 +18,15 @@
                         produk umkm
                     </h1>
                     <p class="text-xl font-light leading-relaxed text-center description">
-                        Temukan berbagai produk kreatif dari badan usaha unit mikro kecil menengah (UMKM) desa
-                        koto mesjid di sini
+                        Temukan berbagai produk kreatif dari badan usaha unit mikro kecil menengah (UMKM) kelurahan
+                        tuwung di sini
                     </p>
                 </div>
             </section>
             <section id="content" class="relative">
                 <div class="max-w-6xl py-20 pt-0 mx-auto lg:pt-20">
                     <div class="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 md:gap-10 lg:grid-cols-4 lg:gap-12">
-                        <a href="#"
-                            wire:click.prevent="$emit('openModal', 'guest.product.show', {&quot;product&quot;:{&quot;id&quot;:2,&quot;title&quot;:&quot;Gantungan Kunci Strowbery Rajut&quot;,&quot;slug&quot;:&quot;gantungan-kunci-strowbery-rajut&quot;,&quot;price&quot;:&quot;8000&quot;,&quot;image&quot;:&quot;gantungan-kunci-strowbery-rajut.jpeg&quot;,&quot;product_category_id&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null,&quot;product_category&quot;:{&quot;id&quot;:1,&quot;category&quot;:&quot;Kriya&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null}}})">
+                        <a href="#" onclick="Livewire.dispatch('openModal', { component: 'guest.product.show' })">
                             <div class="space-y-3">
                                 <div class="relative w-full overflow-hidden h-52 rounded-xl">
                                     <img src="https://kotomesjid.com/storage/image/product/gantungan-kunci-strowbery-rajut.jpeg"
@@ -45,8 +44,7 @@
                                 </h4>
                             </div>
                         </a>
-                        <a href="#"
-                            wire:click.prevent="$emit('openModal', 'guest.product.show', {&quot;product&quot;:{&quot;id&quot;:16,&quot;title&quot;:&quot;Pudung Ikan (Ikan Asin Patin)&quot;,&quot;slug&quot;:&quot;pudung-ikan-ikan-asin-patin&quot;,&quot;price&quot;:&quot;18000&quot;,&quot;image&quot;:&quot;pudung-ikan-ikan-asin-patin.jpeg&quot;,&quot;product_category_id&quot;:&quot;2&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null,&quot;product_category&quot;:{&quot;id&quot;:2,&quot;category&quot;:&quot;Kuliner&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null}}})">
+                        <a href="#" onclick="Livewire.dispatch('openModal', { component: 'guest.product.show' })">
                             <div class="space-y-3">
                                 <div class="relative w-full overflow-hidden h-52 rounded-xl">
                                     <img src="https://kotomesjid.com/storage/image/product/pudung-ikan-ikan-asin-patin.jpeg"
@@ -64,8 +62,7 @@
                                 </h4>
                             </div>
                         </a>
-                        <a href="#"
-                            wire:click.prevent="$emit('openModal', 'guest.product.show', {&quot;product&quot;:{&quot;id&quot;:15,&quot;title&quot;:&quot;Dekla (Kelapa Jelly)&quot;,&quot;slug&quot;:&quot;dekla-kelapa-jelly&quot;,&quot;price&quot;:&quot;20000&quot;,&quot;image&quot;:&quot;dekla-kelapa-jelly.jpeg&quot;,&quot;product_category_id&quot;:&quot;2&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null,&quot;product_category&quot;:{&quot;id&quot;:2,&quot;category&quot;:&quot;Kuliner&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null}}})">
+                        <a href="#" onclick="Livewire.dispatch('openModal', { component: 'guest.product.show' })">
                             <div class="space-y-3">
                                 <div class="relative w-full overflow-hidden h-52 rounded-xl">
                                     <img src="https://kotomesjid.com/storage/image/product/dekla-kelapa-jelly.jpeg"
@@ -83,8 +80,7 @@
                                 </h4>
                             </div>
                         </a>
-                        <a href="#"
-                            wire:click.prevent="$emit('openModal', 'guest.product.show', {&quot;product&quot;:{&quot;id&quot;:14,&quot;title&quot;:&quot;Sepatu Rajut Semi Boots&quot;,&quot;slug&quot;:&quot;sepatu-rajut-semi-boots&quot;,&quot;price&quot;:&quot;350000&quot;,&quot;image&quot;:&quot;sepatu-rajut-semi-boots.jpeg&quot;,&quot;product_category_id&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null,&quot;product_category&quot;:{&quot;id&quot;:1,&quot;category&quot;:&quot;Kriya&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null}}})">
+                        <a href="#" onclick="Livewire.dispatch('openModal', { component: 'guest.product.show' })">
                             <div class="space-y-3">
                                 <div class="relative w-full overflow-hidden h-52 rounded-xl">
                                     <img src="https://kotomesjid.com/storage/image/product/sepatu-rajut-semi-boots.jpeg"
@@ -102,8 +98,7 @@
                                 </h4>
                             </div>
                         </a>
-                        <a href="#"
-                            wire:click.prevent="$emit('openModal', 'guest.product.show', {&quot;product&quot;:{&quot;id&quot;:13,&quot;title&quot;:&quot;Sendal Jepit Motif Rajut&quot;,&quot;slug&quot;:&quot;sendal-jepit-motif-rajut&quot;,&quot;price&quot;:&quot;40000&quot;,&quot;image&quot;:&quot;sendal-jepit-motif-rajut.jpeg&quot;,&quot;product_category_id&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null,&quot;product_category&quot;:{&quot;id&quot;:1,&quot;category&quot;:&quot;Kriya&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null}}})">
+                        <a href="#" onclick="Livewire.dispatch('openModal', { component: 'guest.product.show' })">
                             <div class="space-y-3">
                                 <div class="relative w-full overflow-hidden h-52 rounded-xl">
                                     <img src="https://kotomesjid.com/storage/image/product/sendal-jepit-motif-rajut.jpeg"
@@ -121,8 +116,7 @@
                                 </h4>
                             </div>
                         </a>
-                        <a href="#"
-                            wire:click.prevent="$emit('openModal', 'guest.product.show', {&quot;product&quot;:{&quot;id&quot;:12,&quot;title&quot;:&quot;Tas Rajut Daun 3D&quot;,&quot;slug&quot;:&quot;tas-rajut-daun-3d&quot;,&quot;price&quot;:&quot;600000&quot;,&quot;image&quot;:&quot;tas-rajut-daun-3d.jpeg&quot;,&quot;product_category_id&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null,&quot;product_category&quot;:{&quot;id&quot;:1,&quot;category&quot;:&quot;Kriya&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null}}})">
+                        <a href="#" onclick="Livewire.dispatch('openModal', { component: 'guest.product.show' })">
                             <div class="space-y-3">
                                 <div class="relative w-full overflow-hidden h-52 rounded-xl">
                                     <img src="https://kotomesjid.com/storage/image/product/tas-rajut-daun-3d.jpeg"
@@ -140,8 +134,7 @@
                                 </h4>
                             </div>
                         </a>
-                        <a href="#"
-                            wire:click.prevent="$emit('openModal', 'guest.product.show', {&quot;product&quot;:{&quot;id&quot;:11,&quot;title&quot;:&quot;Tas Rajut Vikra&quot;,&quot;slug&quot;:&quot;tas-rajut-vikra&quot;,&quot;price&quot;:&quot;350000&quot;,&quot;image&quot;:&quot;tas-rajut-vikra.jpeg&quot;,&quot;product_category_id&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null,&quot;product_category&quot;:{&quot;id&quot;:1,&quot;category&quot;:&quot;Kriya&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null}}})">
+                        <a href="#" onclick="Livewire.dispatch('openModal', { component: 'guest.product.show' })">
                             <div class="space-y-3">
                                 <div class="relative w-full overflow-hidden h-52 rounded-xl">
                                     <img src="https://kotomesjid.com/storage/image/product/tas-rajut-vikra.jpeg"
@@ -159,8 +152,7 @@
                                 </h4>
                             </div>
                         </a>
-                        <a href="#"
-                            wire:click.prevent="$emit('openModal', 'guest.product.show', {&quot;product&quot;:{&quot;id&quot;:10,&quot;title&quot;:&quot;Tas Tangan Rajut&quot;,&quot;slug&quot;:&quot;tas-tangan-rajut&quot;,&quot;price&quot;:&quot;250000&quot;,&quot;image&quot;:&quot;tas-tangan-rajut.jpeg&quot;,&quot;product_category_id&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null,&quot;product_category&quot;:{&quot;id&quot;:1,&quot;category&quot;:&quot;Kriya&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null}}})">
+                        <a href="#" onclick="Livewire.dispatch('openModal', { component: 'guest.product.show' })">
                             <div class="space-y-3">
                                 <div class="relative w-full overflow-hidden h-52 rounded-xl">
                                     <img src="https://kotomesjid.com/storage/image/product/tas-tangan-rajut.jpeg"
@@ -178,8 +170,7 @@
                                 </h4>
                             </div>
                         </a>
-                        <a href="#"
-                            wire:click.prevent="$emit('openModal', 'guest.product.show', {&quot;product&quot;:{&quot;id&quot;:9,&quot;title&quot;:&quot;Sling Bag Rajut&quot;,&quot;slug&quot;:&quot;sling-bag-rajut&quot;,&quot;price&quot;:&quot;200000&quot;,&quot;image&quot;:&quot;sling-bag-rajut.jpeg&quot;,&quot;product_category_id&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null,&quot;product_category&quot;:{&quot;id&quot;:1,&quot;category&quot;:&quot;Kriya&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null}}})">
+                        <a href="#" onclick="Livewire.dispatch('openModal', { component: 'guest.product.show' })">
                             <div class="space-y-3">
                                 <div class="relative w-full overflow-hidden h-52 rounded-xl">
                                     <img src="https://kotomesjid.com/storage/image/product/sling-bag-rajut.jpeg"
@@ -197,8 +188,7 @@
                                 </h4>
                             </div>
                         </a>
-                        <a href="#"
-                            wire:click.prevent="$emit('openModal', 'guest.product.show', {&quot;product&quot;:{&quot;id&quot;:8,&quot;title&quot;:&quot;Tas Hp Rajut&quot;,&quot;slug&quot;:&quot;tas-hp-rajut&quot;,&quot;price&quot;:&quot;70000&quot;,&quot;image&quot;:&quot;tas-hp-rajut.jpeg&quot;,&quot;product_category_id&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null,&quot;product_category&quot;:{&quot;id&quot;:1,&quot;category&quot;:&quot;Kriya&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null}}})">
+                        <a href="#" onclick="Livewire.dispatch('openModal', { component: 'guest.product.show' })">
                             <div class="space-y-3">
                                 <div class="relative w-full overflow-hidden h-52 rounded-xl">
                                     <img src="https://kotomesjid.com/storage/image/product/tas-hp-rajut.jpeg"
@@ -216,8 +206,7 @@
                                 </h4>
                             </div>
                         </a>
-                        <a href="#"
-                            wire:click.prevent="$emit('openModal', 'guest.product.show', {&quot;product&quot;:{&quot;id&quot;:7,&quot;title&quot;:&quot;Dompet Rajut&quot;,&quot;slug&quot;:&quot;dompet-rajut&quot;,&quot;price&quot;:&quot;70000&quot;,&quot;image&quot;:&quot;dompet-rajut.jpeg&quot;,&quot;product_category_id&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null,&quot;product_category&quot;:{&quot;id&quot;:1,&quot;category&quot;:&quot;Kriya&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null}}})">
+                        <a href="#" onclick="Livewire.dispatch('openModal', { component: 'guest.product.show' })">
                             <div class="space-y-3">
                                 <div class="relative w-full overflow-hidden h-52 rounded-xl">
                                     <img src="https://kotomesjid.com/storage/image/product/dompet-rajut.jpeg"
@@ -235,8 +224,7 @@
                                 </h4>
                             </div>
                         </a>
-                        <a href="#"
-                            wire:click.prevent="$emit('openModal', 'guest.product.show', {&quot;product&quot;:{&quot;id&quot;:6,&quot;title&quot;:&quot;Masker Rajut&quot;,&quot;slug&quot;:&quot;masker-rajut&quot;,&quot;price&quot;:&quot;25000&quot;,&quot;image&quot;:&quot;masker-rajut.jpeg&quot;,&quot;product_category_id&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null,&quot;product_category&quot;:{&quot;id&quot;:1,&quot;category&quot;:&quot;Kriya&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null}}})">
+                        <a href="#" onclick="Livewire.dispatch('openModal', { component: 'guest.product.show' })">
                             <div class="space-y-3">
                                 <div class="relative w-full overflow-hidden h-52 rounded-xl">
                                     <img src="https://kotomesjid.com/storage/image/product/masker-rajut.jpeg"

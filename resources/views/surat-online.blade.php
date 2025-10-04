@@ -115,7 +115,8 @@
                                 <h6 class="text-xl font-light text-center">
                                     Surat keterangan domisili
                                 </h6>
-                                <a href="#" wire:click.prevent="$emit('openModal', 'guest.certificate.domicile')"
+                                <a href="#"
+                                    onclick="Livewire.dispatch('openModal', { component: 'guest.certificate.domisili' })"
                                     class="px-4 py-2 text-green-600 bg-white rounded-lg hover:bg-white/95 focus:ring-4 focus:ring-white/20">
                                     Buat surat <span class="hidden md:inline-block">sekarang</span>
                                 </a>
@@ -138,7 +139,8 @@
                                 <h6 class="text-xl font-light text-center">
                                     Surat keterangan kelahiran
                                 </h6>
-                                <a href="#" wire:click.prevent="$emit('openModal', 'guest.certificate.birth')"
+                                <a href="#"
+                                    onclick="Livewire.dispatch('openModal', { component: 'guest.certificate.birth' })"
                                     class="px-4 py-2 text-green-600 bg-white rounded-lg hover:bg-white/95 focus:ring-4 focus:ring-white/20">
                                     Buat surat <span class="hidden md:inline-block">sekarang</span>
                                 </a>
@@ -158,7 +160,8 @@
                                 <h6 class="text-xl font-light text-center">
                                     Surat keterangan kematian
                                 </h6>
-                                <a href="#" wire:click.prevent="$emit('openModal', 'guest.certificate.death')"
+                                <a href="#"
+                                    onclick="Livewire.dispatch('openModal', { component: 'guest.certificate.death' })"
                                     class="px-4 py-2 text-green-600 bg-white rounded-lg hover:bg-white/95 focus:ring-4 focus:ring-white/20">
                                     Buat surat <span class="hidden md:inline-block">sekarang</span>
                                 </a>
@@ -182,7 +185,7 @@
                                     Suket penghasilan orang tua
                                 </h6>
                                 <a href="#"
-                                    wire:click.prevent="$emit('openModal', 'guest.certificate.parent-income')"
+                                    onclick="Livewire.dispatch('openModal', { component: 'guest.certificate.penghasilanOrtu' })"
                                     class="px-4 py-2 text-green-600 bg-white rounded-lg hover:bg-white/95 focus:ring-4 focus:ring-white/20">
                                     Buat surat <span class="hidden md:inline-block">sekarang</span>
                                 </a>
@@ -205,7 +208,8 @@
                                 <h6 class="text-xl font-light text-center">
                                     Surat keterangan tidak mampu
                                 </h6>
-                                <a href="#" wire:click.prevent="$emit('openModal', 'guest.certificate.not-capable')"
+                                <a href="#"
+                                    onclick="Livewire.dispatch('openModal', { component: 'guest.certificate.tidakMampu' })"
                                     class="px-4 py-2 text-green-600 bg-white rounded-lg hover:bg-white/95 focus:ring-4 focus:ring-white/20">
                                     Buat surat <span class="hidden md:inline-block">sekarang</span>
                                 </a>
@@ -231,7 +235,8 @@
                                 <h6 class="text-xl font-light text-center">
                                     Surat keterangan usaha
                                 </h6>
-                                <a href="#" wire:click.prevent="$emit('openModal', 'guest.certificate.business')"
+                                <a href="#"
+                                    onclick="Livewire.dispatch('openModal', { component: 'guest.certificate.usaha' })"
                                     class="px-4 py-2 text-green-600 bg-white rounded-lg hover:bg-white/95 focus:ring-4 focus:ring-white/20">
                                     Buat surat <span class="hidden md:inline-block">sekarang</span>
                                 </a>
@@ -242,9 +247,7 @@
             </section>
         </div>
 
-        <button onclick="Livewire.dispatch('openModal', { component: 'guest.certificate.birth' })">
-            Open Modal
-        </button>
+
 
         {{-- Include Footer Component --}}
         @include('layouts.footer')

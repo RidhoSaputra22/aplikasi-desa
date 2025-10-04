@@ -18,7 +18,7 @@
                     </h1>
                     <p class="text-xl font-light leading-relaxed text-center description">
                         Informasi mengenai sejarah, visi, misi desa beserta lebih mengenal aparatur-aparatur
-                        desa koto mesjid
+                        desa kelurahan tuwung
                     </p>
                 </div>
             </section>
@@ -33,15 +33,15 @@
                             sejarah desa
                         </h6>
                         <div class="font-light leading-relaxed prose-xl ck-content ck-custom">
-                            <p>Desa Koto Mesjid merupakan desa relokasi / pemindahan / transmigrasi lokal dari
-                                proyek PLTA Koto Panjang, tepatnya pada tahun 1992. Desa Koto Mesjid merupakan
+                            <p>Desa Kelurahan Tuwung merupakan desa relokasi / pemindahan / transmigrasi lokal dari
+                                proyek PLTA Koto Panjang, tepatnya pada tahun 1992. Desa Kelurahan Tuwung merupakan
                                 salah satu desa dari 8 (delapan) desa yang termasuk ke dalam daerah genangan
-                                Waduk PLTA Koto Panjang. Pada awalnya desa Koto Mesjid masih bergabung dengan
+                                Waduk PLTA Koto Panjang. Pada awalnya desa Kelurahan Tuwung masih bergabung dengan
                                 desa induk yaitu Desa Pulau Gadang. Pada tahun 1999 terjadi pemekaran dari Desa
                                 Pulau Gadang pada tahun berdasarkan surat Keputusan Gubernur Riau Nomor: 247
                                 Tahun 1999, yang dipimpin oleh Pjs. Bapak Bakaruddin. Secara adminitrastif, Desa
-                                Koto Mesjid masuk kedalam wilayah Kecamatan XIII Koto Kampar Kabupaten Kampar,
-                                sedangkan secara Adat wilayah Desa Koto Mesjid merupakan salah satu desa dalam
+                                Kelurahan Tuwung masuk kedalam wilayah Kecamatan XIII Koto Kampar Kabupaten Kampar,
+                                sedangkan secara Adat wilayah Desa Kelurahan Tuwung merupakan salah satu desa dalam
                                 wilayah adat Andiko 44, dengan batas-batas wilayah sebagai berikut:</p>
                             <ul>
                                 <li>Sebelah Utara berbatas dengan Desa Silam Kecamatan Kuok</li>
@@ -50,7 +50,7 @@
                                 </li>
                                 <li>elah Timur Berbatas dengan Desa Merangin Kecamatan Kuok</li>
                             </ul>
-                            <p>Jarak Desa Koto Mesjid dengan Ibu Kota Kecamatan, Kabupaten dan Propinsi antara
+                            <p>Jarak Desa Kelurahan Tuwung dengan Ibu Kota Kecamatan, Kabupaten dan Propinsi antara
                                 lain:</p>
                             <ul>
                                 <li>Jarak dengan Ibukota Kecamatan 15 km, waktu tempuh + 25 menit</li>
@@ -116,7 +116,7 @@
                                     Arjunalis
                                 </h6>
                                 <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
-                                    Kepala Desa Koto Mesjid
+                                    Kepala Desa Kelurahan Tuwung
                                 </p>
                             </div>
                         </div>

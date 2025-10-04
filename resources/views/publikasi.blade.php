@@ -18,7 +18,7 @@
                         publikasi
                     </h1>
                     <p class="text-xl font-light leading-relaxed text-center description">
-                        Temukan berbagai informasi publikasi mengenai desa koto mesjid berupa berita, galeri
+                        Temukan berbagai informasi publikasi mengenai kelurahan tuwung berupa berita, galeri
                         gambar, galeri vidio maunpun pengumuman dihalaman ini
                     </p>
                 </div>
@@ -84,13 +84,13 @@
                                 class="flex flex-row space-x-5 space-y-0 sequenced">
                                 <div class="flex-shrink-0 w-24 h-16 md:h-24 md:w-36">
                                     <img src="https://kotomesjid.com/storage/image/publication/news/pemetaan-statistik-penduduk-desa-koto-mesjid.png"
-                                        alt="Peta Statistik Kependudukan Desa Koto Mesjid"
+                                        alt="Peta Statistik Kependudukan Kelurahan Tuwung"
                                         class="object-cover w-full h-full rounded-md md:rounded-lg lg:rounded-xl">
                                 </div>
                                 <div class="space-y-2">
                                     <h3 class="-mt-1 text-xl leading-snug text-black line-clamp-3 md:mt-0"
-                                        title="Peta Statistik Kependudukan Desa Koto Mesjid">
-                                        Peta Statistik Kependudukan Desa Koto Mesjid
+                                        title="Peta Statistik Kependudukan Kelurahan Tuwung">
+                                        Peta Statistik Kependudukan Kelurahan Tuwung
                                     </h3>
                                     <p class="font-light text-black">
                                         Agustus 19, 2024
@@ -101,13 +101,13 @@
                                 class="flex flex-row space-x-5 space-y-0 sequenced">
                                 <div class="flex-shrink-0 w-24 h-16 md:h-24 md:w-36">
                                     <img src="https://kotomesjid.com/storage/image/publication/news/desa-koto-mesjid-lolos-3-besar-lomba-desa-dan-kelurahan-regional-1-wilayah-sumatera-tahun-2023.jpg"
-                                        alt="Desa Koto Mesjid Lolos 3 Besar Lomba Desa dan Kelurahan Regional 1 Wilayah Sumatera Tahun 2023"
+                                        alt="Kelurahan Tuwung Lolos 3 Besar Lomba Desa dan Kelurahan Regional 1 Wilayah Sumatera Tahun 2023"
                                         class="object-cover w-full h-full rounded-md md:rounded-lg lg:rounded-xl">
                                 </div>
                                 <div class="space-y-2">
                                     <h3 class="-mt-1 text-xl leading-snug text-black line-clamp-3 md:mt-0"
-                                        title="Desa Koto Mesjid Lolos 3 Besar Lomba Desa dan Kelurahan Regional 1 Wilayah Sumatera Tahun 2023">
-                                        Desa Koto Mesjid Lolos 3 Besar Lomba Desa dan Kelurahan Regional 1
+                                        title="Kelurahan Tuwung Lolos 3 Besar Lomba Desa dan Kelurahan Regional 1 Wilayah Sumatera Tahun 2023">
+                                        Kelurahan Tuwung Lolos 3 Besar Lomba Desa dan Kelurahan Regional 1
                                         Wilayah Sumatera Tahun 2023
                                     </h3>
                                     <p class="font-light text-black">
@@ -119,15 +119,15 @@
                                 class="flex flex-row space-x-5 space-y-0 sequenced">
                                 <div class="flex-shrink-0 w-24 h-16 md:h-24 md:w-36">
                                     <img src="https://kotomesjid.com/storage/image/publication/news/desa-koto-mesjid-raih-juara-1-lomba-desa-dan-kelurahantingkat-regional-1-nasional-tahun-2023.jpg"
-                                        alt="Desa Koto Mesjid Raih Juara 1 Lomba Desa
+                                        alt="Kelurahan Tuwung Raih Juara 1 Lomba Desa
 dan Kelurahan Tingkat Nasional Regional 1 Wilayah Sumatera Tahun 2023"
                                         class="object-cover w-full h-full rounded-md md:rounded-lg lg:rounded-xl">
                                 </div>
                                 <div class="space-y-2">
                                     <h3 class="-mt-1 text-xl leading-snug text-black line-clamp-3 md:mt-0"
-                                        title="Desa Koto Mesjid Raih Juara 1 Lomba Desa
+                                        title="Kelurahan Tuwung Raih Juara 1 Lomba Desa
 dan Kelurahan Tingkat Nasional Regional 1 Wilayah Sumatera Tahun 2023">
-                                        Desa Koto Mesjid Raih Juara 1 Lomba Desa
+                                        Kelurahan Tuwung Raih Juara 1 Lomba Desa
                                         dan Kelurahan Tingkat Nasional Regional 1 Wilayah Sumatera Tahun 2023
                                     </h3>
                                     <p class="font-light text-black">
@@ -236,7 +236,7 @@ dan Kelurahan Tingkat Nasional Regional 1 Wilayah Sumatera Tahun 2023">
                                 class="relative overflow-hidden rounded-lg sequenced lg:rounded-xl">
                                 <div class="relative flex-shrink-0 w-full h-[400px]">
                                     <img src="https://kotomesjid.com/storage/image/publication/image-gallery/thumbnail/infografis-data-penduduk-desa-koto-mesjid.png"
-                                        alt="Infografis data penduduk Desa Koto Mesjid"
+                                        alt="Infografis data penduduk Kelurahan Tuwung"
                                         class="object-cover w-full h-full">
                                     <div
                                         class="absolute inset-0 w-full h-full bg-gradient-to-br from-black/50 via-black/50 to-black/75">
@@ -244,7 +244,7 @@ dan Kelurahan Tingkat Nasional Regional 1 Wilayah Sumatera Tahun 2023">
                                 </div>
                                 <div class="absolute inset-x-0 bottom-0 w-full px-6 py-3 space-y-2">
                                     <h3 class="text-xl leading-snug text-white">
-                                        Infografis data penduduk Desa Koto Mesjid
+                                        Infografis data penduduk Kelurahan Tuwung
                                     </h3>
                                     <p class="font-light text-white/80">
                                         Oktober 1, 2024
@@ -256,7 +256,7 @@ dan Kelurahan Tingkat Nasional Regional 1 Wilayah Sumatera Tahun 2023">
                                 class="relative overflow-hidden rounded-lg sequenced lg:rounded-xl">
                                 <div class="relative flex-shrink-0 w-full h-[400px]">
                                     <img src="https://kotomesjid.com/storage/image/publication/image-gallery/thumbnail/road-trip-destinasi-wisata-desa-koto-mesjid.png"
-                                        alt="Road Trip Destinasi Wisata Desa Koto Mesjid"
+                                        alt="Road Trip Destinasi Wisata Kelurahan Tuwung"
                                         class="object-cover w-full h-full">
                                     <div
                                         class="absolute inset-0 w-full h-full bg-gradient-to-br from-black/50 via-black/50 to-black/75">
@@ -264,7 +264,7 @@ dan Kelurahan Tingkat Nasional Regional 1 Wilayah Sumatera Tahun 2023">
                                 </div>
                                 <div class="absolute inset-x-0 bottom-0 w-full px-6 py-3 space-y-2">
                                     <h3 class="text-xl leading-snug text-white">
-                                        Road Trip Destinasi Wisata Desa Koto Mesjid
+                                        Road Trip Destinasi Wisata Kelurahan Tuwung
                                     </h3>
                                     <p class="font-light text-white/80">
                                         Agustus 19, 2024
@@ -336,13 +336,13 @@ dan Kelurahan Tingkat Nasional Regional 1 Wilayah Sumatera Tahun 2023">
                                         </div>
                                     </div>
                                     <img src="https://kotomesjid.com/storage/image/publication/video-gallery/kegiatan-hdci-dan-jejak-petualang-di-kampung-patin-desa-koto-mesjid.jpg"
-                                        alt="Kegiatan HDCI dan Jejak Petualang di kampung Patin Desa Koto Mesjid"
+                                        alt="Kegiatan HDCI dan Jejak Petualang di kampung Patin Kelurahan Tuwung"
                                         class="relative object-cover w-full h-full rounded-md lg:rounded-xl">
                                 </div>
                                 <div class="space-y-2">
                                     <h3 class="text-xl leading-snug line-clamp-3"
-                                        title="Kegiatan HDCI dan Jejak Petualang di kampung Patin Desa Koto Mesjid">
-                                        Kegiatan HDCI dan Jejak Petualang di kampung Patin Desa Koto Mesjid
+                                        title="Kegiatan HDCI dan Jejak Petualang di kampung Patin Kelurahan Tuwung">
+                                        Kegiatan HDCI dan Jejak Petualang di kampung Patin Kelurahan Tuwung
                                     </h3>
                                     <p class="font-light black">
                                         Agustus 4, 2022

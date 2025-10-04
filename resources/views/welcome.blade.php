@@ -10,7 +10,7 @@
                 <div class="w-full h-full swiper">
                     <div class="w-full h-full swiper-wrapper">
                         <div class="relative w-full h-full swiper-slide">
-                            <img src="https://kotomesjid.com/storage/image/hero/desa-koto-mesjid.jpg" alt="desa koto mesjid"
+                            <img src="https://kotomesjid.com/storage/image/hero/desa-koto-mesjid.jpg" alt="kelurahan tuwung"
                                 class="object-cover w-full h-full">
                             <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-black/30 to-transparent">
                             </div>
@@ -18,14 +18,14 @@
                                 <div class="grid h-full max-w-4xl mx-auto place-content-center">
                                     <h1
                                         class="text-6xl font-semibold tracking-tighter text-center text-white capitalize break-words md:text-8xl">
-                                        selamat datang di website desa koto mesjid
+                                        selamat datang di website desa Kelurahan Tuwung
                                     </h1>
                                 </div>
                             </div>
                         </div>
                         <div class="relative w-full h-full swiper-slide">
                             <img src="https://kotomesjid.com/storage/image/hero/kantor-desa-koto-mesjid.jpg"
-                                alt="kantor desa koto mesjid" class="object-cover w-full h-full">
+                                alt="kantor kelurahan tuwung" class="object-cover w-full h-full">
                             <div
                                 class="absolute inset-0 w-full h-full bg-gradient-to-r from-black/50 via-black/50 to-black/25">
                             </div>
@@ -58,7 +58,7 @@
                         </div>
                         <div class="relative w-full h-full swiper-slide">
                             <img src="https://kotomesjid.com/storage/image/hero/public-complaint.jpg"
-                                alt="salah satu bangunan di desa koto mesjid" class="object-cover w-full h-full">
+                                alt="salah satu bangunan di kelurahan tuwung" class="object-cover w-full h-full">
                             <div
                                 class="absolute inset-0 w-full h-full bg-gradient-to-l from-black/50 via-black/50 to-black/25">
                             </div>
@@ -72,7 +72,7 @@
                                         <div class="w-full px-10 mx-auto lg:w-1/2 lg:px-0">
                                             <p class="text-xl font-light leading-snug text-center text-white md:text-2xl">
                                                 Laporkan segala pengaduan anda seputar permasalahan yang ada di
-                                                desa koto mesjid, petugas akan menindaklanjuti pengaduan dengan
+                                                kelurahan tuwung, petugas akan menindaklanjuti pengaduan dengan
                                                 cepat dan tanggap
                                             </p>
                                         </div>
@@ -88,7 +88,7 @@
                         </div>
                         <div class="relative w-full h-full swiper-slide">
                             <img src="https://kotomesjid.com/storage/image/hero/desa-wisata-kampung-patin.jpg"
-                                alt="kantor desa koto mesjid" class="object-cover w-full h-full">
+                                alt="kantor kelurahan tuwung" class="object-cover w-full h-full">
                             <div
                                 class="absolute inset-0 w-full h-full bg-gradient-to-r from-black/50 via-black/50 to-black/25">
                             </div>
@@ -105,7 +105,7 @@
                                                 <p
                                                     class="text-xl font-light leading-snug text-center text-white md:text-2xl lg:text-right">
                                                     Temukan lokasi-lokasi menarik yang anda bisa kunjungi untuk
-                                                    menemani libur pekan anda di desa koto mesjid
+                                                    menemani libur pekan anda di kelurahan tuwung
                                                 </p>
                                             </div>
                                         </div>
@@ -135,7 +135,7 @@
                                         <div class="w-full px-10 mx-auto lg:w-1/2 lg:px-0">
                                             <p class="text-xl font-light leading-snug text-center text-white md:text-2xl">
                                                 Temukan berbagai produk kreatif dari badan usaha unit mikro
-                                                kecil menengah (UMKM) desa koto mesjid
+                                                kecil menengah (UMKM) kelurahan tuwung
                                             </p>
                                         </div>
                                         <div class="flex justify-center">
@@ -183,26 +183,26 @@
                                 </h3>
                                 <div class="space-y-5 text-center divide-y divide-slate-200 lg:text-left description">
                                     <p class="text-xl font-light leading-relaxed">
-                                        Selamat datang di website resmi Desa Koto Mesjid. Pada kesempatan ini
+                                        Selamat datang di website resmi Kelurahan Tuwung. Pada kesempatan ini
                                         marilah kita ucapkan puji syukur kehadirat Allah SWT, karena atas rahmat
                                         dan karunia-nya kita telah dapat membangun, mengembangkan dan mengelola
-                                        website Desa Koto Mesjid. Dengan adanya website ini diharapkan
+                                        website Kelurahan Tuwung. Dengan adanya website ini diharapkan
                                         masyarakat dapat mengetahui informasi mengenai kegiatan yang dilakukan
-                                        oleh Desa Koto Mesjid
+                                        oleh Kelurahan Tuwung
                                     </p>
                                     <div class="pt-5 space-y-1">
                                         <h6 class="text-xl font-semibold">
                                             Arjunalis
                                         </h6>
                                         <p class="text-lg font-light">
-                                            Kepala Desa Koto Mesjid
+                                            Lurah Kelurahan Tuwung
                                         </p>
                                     </div>
                                 </div>
                             </div>
                             <div class="order-1 place-self-center lg:order-2 content">
                                 <img src="https://kotomesjid.com/storage/image/hero/kepala-desa-koto-mesjid.png"
-                                    class="w-64 lg:w-80 rounded-xl" alt="kepala-desa-koto-mesjid">
+                                    class="w-64 lg:w-80 rounded-xl" alt="lurah-kelurahan-tuwung">
                             </div>
                         </div>
                     </div>
@@ -534,7 +534,7 @@
                             </h3>
                             <div class="w-full lg:max-w-xl">
                                 <h1 class="text-4xl font-light leading-tight text-center lg:text-left description">
-                                    Mengenal lebih dekat desa koto mesjid melalui produksi kreatif umkm
+                                    Mengenal lebih dekat kelurahan tuwung melalui produksi kreatif umkm
                                 </h1>
                             </div>
                             <div

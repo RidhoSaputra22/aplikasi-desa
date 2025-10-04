@@ -1,4 +1,4 @@
-<div class="relative w-full p-6 bg-white rounded-lg place-self-center md:max-w-md lg:max-w-4xl md:p-10">
+<div class="relative w-full p-6 rounded-lg place-self-center md:max-w-md lg:max-w-4xl md:p-10">
     <div class="space-y-8">
         <h5 class="text-3xl font-semibold capitalize">
             surat keterangan kelahiran
@@ -15,8 +15,11 @@
                         </label>
                         <div>
                             <input type="text"
-                                class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('babyName') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="baby-name" wire:model="babyName">
+                            @error('babyName')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -25,8 +28,11 @@
                         </label>
                         <div>
                             <input type="text"
-                                class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('placeOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="place-of-birth" wire:model="placeOfBirth">
+                            @error('placeOfBirth')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -37,45 +43,17 @@
                             <div class="flex items-center space-x-3">
                                 <div>
                                     <select
-                                        class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                        class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('dayOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                         id="day-of-birth" wire:model="dayOfBirth">
                                         <option value=""></option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                        <option value="13">13</option>
-                                        <option value="14">14</option>
-                                        <option value="15">15</option>
-                                        <option value="16">16</option>
-                                        <option value="17">17</option>
-                                        <option value="18">18</option>
-                                        <option value="19">19</option>
-                                        <option value="20">20</option>
-                                        <option value="21">21</option>
-                                        <option value="22">22</option>
-                                        <option value="23">23</option>
-                                        <option value="24">24</option>
-                                        <option value="25">25</option>
-                                        <option value="26">26</option>
-                                        <option value="27">27</option>
-                                        <option value="28">28</option>
-                                        <option value="29">29</option>
-                                        <option value="30">30</option>
-                                        <option value="31">31</option>
+                                        @for ($i = 1; $i <= 31; $i++)
+                                            <option value="{{ $i }}">{{ $i }}</option>
+                                        @endfor
                                     </select>
                                 </div>
                                 <div class="flex-1">
                                     <select
-                                        class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                        class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('monthOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                         id="month-of-birth" wire:model="monthOfBirth">
                                         <option value=""></option>
                                         <option value="1">Januari</option>
@@ -94,138 +72,24 @@
                                 </div>
                                 <div>
                                     <select
-                                        class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                        class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('yearOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                         id="year-of-birth" wire:model="yearOfBirth">
                                         <option value=""></option>
-                                        <option value="1900">1900</option>
-                                        <option value="1901">1901</option>
-                                        <option value="1902">1902</option>
-                                        <option value="1903">1903</option>
-                                        <option value="1904">1904</option>
-                                        <option value="1905">1905</option>
-                                        <option value="1906">1906</option>
-                                        <option value="1907">1907</option>
-                                        <option value="1908">1908</option>
-                                        <option value="1909">1909</option>
-                                        <option value="1910">1910</option>
-                                        <option value="1911">1911</option>
-                                        <option value="1912">1912</option>
-                                        <option value="1913">1913</option>
-                                        <option value="1914">1914</option>
-                                        <option value="1915">1915</option>
-                                        <option value="1916">1916</option>
-                                        <option value="1917">1917</option>
-                                        <option value="1918">1918</option>
-                                        <option value="1919">1919</option>
-                                        <option value="1920">1920</option>
-                                        <option value="1921">1921</option>
-                                        <option value="1922">1922</option>
-                                        <option value="1923">1923</option>
-                                        <option value="1924">1924</option>
-                                        <option value="1925">1925</option>
-                                        <option value="1926">1926</option>
-                                        <option value="1927">1927</option>
-                                        <option value="1928">1928</option>
-                                        <option value="1929">1929</option>
-                                        <option value="1930">1930</option>
-                                        <option value="1931">1931</option>
-                                        <option value="1932">1932</option>
-                                        <option value="1933">1933</option>
-                                        <option value="1934">1934</option>
-                                        <option value="1935">1935</option>
-                                        <option value="1936">1936</option>
-                                        <option value="1937">1937</option>
-                                        <option value="1938">1938</option>
-                                        <option value="1939">1939</option>
-                                        <option value="1940">1940</option>
-                                        <option value="1941">1941</option>
-                                        <option value="1942">1942</option>
-                                        <option value="1943">1943</option>
-                                        <option value="1944">1944</option>
-                                        <option value="1945">1945</option>
-                                        <option value="1946">1946</option>
-                                        <option value="1947">1947</option>
-                                        <option value="1948">1948</option>
-                                        <option value="1949">1949</option>
-                                        <option value="1950">1950</option>
-                                        <option value="1951">1951</option>
-                                        <option value="1952">1952</option>
-                                        <option value="1953">1953</option>
-                                        <option value="1954">1954</option>
-                                        <option value="1955">1955</option>
-                                        <option value="1956">1956</option>
-                                        <option value="1957">1957</option>
-                                        <option value="1958">1958</option>
-                                        <option value="1959">1959</option>
-                                        <option value="1960">1960</option>
-                                        <option value="1961">1961</option>
-                                        <option value="1962">1962</option>
-                                        <option value="1963">1963</option>
-                                        <option value="1964">1964</option>
-                                        <option value="1965">1965</option>
-                                        <option value="1966">1966</option>
-                                        <option value="1967">1967</option>
-                                        <option value="1968">1968</option>
-                                        <option value="1969">1969</option>
-                                        <option value="1970">1970</option>
-                                        <option value="1971">1971</option>
-                                        <option value="1972">1972</option>
-                                        <option value="1973">1973</option>
-                                        <option value="1974">1974</option>
-                                        <option value="1975">1975</option>
-                                        <option value="1976">1976</option>
-                                        <option value="1977">1977</option>
-                                        <option value="1978">1978</option>
-                                        <option value="1979">1979</option>
-                                        <option value="1980">1980</option>
-                                        <option value="1981">1981</option>
-                                        <option value="1982">1982</option>
-                                        <option value="1983">1983</option>
-                                        <option value="1984">1984</option>
-                                        <option value="1985">1985</option>
-                                        <option value="1986">1986</option>
-                                        <option value="1987">1987</option>
-                                        <option value="1988">1988</option>
-                                        <option value="1989">1989</option>
-                                        <option value="1990">1990</option>
-                                        <option value="1991">1991</option>
-                                        <option value="1992">1992</option>
-                                        <option value="1993">1993</option>
-                                        <option value="1994">1994</option>
-                                        <option value="1995">1995</option>
-                                        <option value="1996">1996</option>
-                                        <option value="1997">1997</option>
-                                        <option value="1998">1998</option>
-                                        <option value="1999">1999</option>
-                                        <option value="2000">2000</option>
-                                        <option value="2001">2001</option>
-                                        <option value="2002">2002</option>
-                                        <option value="2003">2003</option>
-                                        <option value="2004">2004</option>
-                                        <option value="2005">2005</option>
-                                        <option value="2006">2006</option>
-                                        <option value="2007">2007</option>
-                                        <option value="2008">2008</option>
-                                        <option value="2009">2009</option>
-                                        <option value="2010">2010</option>
-                                        <option value="2011">2011</option>
-                                        <option value="2012">2012</option>
-                                        <option value="2013">2013</option>
-                                        <option value="2014">2014</option>
-                                        <option value="2015">2015</option>
-                                        <option value="2016">2016</option>
-                                        <option value="2017">2017</option>
-                                        <option value="2018">2018</option>
-                                        <option value="2019">2019</option>
-                                        <option value="2020">2020</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2023">2023</option>
-                                        <option value="2024">2024</option>
-                                        <option value="2025">2025</option>
+                                        @for ($i = 1900; $i <= 2025; $i++)
+                                            <option value="{{ $i }}">{{ $i }}</option>
+                                        @endfor
                                     </select>
                                 </div>
                             </div>
+                            @error('dayOfBirth')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
+                            @error('monthOfBirth')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
+                            @error('yearOfBirth')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -236,100 +100,24 @@
                             <div class="flex items-center space-x-3">
                                 <div>
                                     <select
-                                        class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                        class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('hourOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                         id="hour-of-birth" wire:model="hourOfBirth">
                                         <option value=""></option>
-                                        <option value="00">00</option>
-                                        <option value="01">01</option>
-                                        <option value="02">02</option>
-                                        <option value="03">03</option>
-                                        <option value="04">04</option>
-                                        <option value="05">05</option>
-                                        <option value="06">06</option>
-                                        <option value="07">07</option>
-                                        <option value="08">08</option>
-                                        <option value="09">09</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                        <option value="13">13</option>
-                                        <option value="14">14</option>
-                                        <option value="15">15</option>
-                                        <option value="16">16</option>
-                                        <option value="17">17</option>
-                                        <option value="18">18</option>
-                                        <option value="19">19</option>
-                                        <option value="20">20</option>
-                                        <option value="21">21</option>
-                                        <option value="22">22</option>
-                                        <option value="23">23</option>
+                                        @for ($i = 0; $i <= 23; $i++)
+                                            <option value="{{ sprintf('%02d', $i) }}">{{ sprintf('%02d', $i) }}
+                                            </option>
+                                        @endfor
                                     </select>
                                 </div>
                                 <div>
                                     <select
-                                        class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                        class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('minuteOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                         id="minute-of-birth" wire:model="minuteOfBirth">
                                         <option value=""></option>
-                                        <option value="00">00</option>
-                                        <option value="01">01</option>
-                                        <option value="02">02</option>
-                                        <option value="03">03</option>
-                                        <option value="04">04</option>
-                                        <option value="05">05</option>
-                                        <option value="06">06</option>
-                                        <option value="07">07</option>
-                                        <option value="08">08</option>
-                                        <option value="09">09</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                        <option value="13">13</option>
-                                        <option value="14">14</option>
-                                        <option value="15">15</option>
-                                        <option value="16">16</option>
-                                        <option value="17">17</option>
-                                        <option value="18">18</option>
-                                        <option value="19">19</option>
-                                        <option value="20">20</option>
-                                        <option value="21">21</option>
-                                        <option value="22">22</option>
-                                        <option value="23">23</option>
-                                        <option value="24">24</option>
-                                        <option value="25">25</option>
-                                        <option value="26">26</option>
-                                        <option value="27">27</option>
-                                        <option value="28">28</option>
-                                        <option value="29">29</option>
-                                        <option value="30">30</option>
-                                        <option value="31">31</option>
-                                        <option value="32">32</option>
-                                        <option value="33">33</option>
-                                        <option value="34">34</option>
-                                        <option value="35">35</option>
-                                        <option value="36">36</option>
-                                        <option value="37">37</option>
-                                        <option value="38">38</option>
-                                        <option value="39">39</option>
-                                        <option value="40">40</option>
-                                        <option value="41">41</option>
-                                        <option value="42">42</option>
-                                        <option value="43">43</option>
-                                        <option value="44">44</option>
-                                        <option value="45">45</option>
-                                        <option value="46">46</option>
-                                        <option value="47">47</option>
-                                        <option value="48">48</option>
-                                        <option value="49">49</option>
-                                        <option value="50">50</option>
-                                        <option value="51">51</option>
-                                        <option value="52">52</option>
-                                        <option value="53">53</option>
-                                        <option value="54">54</option>
-                                        <option value="55">55</option>
-                                        <option value="56">56</option>
-                                        <option value="57">57</option>
-                                        <option value="58">58</option>
-                                        <option value="59">59</option>
+                                        @for ($i = 0; $i <= 59; $i++)
+                                            <option value="{{ sprintf('%02d', $i) }}">{{ sprintf('%02d', $i) }}
+                                            </option>
+                                        @endfor
                                     </select>
                                 </div>
                                 <div>
@@ -338,6 +126,12 @@
                                     </span>
                                 </div>
                             </div>
+                            @error('hourOfBirth')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
+                            @error('minuteOfBirth')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -346,12 +140,15 @@
                         </label>
                         <div>
                             <select
-                                class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('gender') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="gender" wire:model="gender">
                                 <option value=""></option>
-                                <option value="Laki-laki">Laki-laki</option>
-                                <option value="Perempuan">Perempuan</option>
+                                <option value="L">Laki-laki</option>
+                                <option value="P">Perempuan</option>
                             </select>
+                            @error('gender')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -367,8 +164,11 @@
                         </label>
                         <div>
                             <input type="text"
-                                class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('motherName') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="mother-name" wire:model="motherName">
+                            @error('motherName')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -377,8 +177,11 @@
                         </label>
                         <div>
                             <input type="number"
-                                class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('motherIdCardNumber') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="mother-id-card-number" wire:model="motherIdCardNumber">
+                            @error('motherIdCardNumber')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -389,13 +192,16 @@
                             <div class="flex items-center space-x-3">
                                 <div class="flex-1">
                                     <input type="text"
-                                        class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                        class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('motherAge') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                         id="mother-age" wire:model="motherAge">
                                 </div>
                                 <span class="flex-shrink-0 px-4 py-2 text-black border rounded-md border-slate-700">
                                     tahun
                                 </span>
                             </div>
+                            @error('motherAge')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -404,8 +210,11 @@
                         </label>
                         <div>
                             <input type="text"
-                                class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('motherProfession') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="mother-profession" wire:model="motherProfession">
+                            @error('motherProfession')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -414,8 +223,11 @@
                         </label>
                         <div>
                             <textarea
-                                class="w-full min-h-[100px] text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                class="w-full px-3 py-2 min-h-[100px] text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('motherAddress') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="mother-address" wire:model="motherAddress"></textarea>
+                            @error('motherAddress')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -431,8 +243,11 @@
                         </label>
                         <div>
                             <input type="text"
-                                class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('fatherName') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="father-name" wire:model="fatherName">
+                            @error('fatherName')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -441,8 +256,11 @@
                         </label>
                         <div>
                             <input type="number"
-                                class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('fatherIdCardNumber') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="father-id-card-number" wire:model="fatherIdCardNumber">
+                            @error('fatherIdCardNumber')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -453,13 +271,16 @@
                             <div class="flex items-center space-x-3">
                                 <div class="flex-1">
                                     <input type="text"
-                                        class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                        class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('fatherAge') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                         id="father-age" wire:model="fatherAge">
                                 </div>
                                 <span class="flex-shrink-0 px-4 py-2 text-black border rounded-md border-slate-700">
                                     tahun
                                 </span>
                             </div>
+                            @error('fatherAge')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -468,8 +289,11 @@
                         </label>
                         <div>
                             <input type="text"
-                                class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('fatherProfession') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="father-profession" wire:model="fatherProfession">
+                            @error('fatherProfession')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -478,8 +302,11 @@
                         </label>
                         <div>
                             <textarea
-                                class="w-full min-h-[100px] text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                class="w-full px-3 py-2 min-h-[100px] text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('fatherAddress') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="father-address" wire:model="fatherAddress"></textarea>
+                            @error('fatherAddress')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -495,8 +322,11 @@
                         </label>
                         <div>
                             <input type="text"
-                                class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('reporterName') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="reporter-name" wire:model="reporterName">
+                            @error('reporterName')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -505,8 +335,11 @@
                         </label>
                         <div>
                             <input type="number"
-                                class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('reporterIdCardNumber') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="reporter-id-card-number" wire:model="reporterIdCardNumber">
+                            @error('reporterIdCardNumber')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -517,13 +350,16 @@
                             <div class="flex items-center space-x-3">
                                 <div class="flex-1">
                                     <input type="text"
-                                        class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                        class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('reporterAge') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                         id="reporter-age" wire:model="reporterAge">
                                 </div>
                                 <span class="flex-shrink-0 px-4 py-2 text-black border rounded-md border-slate-700">
                                     tahun
                                 </span>
                             </div>
+                            @error('reporterAge')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -532,8 +368,11 @@
                         </label>
                         <div>
                             <input type="text"
-                                class="w-full text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('reporterProfession') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="reporter-profession" wire:model="reporterProfession">
+                            @error('reporterProfession')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -542,8 +381,11 @@
                         </label>
                         <div>
                             <textarea
-                                class="w-full min-h-[100px] text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black"
+                                class="w-full px-3 py-2 min-h-[100px] text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('reporterAddress') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="reporter-address" wire:model="reporterAddress"></textarea>
+                            @error('reporterAddress')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -581,5 +423,7 @@
                 </div>
             </div>
         </form>
+
     </div>
+
 </div>
