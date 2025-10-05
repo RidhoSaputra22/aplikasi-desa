@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SuratOnlineController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,16 +17,13 @@ Route::get('/data-desa', function () {
 })->name('data-desa');
 
 Route::group(['prefix' => 'surat-online'], function () {
-    Route::get('/', function () {
-        return view('surat-online');
-    })->name('surat-online');
+    Route::get('/', [SuratOnlineController::class, 'index'])->name('surat-online');
 
-    Route::get('bukti-pembuatan-surat/{code}', function ($code) {
-        return $code;
-    })->name('surat-online.bukti-pembuatan-surat');
+    Route::get('bukti-pembuatan-surat/{jenis}/{code}', [SuratOnlineController::class, 'buktiPembuatanSurat'])->name('surat-online.bukti-pembuatan-surat');
+
+    Route::get('status/{jenis}/{code}', [SuratOnlineController::class, 'status'])->name('surat-online.status');
+    Route::get('lihat/{jenis}/{code}', [SuratOnlineController::class, 'lihat'])->name('surat-online.lihat');
 });
-
-
 
 Route::get('/publikasi', function () {
     return view('publikasi');
