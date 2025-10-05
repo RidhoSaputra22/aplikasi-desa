@@ -15,9 +15,17 @@ Route::get('/data-desa', function () {
     return view('data-desa');
 })->name('data-desa');
 
-Route::get('/surat-online', function () {
-    return view('surat-online');
-})->name('surat-online');
+Route::group(['prefix' => 'surat-online'], function () {
+    Route::get('/', function () {
+        return view('surat-online');
+    })->name('surat-online');
+
+    Route::get('bukti-pembuatan-surat/{code}', function ($code) {
+        return $code;
+    })->name('surat-online.bukti-pembuatan-surat');
+});
+
+
 
 Route::get('/publikasi', function () {
     return view('publikasi');

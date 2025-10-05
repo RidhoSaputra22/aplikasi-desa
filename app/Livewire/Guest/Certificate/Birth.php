@@ -231,7 +231,7 @@ class Birth extends ModalComponent
 
         try {
             // Create birth certificate record
-            BirthCertificate::create([
+            $birthCertificate = BirthCertificate::create([
                 // Data bayi
                 'baby_name' => $this->babyName,
                 'place_of_birth' => $this->placeOfBirth,
@@ -264,14 +264,9 @@ class Birth extends ModalComponent
                 'reporter_address' => $this->reporterAddress,
             ]);
 
-            // Show success message
-            session()->flash('success', 'Surat Kelahiran berhasil diajukan! Kode surat akan diberikan setelah verifikasi.');
-
-            // Reset form
-            $this->reset();
 
             // Close modal
-            $this->closeModal();
+            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $birthCertificate->code]);
         } catch (\Exception $e) {
             // Show error message
             session()->flash('error', 'Terjadi kesalahan saat mengajukan surat. Silakan coba lagi.');

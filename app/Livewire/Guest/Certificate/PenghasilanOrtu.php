@@ -219,7 +219,7 @@ class PenghasilanOrtu extends ModalComponent
             }
 
             // Create parent income certificate record
-            ParentIncomeCertificate::create([
+            $ParentIncomeCert = ParentIncomeCertificate::create([
                 // Data diri
                 'name' => $this->name,
                 'place_of_birth' => $this->placeOfBirth,
@@ -249,14 +249,8 @@ class PenghasilanOrtu extends ModalComponent
                 'attachment' => $attachmentPath,
             ]);
 
-            // Show success message
-            session()->flash('success', 'Surat Penghasilan Orang Tua berhasil diajukan! Kode surat akan diberikan setelah verifikasi.');
-
-            // Reset form
-            $this->reset();
-
             // Close modal
-            $this->closeModal();
+            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $ParentIncomeCert->code]);
         } catch (\Exception $e) {
             // Show error message
             session()->flash('error', 'Terjadi kesalahan saat mengajukan surat. Silakan coba lagi.');

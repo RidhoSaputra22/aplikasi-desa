@@ -141,7 +141,7 @@ class Death extends ModalComponent
 
         try {
             // Create death certificate record
-            DeathCertificate::create([
+            $deathCert = DeathCertificate::create([
                 // Data diri almarhum
                 'name' => $this->name,
                 'place_of_birth' => $this->placeOfBirth,
@@ -160,14 +160,9 @@ class Death extends ModalComponent
                 'cause_of_death' => $this->causeOfDeath,
             ]);
 
-            // Show success message
-            session()->flash('success', 'Surat Kematian berhasil diajukan! Kode surat akan diberikan setelah verifikasi.');
-
-            // Reset form
-            $this->reset();
 
             // Close modal
-            $this->closeModal();
+            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $deathCert->code]);
         } catch (\Exception $e) {
             // Show error message
             session()->flash('error', 'Terjadi kesalahan saat mengajukan surat. Silakan coba lagi.');

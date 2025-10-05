@@ -153,7 +153,7 @@ class Domisili extends ModalComponent
             }
 
             // Create domisili certificate record
-            DomisiliCertificate::create([
+            $domisiliCert =  DomisiliCertificate::create([
                 // Data diri
                 'name' => $this->name,
                 'id_card_number' => $this->idCardNumber,
@@ -173,17 +173,11 @@ class Domisili extends ModalComponent
                 'attachment' => $attachmentPath,
             ]);
 
-            // Show success message
-            session()->flash('success', 'Surat Domisili berhasil diajukan! Kode surat akan diberikan setelah verifikasi.');
-
-            // Reset form
-            $this->reset();
 
             // Close modal
-            $this->closeModal();
+            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $domisiliCert->code]);
         } catch (\Exception $e) {
             // Show error message
-            dd($e);
             session()->flash('error', 'Terjadi kesalahan saat mengajukan surat. Silakan coba lagi.');
         }
     }

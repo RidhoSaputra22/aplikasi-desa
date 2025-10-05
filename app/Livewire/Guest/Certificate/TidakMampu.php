@@ -145,7 +145,7 @@ class TidakMampu extends ModalComponent
             }
 
             // Create tidak mampu certificate record
-            TidakMampuCertificate::create([
+            $tidakMampuCert = TidakMampuCertificate::create([
                 // Data diri
                 'name' => $this->name,
                 'id_card_number' => $this->idCardNumber,
@@ -165,14 +165,9 @@ class TidakMampu extends ModalComponent
                 'attachment' => $attachmentPath,
             ]);
 
-            // Show success message
-            session()->flash('success', 'Surat Tidak Mampu berhasil diajukan! Kode surat akan diberikan setelah verifikasi.');
-
-            // Reset form
-            $this->reset();
 
             // Close modal
-            $this->closeModal();
+            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $tidakMampuCert->code]);
         } catch (\Exception $e) {
             // Show error message
             session()->flash('error', 'Terjadi kesalahan saat mengajukan surat. Silakan coba lagi.');

@@ -152,7 +152,7 @@ class Usaha extends ModalComponent
             }
 
             // Create usaha certificate record
-            UsahaCertificate::create([
+            $usahaCert = UsahaCertificate::create([
                 // Data diri
                 'name' => $this->name,
                 'id_card_number' => $this->idCardNumber,
@@ -173,14 +173,8 @@ class Usaha extends ModalComponent
                 'attachment' => $attachmentPath,
             ]);
 
-            // Show success message
-            session()->flash('success', 'Surat Usaha berhasil diajukan! Kode surat akan diberikan setelah verifikasi.');
-
-            // Reset form
-            $this->reset();
-
             // Close modal
-            $this->closeModal();
+            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $usahaCert->code]);
         } catch (\Exception $e) {
             // Show error message
             session()->flash('error', 'Terjadi kesalahan saat mengajukan surat. Silakan coba lagi.');
