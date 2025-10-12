@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Guest\Certificate;
 
+use App\Enums\CertificateType;
 use App\Models\DeathCertificate;
 use LivewireUI\Modal\ModalComponent;
 
@@ -162,7 +163,7 @@ class Death extends ModalComponent
 
 
             // Close modal
-            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $deathCert->code]);
+            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $deathCert->code, 'jenis' => CertificateType::KEMATIAN->value]);
         } catch (\Exception $e) {
             // Show error message
             session()->flash('error', 'Terjadi kesalahan saat mengajukan surat. Silakan coba lagi.');

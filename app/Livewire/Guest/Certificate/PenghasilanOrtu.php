@@ -2,9 +2,10 @@
 
 namespace App\Livewire\Guest\Certificate;
 
-use App\Models\ParentIncomeCertificate;
-use LivewireUI\Modal\ModalComponent;
 use Livewire\WithFileUploads;
+use App\Enums\CertificateType;
+use LivewireUI\Modal\ModalComponent;
+use App\Models\ParentIncomeCertificate;
 use Illuminate\Support\Facades\Storage;
 
 class PenghasilanOrtu extends ModalComponent
@@ -250,7 +251,7 @@ class PenghasilanOrtu extends ModalComponent
             ]);
 
             // Close modal
-            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $ParentIncomeCert->code]);
+            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $ParentIncomeCert->code, 'jenis' => CertificateType::PENGHASILAN_ORANG_TUA->value]);
         } catch (\Exception $e) {
             // Show error message
             session()->flash('error', 'Terjadi kesalahan saat mengajukan surat. Silakan coba lagi.');

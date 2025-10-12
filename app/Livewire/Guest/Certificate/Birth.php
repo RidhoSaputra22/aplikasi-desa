@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Guest\Certificate;
 
+use App\Enums\CertificateType;
 use App\Models\BirthCertificate;
 use LivewireUI\Modal\ModalComponent;
 
@@ -41,15 +42,15 @@ class Birth extends ModalComponent
 
     public function mount()
     {
-        if (env('APP_DEBUG')) {
+        if (1) {
             // Data bayi
             $this->babyName = 'Ahmad Rizki Pratama';
             $this->placeOfBirth = 'Jakarta';
-            $this->dayOfBirth = 15;
-            $this->monthOfBirth = 8;
-            $this->yearOfBirth = 2024;
-            $this->hourOfBirth = 14;
-            $this->minuteOfBirth = 30;
+            // $this->dayOfBirth = 15;
+            // $this->monthOfBirth = 8;
+            // $this->yearOfBirth = 2024;
+            // $this->hourOfBirth = 14;
+            // $this->minuteOfBirth = 30;
             $this->gender = 'L';
 
             // Data ibu
@@ -266,7 +267,7 @@ class Birth extends ModalComponent
 
 
             // Close modal
-            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $birthCertificate->code]);
+            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $birthCertificate->code, 'jenis' => CertificateType::KELAHIRAN->value]);
         } catch (\Exception $e) {
             // Show error message
             session()->flash('error', 'Terjadi kesalahan saat mengajukan surat. Silakan coba lagi.');

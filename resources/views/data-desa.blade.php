@@ -215,6 +215,24 @@
                 </div>
             </section>
         </div>
+        <section id="public-complaint" class="relative">
+            <div class="relative px-6 overflow-hidden bg-green-600 md:px-10">
+                <div class="max-w-6xl py-20 mx-auto relative z-[1]">
+                    <div class="w-full mx-auto lg:w-2/3">
+                        <h1 class="text-4xl font-light leading-tight text-center text-white title">
+                            Belum terdaftar sebagai Penduduk? Input Data Anda Sekarang
+                        </h1>
+                        <div class="flex justify-center mt-12 description">
+                            <a href="#"
+                                onclick="Livewire.dispatch('openModal', { component: 'guest.penduduk.input' })"
+                                class="px-6 py-3 text-lg text-green-600 bg-white rounded-lg hover:bg-white/95 focus:ring-4 focus:ring-white/20">
+                                Input Data
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         {{-- Include Footer Component --}}
         @include('layouts.footer')

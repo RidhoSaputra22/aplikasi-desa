@@ -33,30 +33,7 @@
                             sejarah desa
                         </h6>
                         <div class="font-light leading-relaxed prose-xl ck-content ck-custom">
-                            <p>Desa Kelurahan Tuwung merupakan desa relokasi / pemindahan / transmigrasi lokal dari
-                                proyek PLTA Koto Panjang, tepatnya pada tahun 1992. Desa Kelurahan Tuwung merupakan
-                                salah satu desa dari 8 (delapan) desa yang termasuk ke dalam daerah genangan
-                                Waduk PLTA Koto Panjang. Pada awalnya desa Kelurahan Tuwung masih bergabung dengan
-                                desa induk yaitu Desa Pulau Gadang. Pada tahun 1999 terjadi pemekaran dari Desa
-                                Pulau Gadang pada tahun berdasarkan surat Keputusan Gubernur Riau Nomor: 247
-                                Tahun 1999, yang dipimpin oleh Pjs. Bapak Bakaruddin. Secara adminitrastif, Desa
-                                Kelurahan Tuwung masuk kedalam wilayah Kecamatan XIII Koto Kampar Kabupaten Kampar,
-                                sedangkan secara Adat wilayah Desa Kelurahan Tuwung merupakan salah satu desa dalam
-                                wilayah adat Andiko 44, dengan batas-batas wilayah sebagai berikut:</p>
-                            <ul>
-                                <li>Sebelah Utara berbatas dengan Desa Silam Kecamatan Kuok</li>
-                                <li>Sebelah Selatan berbatas dengan Ulayat Kenegarian Pulau Gadang</li>
-                                <li>Sebelah Barat Berbatas dengan Desa Pulau Gadang Kecamatan XIII Koto Kampar
-                                </li>
-                                <li>elah Timur Berbatas dengan Desa Merangin Kecamatan Kuok</li>
-                            </ul>
-                            <p>Jarak Desa Kelurahan Tuwung dengan Ibu Kota Kecamatan, Kabupaten dan Propinsi antara
-                                lain:</p>
-                            <ul>
-                                <li>Jarak dengan Ibukota Kecamatan 15 km, waktu tempuh + 25 menit</li>
-                                <li>Jarak dengan Ibukota Kabupaten 21 km, waktu tempuh + 45 menit</li>
-                                <li>Jarak dengan Ibukota Propinsi 99 km, waktu tempuh + 90 menit</li>
-                            </ul>
+                            {!! $profil->sejarah_desa !!}
                         </div>
                     </div>
                 </div>
@@ -69,9 +46,7 @@
                                 visi
                             </h6>
                             <div class="font-light leading-relaxed prose-xl ck-content ck-custom">
-                                <p>Menuju Desa Berbasis Digital, Inovatif dalam Mengelola Potensi Desa dengan
-                                    Produk Unggulan di Sektor Perikanan dan Pariwisata Agar Terwujudnya
-                                    Masyarakat yang Religius, Beradat, Mandiri dan Sejahtera</p>
+                                {!! $profil->visi !!}
                             </div>
                         </div>
                         <div class="space-y-10">
@@ -79,20 +54,7 @@
                                 misi
                             </h6>
                             <div class="font-light leading-relaxed prose-xl ck-content ck-custom">
-                                <ol>
-                                    <li>Optimalisasi Peran Pemerintah Desa dalam Pelayanan kepada Masyarakat
-                                        Berbasis Digital</li>
-                                    <li>Berperan Aktif dan Menjalin Komunikasi dengan Kepemudaan, Mahasiswa dan
-                                        Perguruan Tinggi dalam Berinovasi untuk Menopang Pengembangan Potensi
-                                        Desa</li>
-                                    <li>Menjaga, Memelihara, Melestarikan serta Mengembangkan Nilai-Nilai
-                                        Warisan Budaya Lokal yang Berkualitas dan Berkelanjutan</li>
-                                    <li>Meningkatkan Sumber Daya Manusia (SDM) melalui Percepatan Pembangunan
-                                        dan Pengembangan di Sektor Perikanan dan Pariwisata</li>
-                                    <li>Memperkuat Fungsi Lembaga yang Ada di Desa</li>
-                                    <li>Pelaksanaan Pembangunan yang Berkesinambungan dan Mengedepankan
-                                        Partisipasi Gotong Royong Masyarakat</li>
-                                </ol>
+                                {!! $profil->misi !!}
                             </div>
                         </div>
                     </div>
@@ -108,171 +70,27 @@
                         aparatur desa
                     </h6>
                     <div class="grid grid-cols-2 gap-5 gap-y-8 md:grid-cols-3 lg:grid-cols-4 md:gap-10">
-                        <div class="space-y-3 sequenced">
-                            <img src="https://kotomesjid.com/storage/image/profile/human-resource/arjunalis.png"
-                                class="object-cover w-full rounded-lg h-60 md:h-80 lg:h-96 md:rounded-xl" alt="Arjunalis">
-                            <div class="space-y-1 text-center md:space-y-2">
-                                <h6 class="text-base font-semibold md:text-xl">
-                                    Arjunalis
-                                </h6>
-                                <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
-                                    Kepala Desa Kelurahan Tuwung
-                                </p>
+                        @forelse ($aparaturDesa as $aparatur)
+                            <div class="space-y-3 sequenced">
+                                <img src="{{ asset('storage/' . $aparatur->foto) }}"
+                                    class="object-cover w-full rounded-lg h-60 md:h-80 lg:h-96 md:rounded-xl"
+                                    alt="{{ $aparatur->nama }}">
+                                <div class="space-y-1 text-center md:space-y-2">
+                                    <h6 class="text-base font-semibold md:text-xl">
+                                        {{ $aparatur->nama }}
+                                    </h6>
+                                    <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
+                                        {{ $aparatur->jabatan }}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="space-y-3 sequenced">
-                            <img src="https://kotomesjid.com/storage/image/profile/human-resource/geneper-siddik-s-pi.png"
-                                class="object-cover w-full rounded-lg h-60 md:h-80 lg:h-96 md:rounded-xl"
-                                alt="Geneper Siddik, S. Pi">
-                            <div class="space-y-1 text-center md:space-y-2">
-                                <h6 class="text-base font-semibold md:text-xl">
-                                    Geneper Siddik, S. Pi
-                                </h6>
-                                <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
-                                    Sekretaris Desa
-                                </p>
-                            </div>
-                        </div>
-                        <div class="space-y-3 sequenced">
-                            <img src="https://kotomesjid.com/storage/image/profile/human-resource/agussalim-j.png"
-                                class="object-cover w-full rounded-lg h-60 md:h-80 lg:h-96 md:rounded-xl"
-                                alt="Agussalim. J">
-                            <div class="space-y-1 text-center md:space-y-2">
-                                <h6 class="text-base font-semibold md:text-xl">
-                                    Agussalim. J
-                                </h6>
-                                <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
-                                    Kepala Seksi Kesejahteraan
-                                </p>
-                            </div>
-                        </div>
-                        <div class="space-y-3 sequenced">
-                            <img src="https://kotomesjid.com/storage/image/profile/human-resource/ria-mariana-s-pd.png"
-                                class="object-cover w-full rounded-lg h-60 md:h-80 lg:h-96 md:rounded-xl"
-                                alt="Ria Mariana, S. Pd">
-                            <div class="space-y-1 text-center md:space-y-2">
-                                <h6 class="text-base font-semibold md:text-xl">
-                                    Ria Mariana, S. Pd
-                                </h6>
-                                <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
-                                    Kepala Urusan Keuangan
-                                </p>
-                            </div>
-                        </div>
-                        <div class="space-y-3 sequenced">
-                            <img src="https://kotomesjid.com/storage/image/profile/human-resource/ali-akbar.png"
-                                class="object-cover w-full rounded-lg h-60 md:h-80 lg:h-96 md:rounded-xl" alt="Ali Akbar">
-                            <div class="space-y-1 text-center md:space-y-2">
-                                <h6 class="text-base font-semibold md:text-xl">
-                                    Ali Akbar
-                                </h6>
-                                <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
-                                    Kepala Urusan Perencanaan
-                                </p>
-                            </div>
-                        </div>
-                        <div class="space-y-3 sequenced">
-                            <img src="https://kotomesjid.com/storage/image/profile/human-resource/doni-maryandi-s-pt.png"
-                                class="object-cover w-full rounded-lg h-60 md:h-80 lg:h-96 md:rounded-xl"
-                                alt="Doni Maryandi, S. Pt">
-                            <div class="space-y-1 text-center md:space-y-2">
-                                <h6 class="text-base font-semibold md:text-xl">
-                                    Doni Maryandi, S. Pt
-                                </h6>
-                                <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
-                                    Kepala Seksi Pemerintahan
-                                </p>
-                            </div>
-                        </div>
-                        <div class="space-y-3 sequenced">
-                            <img src="https://kotomesjid.com/storage/image/profile/human-resource/vella-yulita.jpg"
-                                class="object-cover w-full rounded-lg h-60 md:h-80 lg:h-96 md:rounded-xl"
-                                alt="Vella Yulita">
-                            <div class="space-y-1 text-center md:space-y-2">
-                                <h6 class="text-base font-semibold md:text-xl">
-                                    Vella Yulita
-                                </h6>
-                                <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
-                                    Kepala Seksi Pelayanan
-                                </p>
-                            </div>
-                        </div>
-                        <div class="space-y-3 sequenced">
-                            <img src="https://kotomesjid.com/storage/image/profile/human-resource/asril-leo.png"
-                                class="object-cover w-full rounded-lg h-60 md:h-80 lg:h-96 md:rounded-xl" alt="Asril Leo">
-                            <div class="space-y-1 text-center md:space-y-2">
-                                <h6 class="text-base font-semibold md:text-xl">
-                                    Asril Leo
-                                </h6>
-                                <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
-                                    Staf Kesejahteraan dan Pelayanan
-                                </p>
-                            </div>
-                        </div>
-                        <div class="space-y-3 sequenced">
-                            <img src="https://kotomesjid.com/storage/image/profile/human-resource/nuari-afrinaldi-s-pd.png"
-                                class="object-cover w-full rounded-lg h-60 md:h-80 lg:h-96 md:rounded-xl"
-                                alt="Nuari Afrinaldi, S. Pd">
-                            <div class="space-y-1 text-center md:space-y-2">
-                                <h6 class="text-base font-semibold md:text-xl">
-                                    Nuari Afrinaldi, S. Pd
-                                </h6>
-                                <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
-                                    Kepala Urusan Tata Usaha dan Umum
-                                </p>
-                            </div>
-                        </div>
-                        <div class="space-y-3 sequenced">
-                            <img src="https://kotomesjid.com/storage/image/profile/human-resource/ali-yasri.png"
-                                class="object-cover w-full rounded-lg h-60 md:h-80 lg:h-96 md:rounded-xl" alt="Ali Yasri">
-                            <div class="space-y-1 text-center md:space-y-2">
-                                <h6 class="text-base font-semibold md:text-xl">
-                                    Ali Yasri
-                                </h6>
-                                <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
-                                    Kepala Dusun I Pincuran Bilah
-                                </p>
-                            </div>
-                        </div>
-                        <div class="space-y-3 sequenced">
-                            <img src="https://kotomesjid.com/storage/image/profile/human-resource/benny-pranata.png"
-                                class="object-cover w-full rounded-lg h-60 md:h-80 lg:h-96 md:rounded-xl"
-                                alt="Benny Pranata">
-                            <div class="space-y-1 text-center md:space-y-2">
-                                <h6 class="text-base font-semibold md:text-xl">
-                                    Benny Pranata
-                                </h6>
-                                <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
-                                    Kepala Dusun II Pincuran Gading
-                                </p>
-                            </div>
-                        </div>
-                        <div class="space-y-3 sequenced">
-                            <img src="https://kotomesjid.com/storage/image/profile/human-resource/idel-primana.png"
-                                class="object-cover w-full rounded-lg h-60 md:h-80 lg:h-96 md:rounded-xl"
-                                alt="Idel Primana">
-                            <div class="space-y-1 text-center md:space-y-2">
-                                <h6 class="text-base font-semibold md:text-xl">
-                                    Idel Primana
-                                </h6>
-                                <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
-                                    Kepala Dusun III Kampung Baru
-                                </p>
-                            </div>
-                        </div>
-                        <div class="space-y-3 sequenced">
-                            <img src="https://kotomesjid.com/storage/image/profile/human-resource/heri-caldra.png"
-                                class="object-cover w-full rounded-lg h-60 md:h-80 lg:h-96 md:rounded-xl"
-                                alt="Heri Caldra">
-                            <div class="space-y-1 text-center md:space-y-2">
-                                <h6 class="text-base font-semibold md:text-xl">
-                                    Heri Caldra
-                                </h6>
-                                <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
-                                    Kepala Dusun IV Kampung Baru
-                                </p>
-                            </div>
-                        </div>
+                        @empty
+                            <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
+                                Belum ada data aparatur desa.
+                            </p>
+                        @endforelse
+
+
                     </div>
                 </div>
             </section>

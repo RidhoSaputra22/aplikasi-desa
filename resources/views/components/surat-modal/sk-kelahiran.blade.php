@@ -104,7 +104,7 @@
                                         id="hour-of-birth" wire:model="hourOfBirth">
                                         <option value=""></option>
                                         @for ($i = 0; $i <= 23; $i++)
-                                            <option value="{{ sprintf('%02d', $i) }}">{{ sprintf('%02d', $i) }}
+                                            <option value="{{ $i }}">{{ sprintf('%02d', $i) }}
                                             </option>
                                         @endfor
                                     </select>
@@ -115,7 +115,7 @@
                                         id="minute-of-birth" wire:model="minuteOfBirth">
                                         <option value=""></option>
                                         @for ($i = 0; $i <= 59; $i++)
-                                            <option value="{{ sprintf('%02d', $i) }}">{{ sprintf('%02d', $i) }}
+                                            <option value="{{ $i }}">{{ sprintf('%02d', $i) }}
                                             </option>
                                         @endfor
                                     </select>

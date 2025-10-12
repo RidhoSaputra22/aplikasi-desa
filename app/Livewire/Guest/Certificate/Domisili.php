@@ -2,9 +2,10 @@
 
 namespace App\Livewire\Guest\Certificate;
 
+use Livewire\WithFileUploads;
+use App\Enums\CertificateType;
 use App\Models\DomisiliCertificate;
 use LivewireUI\Modal\ModalComponent;
-use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Storage;
 
 class Domisili extends ModalComponent
@@ -175,7 +176,7 @@ class Domisili extends ModalComponent
 
 
             // Close modal
-            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $domisiliCert->code]);
+            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $domisiliCert->code, 'jenis' => CertificateType::DOMISILI->value]);
         } catch (\Exception $e) {
             // Show error message
             session()->flash('error', 'Terjadi kesalahan saat mengajukan surat. Silakan coba lagi.');

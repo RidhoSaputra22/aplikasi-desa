@@ -28,8 +28,8 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->colors([
                 'primary' => Color::Green,
+
             ])
-            // ->brandName('Admin Kelurahan Tuwung')
             ->brandLogo(fn() => view('components.logo'))
             ->brandLogoHeight('2rem')
             ->viteTheme('resources/css/filament/admin/theme.css')

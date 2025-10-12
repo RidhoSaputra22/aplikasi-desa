@@ -1,0 +1,24 @@
+<?php
+
+namespace App\Filament\Admin\Resources\AparaturDesas\Schemas;
+
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Schema;
+
+class AparaturDesaForm
+{
+    public static function configure(Schema $schema): Schema
+    {
+        return $schema
+            ->components([
+                TextInput::make('nama')
+                    ->required(),
+                TextInput::make('jabatan')
+                    ->required(),
+                FileUpload::make('foto')
+                    ->image()
+                    ->required(),
+            ]);
+    }
+}

@@ -2,9 +2,10 @@
 
 namespace App\Livewire\Guest\Certificate;
 
+use Livewire\WithFileUploads;
+use App\Enums\CertificateType;
 use App\Models\UsahaCertificate;
 use LivewireUI\Modal\ModalComponent;
-use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Storage;
 
 class Usaha extends ModalComponent
@@ -174,7 +175,7 @@ class Usaha extends ModalComponent
             ]);
 
             // Close modal
-            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $usahaCert->code]);
+            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $usahaCert->code, 'jenis' => CertificateType::USAHA->value]);
         } catch (\Exception $e) {
             // Show error message
             session()->flash('error', 'Terjadi kesalahan saat mengajukan surat. Silakan coba lagi.');

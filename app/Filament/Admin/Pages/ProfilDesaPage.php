@@ -1,0 +1,81 @@
+<?php
+
+namespace App\Filament\Admin\Pages;
+
+use Filament\Pages\Page;
+use Filament\Actions\Action;
+use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Filament\Forms\Components\TextInput;
+use Filament\Notifications\Notification;
+use Filament\Forms\Components\RichEditor;
+use Filament\Schemas\Concerns\InteractsWithSchemas;
+use App\Models\ProfilDesa;
+
+class ProfilDesaPage extends Page
+{
+    use InteractsWithSchemas;
+
+    public ?array $data = [];
+    protected string $view = 'filament.admin.pages.profil-desa';
+    protected static string|\BackedEnum|null $navigationIcon = Heroicon::OutlinedUserCircle;
+    protected static ?string $navigationLabel = 'Profile Desa';
+    protected static ?string $pluralModelLabel = 'Profile Desa';
+    protected static ?string $modelLabel = 'Profile Desa';
+
+
+
+    public function mount(): void
+    {
+        $data = ProfilDesa::first();
+        $this->data = $data ? $data->toArray() : [];
+        $this->form->fill(
+            $this->data
+        );
+    }
+
+    public function form(Schema $schema): Schema
+    {
+        return $schema
+            ->components([
+                TextInput::make('nama_desa')
+                    ->required(),
+                TextInput::make('email')
+                    ->label('Email address')
+                    ->columnSpan(2)
+                    ->email(),
+                RichEditor::make('sejarah_desa')
+                    ->columnSpanFull()
+                    ->required(),
+                RichEditor::make('visi')
+                    ->columnSpanFull(),
+                RichEditor::make('misi')
+                    ->columnSpanFull(),
+                TextInput::make('alamat')
+                    ->required(),
+                TextInput::make('kode_pos'),
+                TextInput::make('telepon')
+                    ->tel(),
+            ])
+            ->columns(3)
+            ->statePath('data');
+    }
+
+    public function submit(): void
+    {
+        // ModelsProfilDesa::create($this->form->getState());
+        ProfilDesa::updateOrCreate([], $this->form->getState());
+        Notification::make()
+            ->title('Profil Desa berhasil disimpan.')
+            ->success()
+            ->send();
+    }
+
+    protected function getActionsButtons()
+    {
+        return Action::make('save')
+            ->label('Save')
+            ->action('submit')
+            ->button();
+    }
+}

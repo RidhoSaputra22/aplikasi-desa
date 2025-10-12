@@ -7,10 +7,12 @@ use LivewireUI\Modal\ModalComponent;
 class ConfirmModal extends ModalComponent
 {
     public $code;
+    public $jenis;
 
-    public function mount($code = null)
+    public function mount($code = null, $jenis = null)
     {
         $this->code = $code;
+        $this->jenis = $jenis;
     }
 
     public function render()
@@ -37,7 +39,7 @@ class ConfirmModal extends ModalComponent
                     </div>
                 </div>
                 <div class="flex justify-center">
-                    <a href="{{ route('surat-online.bukti-pembuatan-surat', ['code' => $code]) }}" target="_blank" class="flex items-center justify-center px-4 py-2 space-x-2 text-white transition bg-green-600 border border-green-600 rounded-md hover:bg-opacity-90 focus:ring-4 focus:focus:ring-slate-200/75">
+                    <a href="{{ route('surat-online.bukti-pembuatan-surat', ['code' => $code, 'jenis' => $jenis]) }}" target="_blank" class="flex items-center justify-center px-4 py-2 space-x-2 text-white transition bg-green-600 border border-green-600 rounded-md hover:bg-opacity-90 focus:ring-4 focus:focus:ring-slate-200/75">
                         Unduh bukti pembuatan surat keterangan
                     </a>
                 </div>

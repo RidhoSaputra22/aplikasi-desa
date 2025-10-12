@@ -1,7 +1,11 @@
 <?php
 
+use App\Models\ProfilDesa;
+use App\Models\AparaturDesa;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SuratOnlineController;
+use App\Models\DataPenduduk;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
@@ -9,12 +13,28 @@ Route::get('/', function () {
 
 // Main navigation routes
 Route::get('/profil-desa', function () {
-    return view('profil-desa');
+    $profil = ProfilDesa::first();
+    $aparaturDesa = AparaturDesa::all();
+    return view('profil-desa', compact('profil', 'aparaturDesa'));
 })->name('profil-desa');
 
 Route::get('/data-desa', function () {
     return view('data-desa');
 })->name('data-desa');
+
+Route::get('/cek-data', function (Request $request) {
+
+    $nik = $request->input('nik');
+    $data = DataPenduduk::where('nik', $nik)->first();
+
+    if ($nik && !$data) {
+        return redirect()->route('cek-data')->with('error', 'Data dengan NIK ' . $nik . ' tidak ditemukan.');
+    }
+    if ($data) {
+        return redirect()->route('cek-data')->with('success', ['data' => $data]);
+    }
+    return view('cek-data');
+})->name('cek-data');
 
 Route::group(['prefix' => 'surat-online'], function () {
     Route::get('/', [SuratOnlineController::class, 'index'])->name('surat-online');

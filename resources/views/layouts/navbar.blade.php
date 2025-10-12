@@ -21,6 +21,10 @@
                     class="tracking-wide capitalize transition {{ request()->routeIs('data-desa') ? $activeClass : $inactiveClass }}">
                     data desa
                 </a>
+                <a href="{{ route('cek-data') }}"
+                    class="tracking-wide capitalize transition {{ request()->routeIs('cek-data') ? $activeClass : $inactiveClass }}">
+                    cek data
+                </a>
                 <a href="{{ route('surat-online') }}"
                     class="tracking-wide capitalize transition {{ request()->routeIs('surat-online') ? $activeClass : $inactiveClass }}">
                     surat online

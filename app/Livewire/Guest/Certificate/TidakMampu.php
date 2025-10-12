@@ -2,9 +2,10 @@
 
 namespace App\Livewire\Guest\Certificate;
 
-use App\Models\TidakMampuCertificate;
-use LivewireUI\Modal\ModalComponent;
 use Livewire\WithFileUploads;
+use App\Enums\CertificateType;
+use LivewireUI\Modal\ModalComponent;
+use App\Models\TidakMampuCertificate;
 use Illuminate\Support\Facades\Storage;
 
 class TidakMampu extends ModalComponent
@@ -167,7 +168,7 @@ class TidakMampu extends ModalComponent
 
 
             // Close modal
-            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $tidakMampuCert->code]);
+            $this->dispatch('openModal', 'guest.certificate.confirmModal', ['code' => $tidakMampuCert->code, 'jenis' => CertificateType::TIDAK_MAMPU->value]);
         } catch (\Exception $e) {
             // Show error message
             session()->flash('error', 'Terjadi kesalahan saat mengajukan surat. Silakan coba lagi.');

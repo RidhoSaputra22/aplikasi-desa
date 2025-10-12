@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Filament\Admin\Resources\ParentIncomeCertificates\Pages;
+
+use App\Filament\Admin\Resources\ParentIncomeCertificates\ParentIncomeCertificateResource;
+use Filament\Actions\CreateAction;
+use Filament\Resources\Pages\ListRecords;
+
+class ListParentIncomeCertificates extends ListRecords
+{
+    protected static string $resource = ParentIncomeCertificateResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            CreateAction::make(),
+        ];
+    }
+}

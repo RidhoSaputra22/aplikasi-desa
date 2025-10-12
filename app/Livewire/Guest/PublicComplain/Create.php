@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Guest\PublicComplain;
 
+use App\Models\PengaduanMasyarakat;
 use LivewireUI\Modal\ModalComponent;
 
 class Create extends ModalComponent
@@ -32,6 +33,25 @@ class Create extends ModalComponent
         'images.*.image' => 'File harus berupa gambar.',
         'images.*.max' => 'Ukuran gambar maksimal 2MB.',
     ];
+
+    public function submit()
+    {
+        $this->validate();
+
+        PengaduanMasyarakat::create([
+            'name' => $this->name,
+            'no_hp' => $this->mobilePhoneNumber,
+            'alamat' => $this->address,
+            'isi_laporan' => $this->complaint,
+            // Handle image uploads if necessary
+        ]);
+
+        // Reset form fields setelah submit
+        $this->reset(['name', 'mobilePhoneNumber', 'address', 'complaint', 'images']);
+
+        // Tutup modal setelah submit
+        $this->closeModal();
+    }
 
 
     public function render()
