@@ -408,7 +408,7 @@
                 data: {
                     labels: {!! $byUsia->pluck('usia')->map(fn($val) => 'Usia ' . $val) !!},
                     datasets: [{
-                        data: {{ $byUsia->pluck('total') }},
+                        data: {!! $byUsia->pluck('total') !!},
                         backgroundColor: 'rgb(48, 163, 73, .8)',
                         valueFormated: {!! $byUsia->pluck('total')->map(fn($val) => $val . ' jiwa') !!},
                         percentase: {!! $byUsia->pluck('total')->map(fn($val) => $val . ' jiwa') !!},

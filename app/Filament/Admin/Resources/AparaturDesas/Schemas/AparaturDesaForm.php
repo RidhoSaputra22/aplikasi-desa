@@ -17,6 +17,8 @@ class AparaturDesaForm
                 TextInput::make('jabatan')
                     ->required(),
                 FileUpload::make('foto')
+                    ->visibility('public')
+                    ->disk('public')
                     ->image()
                     ->required(),
             ]);
