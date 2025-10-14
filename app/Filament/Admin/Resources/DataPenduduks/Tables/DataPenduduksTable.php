@@ -25,21 +25,21 @@ class DataPenduduksTable
                 TextColumn::make('tanggal_lahir')
                     ->date()
                     ->sortable(),
-                TextColumn::make('hubungan_keluarga')
+                TextColumn::make('statusKeluarga.nama_status')
                     ->searchable(),
-                TextColumn::make('status')
+                TextColumn::make('statusKawin.nama_status')
                     ->searchable(),
-                TextColumn::make('agama')
+                TextColumn::make('agama.nama_agama')
                     ->searchable(),
-                TextColumn::make('pendidikan')
+                TextColumn::make('pendidikan.nama_pendidikan')
                     ->searchable(),
-                TextColumn::make('pekerjaan')
+                TextColumn::make('pekerjaan.nama_pekerjaan')
                     ->searchable(),
-                TextColumn::make('jenis_bantuan')
+                TextColumn::make('jenisBantuan.nama_bantuan')
                     ->searchable(),
                 TextColumn::make('penghasilan_bulanan')
                     ->searchable(),
-                TextColumn::make('kategori_kemiskinan')
+                TextColumn::make('kategoriKemiskinan.nama_kategori')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()

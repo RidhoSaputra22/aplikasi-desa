@@ -38,12 +38,6 @@ class ProfilDesaPage extends Page
     {
         return $schema
             ->components([
-                TextInput::make('nama_desa')
-                    ->required(),
-                TextInput::make('email')
-                    ->label('Email address')
-                    ->columnSpan(2)
-                    ->email(),
                 RichEditor::make('sejarah_desa')
                     ->columnSpanFull()
                     ->required(),
@@ -51,11 +45,7 @@ class ProfilDesaPage extends Page
                     ->columnSpanFull(),
                 RichEditor::make('misi')
                     ->columnSpanFull(),
-                TextInput::make('alamat')
-                    ->required(),
-                TextInput::make('kode_pos'),
-                TextInput::make('telepon')
-                    ->tel(),
+
             ])
             ->columns(3)
             ->statePath('data');

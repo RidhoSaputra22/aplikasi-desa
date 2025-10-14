@@ -1,13 +1,10 @@
-<div class="flex flex-col w-full h-screen md:flex-row bg-black/50">
-    <div x-init="" @click.self="$wire.closeModal()"
-        class="relative flex justify-center flex-1 h-full overflow-hidden">
-
-        <img src="https://kotomesjid.com/storage/image/product/sepatu-rajut-semi-boots.jpeg" alt="sepatu-rajut-semi-boots"
-            class="object-contain h-full">
+<div class="px-6 py-6 space-y-6 lg:px-10 lg:py-10 lg:space-y-10">
+    <div x-init="" @click.self="$wire.closeModal()" class="">
+        <img src="{{ $data['gambar'] }}" class="object-contain h-full w-full">
     </div>
-    <div class="flex-shrink-0 w-full p-6 bg-white h-fit md:h-full lg:p-10 md:w-72 lg:w-96">
+    <div class="">
         <h5 class="text-2xl font-semibold leading-tight capitalize lg:text-4xl">
-            Sepatu Rajut Semi Boots
+            {{ $data['nama_produk'] }}
         </h5>
         <ul class="mt-3 divide-y divide-black lg:mt-5">
             <li class="flex items-start justify-between py-3">
@@ -15,7 +12,7 @@
                     harga
                 </p>
                 <p class="text-base text-black lg:text-lg">
-                    Rp 350.000
+                    Rp {{ number_format($data['harga']) }}
                 </p>
             </li>
             <li class="flex items-start justify-between py-3">
@@ -23,12 +20,12 @@
                     kategori
                 </p>
                 <p class="text-base text-black lg:text-lg">
-                    Kriya
+                    {{ $data['kategori_umkm']['nama_kategori'] }}
                 </p>
             </li>
         </ul>
         <div class="mt-5 lg:mt-10">
-            <a href="https://api.whatsapp.com/send/?phone=6282173053862" target="_blank"
+            <a href="https://api.whatsapp.com/send/?phone={{ phone_to_international($data['no_hp']) }}" target="_blank"
                 class="flex items-center justify-center w-full px-4 py-2 space-x-2 text-white transition bg-green-600 border border-green-600 rounded-md hover:bg-opacity-90 focus:ring-4 focus:focus:ring-slate-200/75 disabled:bg-opacity-60 disabled:border-green-600/60 disabled:hover:bg-opacity-60">
                 <span class="font-medium tracking-wide">
                     Beli sekarang

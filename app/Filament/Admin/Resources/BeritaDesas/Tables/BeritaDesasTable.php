@@ -17,7 +17,10 @@ class BeritaDesasTable
             ->columns([
                 TextColumn::make('judul')
                     ->searchable(),
-                ImageColumn::make('gambar'),
+                ImageColumn::make('gambar')
+                    ->disk('public')
+                    ->label('Gambar')
+                    ->width(50),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

@@ -12,15 +12,47 @@ class DataPenduduk extends Model
         'nama_lengkap',
         'jenis_kelamin',
         'tanggal_lahir',
-        'hubungan_keluarga',
-        'status',
-        'agama',
-        'pendidikan',
-        'pekerjaan',
-
-        // bantuan
-        'jenis_bantuan',
+        'status_keluarga_id',
+        'status_kawin_id',
+        'agama_id',
+        'pendidikan_id',
+        'pekerjaan_id',
+        'jenis_bantuan_id',
         'penghasilan_bulanan',
-        'kategori_kemiskinan',
+        'kategori_kemiskinan_id',
     ];
+
+    // Define relationships if necessary
+    public function agama()
+    {
+        return $this->belongsTo(Agama::class);
+    }
+    public function jenisBantuan()
+    {
+        return $this->belongsTo(JenisBantuan::class);
+    }
+    public function kategoriKemiskinan()
+    {
+        return $this->belongsTo(KategoriKemiskinan::class);
+    }
+
+    public function pendidikan()
+    {
+        return $this->belongsTo(Pendidikan::class);
+    }
+
+    public function pekerjaan()
+    {
+        return $this->belongsTo(Pekerjaan::class);
+    }
+
+    public function statusKawin()
+    {
+        return $this->belongsTo(StatusKawin::class);
+    }
+
+    public function statusKeluarga()
+    {
+        return $this->belongsTo(StatusKeluarga::class);
+    }
 }

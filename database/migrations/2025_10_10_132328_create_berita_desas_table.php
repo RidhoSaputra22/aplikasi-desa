@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('berita_desas', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
+            $table->string('slug')->unique();
             $table->text('isi');
             $table->string('gambar')->nullable();
             $table->timestamps();

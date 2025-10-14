@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Bukti Pembuatan {{ $jenisSurat }} - {{ $code }}</title>
-    @vite('resources/css/app.css')
+    @vite('resources/css/pdf.css')
 
     <style>
         @page {

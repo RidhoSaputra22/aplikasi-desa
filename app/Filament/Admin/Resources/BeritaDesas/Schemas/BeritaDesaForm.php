@@ -16,14 +16,17 @@ class BeritaDesaForm
         return $schema
             ->components([
                 FileUpload::make('gambar')
+                    ->disk('public')
                     ->image()
                     ->columnSpanFull()
+                    ->visibility('public')
                     ->required(),
                 TextInput::make('judul')
                     ->required(),
+                TextInput::make('slug')
+                    ->required(),
                 RichEditor::make('isi')
                     ->required()
-
                     ->columnSpanFull(),
             ]);
     }

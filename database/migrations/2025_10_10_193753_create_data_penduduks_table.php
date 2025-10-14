@@ -13,21 +13,15 @@ return new class extends Migration
     {
         Schema::create('data_penduduks', function (Blueprint $table) {
             $table->id();
-            $table->string('no_kk');
-            $table->string('nik')->unique();
-            $table->string('nama_lengkap');
-            $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
-            $table->date('tanggal_lahir');
-            $table->string('hubungan_keluarga');
-            $table->string('status');
-            $table->string('agama')->nullable();
-            $table->string('pendidikan')->nullable();
-            $table->string('pekerjaan')->nullable();
+            $table->string('no_kk')->nullable();
+            $table->string('nik')->nullable();
+            $table->string('nama_lengkap')->nullable();
+            $table->enum('jenis_kelamin', ['L', 'P'])->nullable();
+            $table->string('tanggal_lahir')->nullable();
 
-            // bantuan
-            $table->string('jenis_bantuan')->nullable();
             $table->string('penghasilan_bulanan')->nullable();
-            $table->string('kategori_kemiskinan')->nullable();
+            // bantuan
+
             $table->timestamps();
         });
     }

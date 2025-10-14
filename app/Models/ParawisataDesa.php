@@ -8,9 +8,14 @@ class ParawisataDesa extends Model
 {
     protected $fillable = [
         'title',
+        'slug',
+        'alamat',
         'deskripsi',
         'gambar',
-        'galeri'
+        'galeri',
+        'lat',
+        'long'
+
     ];
 
     protected $casts = [

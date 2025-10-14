@@ -14,9 +14,13 @@ return new class extends Migration
         Schema::create('parawisata_desas', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug')->unique();
+            $table->text('alamat')->nullable();
             $table->text('deskripsi')->nullable();
             $table->string('gambar')->nullable();
             $table->json('galeri')->nullable();
+            $table->text('lat')->nullable();
+            $table->text('long')->nullable();
             $table->timestamps();
         });
     }

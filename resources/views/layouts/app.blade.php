@@ -9,7 +9,7 @@
     <title>@yield('title', 'Kelurahan tuwung')</title>
 
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.x.x/dist/cdn.min.js"></script>
@@ -18,6 +18,11 @@
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    {{-- <link rel="stylesheet" href="https://kotomesjid.com/css/app.css"> --}}
+
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
 
     <!-- Custom CSS -->
     <style>
@@ -43,10 +48,11 @@
             background: #059669;
         }
     </style>
+    @vite('resources/css/app.css')
     @livewireStyles
 </head>
 
-<body class="font-sans antialiased">
+<body class="font-sans antialiased ">
     @yield('content')
 
     <!-- Swiper JS -->

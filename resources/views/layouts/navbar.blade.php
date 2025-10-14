@@ -14,39 +14,39 @@
                 @endphp
 
                 <a href="{{ route('profil-desa') }}"
-                    class="tracking-wide capitalize transition {{ request()->routeIs('profil-desa') ? $activeClass : $inactiveClass }}">
+                    class="tracking-wide capitalize transition {{ request()->is('profil-desa*') ? $activeClass : $inactiveClass }}">
                     profil
                 </a>
                 <a href="{{ route('data-desa') }}"
-                    class="tracking-wide capitalize transition {{ request()->routeIs('data-desa') ? $activeClass : $inactiveClass }}">
+                    class="tracking-wide capitalize transition {{ request()->is('data-desa*') ? $activeClass : $inactiveClass }}">
                     data desa
                 </a>
                 <a href="{{ route('cek-data') }}"
-                    class="tracking-wide capitalize transition {{ request()->routeIs('cek-data') ? $activeClass : $inactiveClass }}">
+                    class="tracking-wide capitalize transition {{ request()->is('cek-data*') ? $activeClass : $inactiveClass }}">
                     cek data
                 </a>
                 <a href="{{ route('surat-online') }}"
-                    class="tracking-wide capitalize transition {{ request()->routeIs('surat-online') ? $activeClass : $inactiveClass }}">
+                    class="tracking-wide capitalize transition {{ request()->is('surat-online*') ? $activeClass : $inactiveClass }}">
                     surat online
                 </a>
                 <a href="{{ route('publikasi') }}"
-                    class="tracking-wide capitalize transition {{ request()->routeIs('publikasi') ? $activeClass : $inactiveClass }}">
+                    class="tracking-wide capitalize transition {{ request()->is('publikasi*') ? $activeClass : $inactiveClass }}">
                     publikasi
                 </a>
                 <a href="{{ route('parawisata') }}"
-                    class="tracking-wide capitalize transition {{ request()->routeIs('parawisata') ? $activeClass : $inactiveClass }}">
+                    class="tracking-wide capitalize transition {{ request()->is('parawisata*') ? $activeClass : $inactiveClass }}">
                     pariwisata
                 </a>
                 <a href="{{ route('produk-umkm') }}"
-                    class="tracking-wide capitalize transition {{ request()->routeIs('produk-umkm') ? $activeClass : $inactiveClass }}">
+                    class="tracking-wide capitalize transition {{ request()->is('produk-umkm*') ? $activeClass : $inactiveClass }}">
                     umkm
                 </a>
                 <a href="{{ route('pengaduan-masyarakat') }}"
-                    class="tracking-wide capitalize transition {{ request()->routeIs('pengaduan-masyarakat') ? $activeClass : $inactiveClass }}">
+                    class="tracking-wide capitalize transition {{ request()->is('pengaduan-masyarakat*') ? $activeClass : $inactiveClass }}">
                     pengaduan
                 </a>
                 <a href="{{ route('kontak') }}"
-                    class="tracking-wide capitalize transition {{ request()->routeIs('kontak') ? $activeClass : $inactiveClass }}">
+                    class="tracking-wide capitalize transition {{ request()->is('kontak*') ? $activeClass : $inactiveClass }}">
                     kontak
                 </a>
             </div>

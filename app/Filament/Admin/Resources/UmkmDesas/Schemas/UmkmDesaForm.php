@@ -33,6 +33,8 @@ class UmkmDesaForm
                     ->searchable()
                     ->required(),
                 FileUpload::make('gambar')
+                    ->visibility('public')
+                    ->disk('public')
                     ->image()
                     ->columnSpanFull(),
             ])->columns(3);

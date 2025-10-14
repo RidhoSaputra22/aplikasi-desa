@@ -352,106 +352,103 @@
                                     Terhubung seputar informasi kegiatan dan berita desa terkini
                                 </h1>
                             </div>
-                            <div class="grid grid-cols-1 gap-8 md:gap-10 lg:grid-cols-2">
-                                <div class="row-span-1 lg:row-span-3">
-                                    <div class="hidden lg:block">
-                                        <a href="https://kotomesjid.com/publikasi/berita/tim-ppk-ormawa-bem-fikom-umri-ciptakan-inovasi-pengolahan-limbah-menjadi-produk-bernilai-jual"
-                                            class="sequenced">
-                                            <div class="relative w-full overflow-hidden rounded-xl h-96">
-                                                <img src="https://kotomesjid.com/storage/image/publication/news/tim-ppk-ormawa-bem-fikom-umri-ciptakan-inovasi-pengolahan-limbah-menjadi-produk-bernilai-jual.jpg"
-                                                    class="object-cover w-full h-full"
-                                                    alt="tim-ppk-ormawa-bem-fikom-umri-ciptakan-inovasi-pengolahan-limbah-menjadi-produk-bernilai-jual">
-                                                <div
-                                                    class="absolute inset-0 w-full h-full bg-gradient-to-br from-black/10 via-black/40 to-black/60">
+                            @if ($latest->isNotEmpty())
+                                <div class="grid grid-cols-1 gap-8 md:gap-10 lg:grid-cols-2">
+                                    <div class="row-span-1 lg:row-span-3">
+                                        <div class="hidden lg:block">
+                                            <a href="{{ route('publikasi.berita', ['slug' => $latest[0]->slug]) }}"
+                                                class="sequenced">
+                                                <div class="relative w-full overflow-hidden rounded-xl h-96">
+                                                    <img src="{{ $latest[0]->gambar }}" class="object-cover w-full h-full"
+                                                        alt="tim-ppk-ormawa-bem-fikom-umri-ciptakan-inovasi-pengolahan-limbah-menjadi-produk-bernilai-jual">
+                                                    <div
+                                                        class="absolute inset-0 w-full h-full bg-gradient-to-br from-black/10 via-black/40 to-black/60">
+                                                    </div>
+                                                    <div class="absolute inset-x-0 bottom-0 w-full p-4 space-y-2">
+                                                        <h6 class="text-2xl leading-tight text-white">
+                                                            {{ $latest[0]->judul }}
+                                                        </h6>
+                                                        <p class="text-lg font-light text-white/80">
+                                                            {{ $latest[0]->created_at->format('F j, Y') }}
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                                <div class="absolute inset-x-0 bottom-0 w-full p-4 space-y-2">
-                                                    <h6 class="text-2xl leading-tight text-white">
-                                                        Tim PPK Ormawa BEM Fikom Umri Ciptakan Inovasi
-                                                        Pengolahan Limbah Menjadi Produk Bernilai Jual
-                                                    </h6>
-                                                    <p class="text-lg font-light text-white/80">
-                                                        September 3, 2024
+                                            </a>
+                                        </div>
+                                        <div class="block lg:hidden">
+                                            <a href="{{ route('publikasi.berita', ['slug' => $latest[0]->slug]) }}"
+                                                class="flex flex-row space-x-5 space-y-0 sequenced">
+                                                <div class="flex-shrink-0 w-24 h-16 md:h-24 md:w-36">
+                                                    <img src="{{ $latest[0]->gambar }}"
+                                                        alt="Tim PPK Ormawa BEM Fikom Umri Ciptakan Inovasi Pengolahan Limbah Menjadi Produk Bernilai Jual"
+                                                        class="object-cover w-full h-full rounded-md md:rounded-lg lg:rounded-xl">
+                                                </div>
+                                                <div class="space-y-2">
+                                                    <h3 class="-mt-1 text-xl leading-snug text-black line-clamp-3 md:mt-0"
+                                                        title="Tim PPK Ormawa BEM Fikom Umri Ciptakan Inovasi Pengolahan Limbah Menjadi Produk Bernilai Jual">
+                                                        {{ $latest[0]->judul }}
+                                                    </h3>
+                                                    <p class="font-light text-black">
+                                                        {{ $latest[0]->created_at->format('F j, Y') }}
                                                     </p>
                                                 </div>
-                                            </div>
-                                        </a>
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div class="block lg:hidden">
-                                        <a href="https://kotomesjid.com/publikasi/berita/tim-ppk-ormawa-bem-fikom-umri-ciptakan-inovasi-pengolahan-limbah-menjadi-produk-bernilai-jual"
-                                            class="flex flex-row space-x-5 space-y-0 sequenced">
-                                            <div class="flex-shrink-0 w-24 h-16 md:h-24 md:w-36">
-                                                <img src="https://kotomesjid.com/storage/image/publication/news/tim-ppk-ormawa-bem-fikom-umri-ciptakan-inovasi-pengolahan-limbah-menjadi-produk-bernilai-jual.jpg"
-                                                    alt="Tim PPK Ormawa BEM Fikom Umri Ciptakan Inovasi Pengolahan Limbah Menjadi Produk Bernilai Jual"
-                                                    class="object-cover w-full h-full rounded-md md:rounded-lg lg:rounded-xl">
-                                            </div>
-                                            <div class="space-y-2">
-                                                <h3 class="-mt-1 text-xl leading-snug text-black line-clamp-3 md:mt-0"
-                                                    title="Tim PPK Ormawa BEM Fikom Umri Ciptakan Inovasi Pengolahan Limbah Menjadi Produk Bernilai Jual">
-                                                    Tim PPK Ormawa BEM Fikom Umri Ciptakan Inovasi Pengolahan
-                                                    Limbah Menjadi Produk Bernilai Jual
-                                                </h3>
-                                                <p class="font-light text-black">
-                                                    September 3, 2024
-                                                </p>
-                                            </div>
-                                        </a>
-                                    </div>
+                                    <a href="{{ route('publikasi.berita', ['slug' => $latest[1]->slug]) }}"
+                                        class="flex flex-row space-x-5 space-y-0 sequenced">
+                                        <div class="flex-shrink-0 w-24 h-16 md:h-24 md:w-36">
+                                            <img src="{{ $latest[1]->gambar }}"
+                                                alt="Kelurahan Tuwung Lolos 3 Besar Lomba Desa dan Kelurahan Regional 1 Wilayah Sumatera Tahun 2023"
+                                                class="object-cover w-full h-full rounded-md md:rounded-lg lg:rounded-xl">
+                                        </div>
+                                        <div class="space-y-2">
+                                            <h3 class="-mt-1 text-xl leading-snug text-black line-clamp-3 md:mt-0">
+                                                {{ $latest[1]->judul }}
+                                            </h3>
+                                            <p class="font-light text-black">
+                                                {{ $latest[1]->created_at->format('F j, Y') }}
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="{{ route('publikasi.berita', ['slug' => $latest[2]->slug]) }}"
+                                        class="flex flex-row space-x-5 space-y-0 sequenced">
+                                        <div class="flex-shrink-0 w-24 h-16 md:h-24 md:w-36">
+                                            <img src="{{ $latest[2]->gambar }}"
+                                                class="object-cover w-full h-full rounded-md md:rounded-lg lg:rounded-xl">
+                                        </div>
+                                        <div class="space-y-2">
+                                            <h3 class="-mt-1 text-xl leading-snug text-black line-clamp-3 md:mt-0">
+                                                {{ $latest[2]->judul }}
+                                            </h3>
+                                            <p class="font-light text-black">
+                                                {{ $latest[2]->created_at->format('F j, Y') }}
+                                            </p>
+                                        </div>
+                                    </a>
+                                    <a href="{{ route('publikasi.berita', ['slug' => $latest[3]->slug]) }}"
+                                        class="flex flex-row space-x-5 space-y-0 sequenced">
+                                        <div class="flex-shrink-0 w-24 h-16 md:h-24 md:w-36">
+                                            <img src="{{ $latest[3]->gambar }}"
+                                                class="object-cover w-full h-full rounded-md md:rounded-lg lg:rounded-xl">
+                                        </div>
+                                        <div class="space-y-2">
+                                            <h3 class="-mt-1 text-xl leading-snug text-black line-clamp-3 md:mt-0">
+                                                {{ $latest[3]->judul }}
+                                            </h3>
+                                            <p class="font-light text-black">
+                                                {{ $latest[3]->created_at->format('F j, Y') }}
+                                            </p>
+                                        </div>
+                                    </a>
                                 </div>
-                                <a href="https://kotomesjid.com/publikasi/berita/peta-statistik-kependudukan-desa-koto-mesjid"
-                                    class="flex flex-row space-x-5 space-y-0 sequenced">
-                                    <div class="flex-shrink-0 w-24 h-16 md:h-24 md:w-36">
-                                        <img src="https://kotomesjid.com/storage/image/publication/news/pemetaan-statistik-penduduk-desa-koto-mesjid.png"
-                                            alt="Peta Statistik Kependudukan Desa Koto Mesjid"
-                                            class="object-cover w-full h-full rounded-md md:rounded-lg lg:rounded-xl">
-                                    </div>
-                                    <div class="space-y-2">
-                                        <h3 class="-mt-1 text-xl leading-snug text-black line-clamp-3 md:mt-0"
-                                            title="Peta Statistik Kependudukan Desa Koto Mesjid">
-                                            Peta Statistik Kependudukan Desa Koto Mesjid
-                                        </h3>
-                                        <p class="font-light text-black">
-                                            Agustus 19, 2024
-                                        </p>
-                                    </div>
-                                </a>
-                                <a href="https://kotomesjid.com/publikasi/berita/desa-koto-mesjid-lolos-3-besar-lomba-desa-dan-kelurahan-regional-1-wilayah-sumatera-tahun-2023"
-                                    class="flex flex-row space-x-5 space-y-0 sequenced">
-                                    <div class="flex-shrink-0 w-24 h-16 md:h-24 md:w-36">
-                                        <img src="https://kotomesjid.com/storage/image/publication/news/desa-koto-mesjid-lolos-3-besar-lomba-desa-dan-kelurahan-regional-1-wilayah-sumatera-tahun-2023.jpg"
-                                            alt="Desa Koto Mesjid Lolos 3 Besar Lomba Desa dan Kelurahan Regional 1 Wilayah Sumatera Tahun 2023"
-                                            class="object-cover w-full h-full rounded-md md:rounded-lg lg:rounded-xl">
-                                    </div>
-                                    <div class="space-y-2">
-                                        <h3 class="-mt-1 text-xl leading-snug text-black line-clamp-3 md:mt-0"
-                                            title="Desa Koto Mesjid Lolos 3 Besar Lomba Desa dan Kelurahan Regional 1 Wilayah Sumatera Tahun 2023">
-                                            Desa Koto Mesjid Lolos 3 Besar Lomba Desa dan Kelurahan Regional 1
-                                            Wilayah Sumatera Tahun 2023
-                                        </h3>
-                                        <p class="font-light text-black">
-                                            Agustus 16, 2023
-                                        </p>
-                                    </div>
-                                </a>
-                                <a href="https://kotomesjid.com/publikasi/berita/desa-koto-mesjid-raih-juara-1-lomba-desa-dan-kelurahan-tingkat-nasional-regional-1-wilayah-sumatera-tahun-2023"
-                                    class="flex flex-row space-x-5 space-y-0 sequenced">
-                                    <div class="flex-shrink-0 w-24 h-16 md:h-24 md:w-36">
-                                        <img src="https://kotomesjid.com/storage/image/publication/news/desa-koto-mesjid-raih-juara-1-lomba-desa-dan-kelurahantingkat-regional-1-nasional-tahun-2023.jpg"
-                                            alt="Desa Koto Mesjid Raih Juara 1 Lomba Desa dan Kelurahan Tingkat Nasional Regional 1 Wilayah Sumatera Tahun 2023"
-                                            class="object-cover w-full h-full rounded-md md:rounded-lg lg:rounded-xl">
-                                    </div>
-                                    <div class="space-y-2">
-                                        <h3 class="-mt-1 text-xl leading-snug text-black line-clamp-3 md:mt-0"
-                                            title="Desa Koto Mesjid Raih Juara 1 Lomba Desa dan Kelurahan Tingkat Nasional Regional 1 Wilayah Sumatera Tahun 2023">
-                                            Desa Koto Mesjid Raih Juara 1 Lomba Desa
-                                            dan Kelurahan Tingkat Nasional Regional 1 Wilayah Sumatera Tahun
-                                            2023
-                                        </h3>
-                                        <p class="font-light text-black">
-                                            Agustus 16, 2023
-                                        </p>
-                                    </div>
-                                </a>
-                            </div>
+                            @else
+                                <div class="">
+                                    <p class="text-xl font-light leading-snug text-left description">
+                                        Belum ada berita terbaru saat ini, silahkan cek kembali nanti
+                                    </p>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -471,54 +468,29 @@
                                 </h1>
                             </div>
                             <div class="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 md:gap-10 lg:gap-12">
-                                <a href="{{ route('parawisata.puncak-kobe') }}" class="sequenced">
-                                    <div class="space-y-3">
-                                        <div class="relative w-full overflow-hidden h-80 rounded-xl">
-                                            <img src="https://kotomesjid.com/storage/image/tourist/thumbnail/puncak-kompe.jpg"
-                                                alt="puncak-kobe" class="relative object-cover w-full h-full">
-                                            <div
-                                                class="absolute inset-0 grid w-full h-full rounded-xl bg-black/30 place-content-center">
-                                                <h1
-                                                    class="text-3xl font-semibold leading-snug text-center text-white line-clamp-2">
-                                                    Puncak Kobe
-
-                                                </h1>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="{{ route('parawisata.sungai-gagak') }}" class="sequenced">
-                                    <div class="space-y-3">
-                                        <div class="relative w-full overflow-hidden h-80 rounded-xl">
-                                            <img src="https://kotomesjid.com/storage/image/tourist/thumbnail/sungai-gagak.jpg"
-                                                alt="sungai-gagak" class="relative object-cover w-full h-full">
-                                            <div
-                                                class="absolute inset-0 grid w-full h-full rounded-xl bg-black/30 place-content-center">
-                                                <h1
-                                                    class="text-3xl font-semibold leading-snug text-center text-white line-clamp-2">
-                                                    Sungai Gagak
-                                                </h1>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="hidden md:block">
-                                    <a href="{{ route('parawisata.talau-pusako') }}" class="sequenced">
+                                @forelse ($parawisata as $item)
+                                    <a href="{{ route('parawisata.detail', $item->slug) }}">
                                         <div class="space-y-3">
                                             <div class="relative w-full overflow-hidden h-80 rounded-xl">
-                                                <img src="https://kotomesjid.com/storage/image/tourist/thumbnail/talau-pusako.jpg"
-                                                    alt="talau-pusako" class="relative object-cover w-full h-full">
+                                                <img src="{{ $item->gambar }}" alt="puncak-kobe"
+                                                    class="relative object-cover w-full h-full">
                                                 <div
                                                     class="absolute inset-0 grid w-full h-full rounded-xl bg-black/30 place-content-center">
                                                     <h1
                                                         class="text-3xl font-semibold leading-snug text-center text-white line-clamp-2">
-                                                        Talau Pusako
+                                                        {{ $item->title }}
                                                     </h1>
                                                 </div>
                                             </div>
                                         </div>
                                     </a>
-                                </div>
+                                @empty
+                                    <div class="">
+                                        <p class="text-xl font-light leading-snug text-left description">
+                                            Belum ada lokasi pariwisata saat ini, silahkan cek kembali nanti
+                                        </p>
+                                    </div>
+                                @endforelse
                             </div>
                         </div>
                     </div>
@@ -539,88 +511,35 @@
                             </div>
                             <div
                                 class="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 md:gap-10 lg:grid-cols-4 lg:gap-12">
-                                <a href="#"
-                                    wire:click.prevent="$emit('openModal', 'guest.product.show', {&quot;product&quot;:{&quot;id&quot;:17,&quot;title&quot;:&quot;Rendang Ikan Patin&quot;,&quot;slug&quot;:&quot;rendang-ikan-patin&quot;,&quot;price&quot;:&quot;35000&quot;,&quot;image&quot;:&quot;rendang-ikan-patin.png&quot;,&quot;product_category_id&quot;:&quot;2&quot;,&quot;created_at&quot;:&quot;2022-11-21T19:56:25.000000Z&quot;,&quot;updated_at&quot;:&quot;2022-11-21T19:56:25.000000Z&quot;,&quot;deleted_at&quot;:null}})"
-                                    class="sequenced">
-                                    <div class="space-y-3">
-                                        <div class="relative w-full overflow-hidden h-52 rounded-xl">
-                                            <img src="https://kotomesjid.com/storage/image/product/rendang-ikan-patin.png"
-                                                alt="rendang-ikan-patin" class="relative object-cover w-full h-full">
-                                            <span
-                                                class="absolute px-2 py-1 text-xs font-bold text-white capitalize rounded-md bg-slate-700/50 bottom-3 right-3">
-                                                Kuliner
-                                            </span>
-                                        </div>
-                                        <h6 class="text-xl font-semibold text-right">
-                                            Rp 35.000
-                                        </h6>
-                                        <h4 class="text-xl font-light leading-snug">
-                                            Rendang Ikan Patin
-                                        </h4>
-                                    </div>
-                                </a>
-                                <a href="#"
-                                    wire:click.prevent="$emit('openModal', 'guest.product.show', {&quot;product&quot;:{&quot;id&quot;:8,&quot;title&quot;:&quot;Tas Hp Rajut&quot;,&quot;slug&quot;:&quot;tas-hp-rajut&quot;,&quot;price&quot;:&quot;70000&quot;,&quot;image&quot;:&quot;tas-hp-rajut.jpeg&quot;,&quot;product_category_id&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null}})"
-                                    class="sequenced">
-                                    <div class="space-y-3">
-                                        <div class="relative w-full overflow-hidden h-52 rounded-xl">
-                                            <img src="https://kotomesjid.com/storage/image/product/tas-hp-rajut.jpeg"
-                                                alt="tas-hp-rajut" class="relative object-cover w-full h-full">
-                                            <span
-                                                class="absolute px-2 py-1 text-xs font-bold text-white capitalize rounded-md bg-slate-700/50 bottom-3 right-3">
-                                                Kriya
-                                            </span>
-                                        </div>
-                                        <h6 class="text-xl font-semibold text-right">
-                                            Rp 70.000
-                                        </h6>
-                                        <h4 class="text-xl font-light leading-snug">
-                                            Tas Hp Rajut
-                                        </h4>
-                                    </div>
-                                </a>
-                                <a href="#"
-                                    wire:click.prevent="$emit('openModal', 'guest.product.show', {&quot;product&quot;:{&quot;id&quot;:7,&quot;title&quot;:&quot;Dompet Rajut&quot;,&quot;slug&quot;:&quot;dompet-rajut&quot;,&quot;price&quot;:&quot;70000&quot;,&quot;image&quot;:&quot;dompet-rajut.jpeg&quot;,&quot;product_category_id&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null}})"
-                                    class="sequenced">
-                                    <div class="space-y-3">
-                                        <div class="relative w-full overflow-hidden h-52 rounded-xl">
-                                            <img src="https://kotomesjid.com/storage/image/product/dompet-rajut.jpeg"
-                                                alt="dompet-rajut" class="relative object-cover w-full h-full">
-                                            <span
-                                                class="absolute px-2 py-1 text-xs font-bold text-white capitalize rounded-md bg-slate-700/50 bottom-3 right-3">
-                                                Kriya
-                                            </span>
-                                        </div>
-                                        <h6 class="text-xl font-semibold text-right">
-                                            Rp 70.000
-                                        </h6>
-                                        <h4 class="text-xl font-light leading-snug">
-                                            Dompet Rajut
-                                        </h4>
-                                    </div>
-                                </a>
-                                <div class="block md:hidden lg:block">
-                                    <a href="#"
-                                        wire:click.prevent="$emit('openModal', 'guest.product.show', {&quot;product&quot;:{&quot;id&quot;:6,&quot;title&quot;:&quot;Masker Rajut&quot;,&quot;slug&quot;:&quot;masker-rajut&quot;,&quot;price&quot;:&quot;25000&quot;,&quot;image&quot;:&quot;masker-rajut.jpeg&quot;,&quot;product_category_id&quot;:&quot;1&quot;,&quot;created_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;updated_at&quot;:&quot;2025-02-13T23:00:26.000000Z&quot;,&quot;deleted_at&quot;:null}})"
-                                        class="sequenced">
+                                @forelse ($umkm as $item)
+                                    <button
+                                        onclick='Livewire.dispatch("openModal", { component: "guest.product.show" , arguments: {
+                                data: @json($item) } })'>
                                         <div class="space-y-3">
                                             <div class="relative w-full overflow-hidden h-52 rounded-xl">
-                                                <img src="https://kotomesjid.com/storage/image/product/masker-rajut.jpeg"
-                                                    alt="masker-rajut" class="relative object-cover w-full h-full">
+                                                <img src="{{ $item->gambar }}" alt="gantungan-kunci-strowbery-rajut"
+                                                    class="relative object-cover w-full h-full">
                                                 <span
                                                     class="absolute px-2 py-1 text-xs font-bold text-white capitalize rounded-md bg-slate-700/50 bottom-3 right-3">
-                                                    Kriya
+                                                    {{ $item->kategoriUmkm->nama_kategori }}
                                                 </span>
                                             </div>
                                             <h6 class="text-xl font-semibold text-right">
-                                                Rp 25.000
+                                                Rp. {{ number_format($item->harga) }}
                                             </h6>
                                             <h4 class="text-xl font-light leading-snug">
-                                                Masker Rajut
+                                                {{ $item->nama_produk }}
                                             </h4>
                                         </div>
-                                    </a>
-                                </div>
+                                    </button>
+
+                                @empty
+                                    <div class="">
+                                        <p class="text-xl font-light leading-snug text-left description">
+                                            Belum ada produk umkm saat ini, silahkan cek kembali nanti
+                                        </p>
+                                    </div>
+                                @endforelse
                             </div>
                         </div>
                     </div>
