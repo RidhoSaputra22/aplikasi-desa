@@ -475,7 +475,7 @@
                 data: {
                     labels: {!! $byPendidikan->pluck('label') !!},
                     datasets: [{
-                        data: {{ $byPendidikan->pluck('total') }},
+                        data: {!! $byPendidikan->pluck('total') !!},
                         backgroundColor: 'rgb(48, 163, 73, .8)',
                         labelFormated: {!! $byPendidikan->pluck('label') !!},
                         valueFormated: {!! $byPendidikan->pluck('total')->map(fn($val) => $val . ' orang') !!},
