@@ -18,7 +18,7 @@
                                 <div class="grid h-full max-w-4xl mx-auto place-content-center">
                                     <h1
                                         class="text-6xl font-semibold tracking-tighter text-center text-white capitalize break-words md:text-8xl">
-                                        selamat datang di website desa Kelurahan Tuwung
+                                        selamat datang di website desa Kelurahan Tuwung GESSSSSSSSSS
                                     </h1>
                                 </div>
                             </div>
