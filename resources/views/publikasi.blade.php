@@ -23,7 +23,7 @@
                     </p>
                 </div>
             </section>
-            @if (!$data->isEmpty() || $latest->isEmpty())
+            @if (!$data->isEmpty() && !$latest->isEmpty())
                 <section id="content" class="relative">
                     <div class="max-w-6xl py-20 pt-0 mx-auto space-y-32 lg:pt-20">
                         <div class="space-y-10">
@@ -163,9 +163,6 @@
                     </div>
                 </section>
             @else
-                <section id="content" class="relative">
-                    <div>Data Tak Ada</div>
-                </section>
             @endif
         </div>
 
