@@ -3,6 +3,7 @@
 namespace App\Filament\Admin\Resources\DomisiliCertificates\Schemas;
 
 use App\Enums\CertificateStatus;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
@@ -14,6 +15,11 @@ class DomisiliCertificateForm
     {
         return $schema
             ->components([
+                FileUpload::make('attachment')
+                    ->disk('local')
+                    ->directory('attachments/')
+                    ->columnSpanFull()
+                    ->openable(),
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('id_card_number')
@@ -42,7 +48,7 @@ class DomisiliCertificateForm
                 Textarea::make('address')
                     ->required()
                     ->columnSpanFull(),
-                TextInput::make('attachment'),
+
                 TextInput::make('code')
                     ->required(),
                 Select::make('confirmation_status')

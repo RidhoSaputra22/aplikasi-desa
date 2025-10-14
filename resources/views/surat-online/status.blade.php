@@ -14,7 +14,7 @@
                 <div class="relative z-[1] py-20 pt-32 pb-10 mx-auto space-y-8 md:max-w-xl lg:max-w-4xl lg:pt-44">
                     <h1 class="text-6xl font-bold text-center capitalize break-words md:text-8xl title" data-sr-id="0"
                         style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: all, opacity 1s cubic-bezier(0.5, 0, 0, 1), transform 1s cubic-bezier(0.5, 0, 0, 1);">
-                        status surat keterangan
+                        status {{ $jenisSurat }}
                     </h1>
                 </div>
             </section>
@@ -101,6 +101,78 @@
                                 </svg>
                                 <h6 class="text-xl font-medium text-slate-500">
                                     Proses selesai dan surat keterangan dapat diunduh
+                                </h6>
+                            </li>
+                        @elseif ($certificate->confirmation_status === $status::CONFIRM)
+                            <li class="flex items-start space-x-3 md:space-x-5">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="w-10 h-10 -mt-[6px] flex-shrink-0 text-green-600" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <circle cx="12" cy="12" r="9"></circle>
+                                    <path d="M9 12l2 2l4 -4"></path>
+                                </svg>
+                                <div class="space-y-2">
+                                    <h6 class="text-xl font-medium text-green-600">
+                                        Pengajuan surat pengaduan
+                                    </h6>
+                                    <p class="text-lg font-light">
+                                        Diajukan pada sabtu, 4 oktober 2025 pukul 17.38 wib
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3 md:space-x-5">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="w-10 h-10 -mt-[6px] flex-shrink-0 text-green-600" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <circle cx="12" cy="12" r="9"></circle>
+                                    <path d="M9 12l2 2l4 -4"></path>
+                                </svg>
+                                <div class="space-y-2">
+                                    <h6 class="text-xl font-medium text-green-600">
+                                        Petugas melakukan verifikasi data
+                                    </h6>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-3 md:space-x-5">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="w-10 h-10 -mt-[6px] flex-shrink-0 text-slate-600" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95"></path>
+                                    <path d="M3.69 8.56a9 9 0 0 0 -.69 3.44"></path>
+                                    <path d="M3.69 15.44a9 9 0 0 0 1.95 2.92"></path>
+                                    <path d="M8.56 20.31a9 9 0 0 0 3.44 .69"></path>
+                                    <path d="M15.44 20.31a9 9 0 0 0 2.92 -1.95"></path>
+                                    <path d="M20.31 15.44a9 9 0 0 0 .69 -3.44"></path>
+                                    <path d="M20.31 8.56a9 9 0 0 0 -1.95 -2.92"></path>
+                                    <path d="M15.44 3.69a9 9 0 0 0 -3.44 -.69"></path>
+                                </svg>
+                                <h6 class="text-xl font-medium text-slate-500">
+                                    Hasil verifikasi data dikonfirmasi oleh petugas
+                                </h6>
+                            </li>
+                            <li class="flex items-start space-x-3 md:space-x-5">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="w-10 h-10 -mt-[6px] flex-shrink-0 text-slate-500" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M8.56 3.69a9 9 0 0 0 -2.92 1.95"></path>
+                                    <path d="M3.69 8.56a9 9 0 0 0 -.69 3.44"></path>
+                                    <path d="M3.69 15.44a9 9 0 0 0 1.95 2.92"></path>
+                                    <path d="M8.56 20.31a9 9 0 0 0 3.44 .69"></path>
+                                    <path d="M15.44 20.31a9 9 0 0 0 2.92 -1.95"></path>
+                                    <path d="M20.31 15.44a9 9 0 0 0 .69 -3.44"></path>
+                                    <path d="M20.31 8.56a9 9 0 0 0 -1.95 -2.92"></path>
+                                    <path d="M15.44 3.69a9 9 0 0 0 -3.44 -.69"></path>
+                                </svg>
+                                <h6 class="text-xl font-medium text-slate-500">
+                                    Proses selesai dan surat pengaduan dapat diunduh
                                 </h6>
                             </li>
                         @elseif ($certificate->confirmation_status === $status::SUCCESS)

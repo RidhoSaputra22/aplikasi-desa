@@ -3,10 +3,14 @@
 namespace App\Livewire\Guest\PublicComplain;
 
 use App\Models\PengaduanMasyarakat;
+use Illuminate\Support\Facades\Storage;
+use Livewire\Features\SupportFileUploads\WithFileUploads;
 use LivewireUI\Modal\ModalComponent;
 
 class Create extends ModalComponent
 {
+
+    use WithFileUploads;
 
     // Properties untuk form inputs
     public $name;
@@ -34,23 +38,44 @@ class Create extends ModalComponent
         'images.*.max' => 'Ukuran gambar maksimal 2MB.',
     ];
 
+    public function mount()
+    {
+        $this->name = "TEST";
+        $this->mobilePhoneNumber = "081234567890";
+        $this->address = "Jl. Contoh Alamat No.123, Kota Contoh";
+        $this->complaint = "Ini adalah contoh isi pengaduan masyarakat untuk keperluan testing aplikasi.";
+        $this->images = [];
+    }
+
     public function submit()
     {
         $this->validate();
+        try {
 
-        PengaduanMasyarakat::create([
-            'name' => $this->name,
-            'no_hp' => $this->mobilePhoneNumber,
-            'alamat' => $this->address,
-            'isi_laporan' => $this->complaint,
-            // Handle image uploads if necessary
-        ]);
+            // Handle image uploads
+            $imagePaths = [];
+            if (!empty($this->images)) {
+                foreach ($this->images as $image) {
+                    $imagePaths[] = $image->store('complaints', 'local');
+                }
+            }
 
-        // Reset form fields setelah submit
-        $this->reset(['name', 'mobilePhoneNumber', 'address', 'complaint', 'images']);
+            $data = PengaduanMasyarakat::create([
+                'name' => $this->name,
+                'no_hp' => $this->mobilePhoneNumber,
+                'alamat' => $this->address,
+                'isi_laporan' => $this->complaint,
+                'foto' => !empty($imagePaths) ? $imagePaths : null,
+            ]);
 
-        // Tutup modal setelah submit
-        $this->closeModal();
+            $this->dispatch('openModal', 'guest.PublicComplain.ConfirmModal', [
+                'code' => $data->code,
+            ]);
+        } catch (\Exception $e) {
+            dd($e);
+            $this->addError('submit', 'Terjadi kesalahan saat mengirim pengaduan. Silakan coba lagi.');
+            return;
+        }
     }
 
 
@@ -138,7 +163,7 @@ class Create extends ModalComponent
                                                                         <line x1="18" y1="3" x2="18" y2="9"></line>
                                                                     </svg>
                                                                     <span class="text-sm leading-tight text-center capitalize">
-                                                                        tambah gambar
+                                                                        {{ count($images) > 0 ? count($images) . ' file dipilih' : 'tambah gambar' }}
                                                                     </span>
                                                                 </label>
                                                             </div>

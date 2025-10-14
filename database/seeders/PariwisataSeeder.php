@@ -38,13 +38,13 @@ class PariwisataSeeder extends Seeder
                 'slug' => $slug,
                 'deskripsi' => $faker->paragraph(3),
                 'alamat' => $faker->address(),
-                'gambar' => "https://picsum.photos/seed/{$slug}/600/400",
+                'gambar' => "default-image.jpeg",
                 'long' => 1.361764,
                 'lat' => 124.852103,
                 'galeri' => json_encode([
-                    "https://picsum.photos/seed/{$slug}1/600/400",
-                    "https://picsum.photos/seed/{$slug}2/600/400",
-                    "https://picsum.photos/seed/{$slug}3/600/400",
+                    "default-image.jpeg",
+                    "default-image.jpeg",
+                    "default-image.jpeg",
                 ]),
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -52,9 +52,6 @@ class PariwisataSeeder extends Seeder
         }
 
 
-        foreach ($data as &$item) {
-            $item['galeri'] = json_encode($item['galeri']); // 🔹 ubah ke JSON string
-        }
 
         \App\Models\ParawisataDesa::insert($data);
     }

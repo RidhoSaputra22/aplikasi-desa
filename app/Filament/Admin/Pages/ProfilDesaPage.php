@@ -38,6 +38,8 @@ class ProfilDesaPage extends Page
     {
         return $schema
             ->components([
+                TextInput::make('sub_judul')
+                    ->columnSpanFull(),
                 RichEditor::make('sejarah_desa')
                     ->columnSpanFull()
                     ->required(),

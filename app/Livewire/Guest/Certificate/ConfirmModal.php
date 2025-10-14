@@ -27,7 +27,7 @@ class ConfirmModal extends ModalComponent
                 </svg>
                 <div class="space-y-4">
                     <p class="text-2xl font-semibold leading-snug text-center">
-                        Berhasil membuat surat keterangan domisili dengan kode <span class="font-bold text-green-600">{{ $code }}</span>
+                        Berhasil membuat surat keterangan dengan kode <span class="font-bold text-green-600">{{ $code }}</span>
                     </p>
                     <div class="space-y-2">
                         <p class="text-xl font-light leading-tight text-center">

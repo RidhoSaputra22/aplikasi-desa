@@ -22,7 +22,7 @@
                               <label for="noKk" class="font-medium">Nomor KK</label>
                               <div>
                                   <input type="text" id="noKk" wire:model="noKk"
-                                      class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
+                                      class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
                                   @error('noKk')
                                       <p class="text-sm text-red-600">{{ $message }}</p>
                                   @enderror
@@ -34,7 +34,7 @@
                               <label for="nik" class="font-medium">NIK</label>
                               <div>
                                   <input type="text" id="nik" wire:model="nik"
-                                      class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
+                                      class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
                                   @error('nik')
                                       <p class="text-sm text-red-600">{{ $message }}</p>
                                   @enderror
@@ -46,7 +46,7 @@
                               <label for="namaLengkap" class="font-medium">Nama Lengkap</label>
                               <div>
                                   <input type="text" id="namaLengkap" wire:model="namaLengkap"
-                                      class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
+                                      class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
                                   @error('namaLengkap')
                                       <p class="text-sm text-red-600">{{ $message }}</p>
                                   @enderror
@@ -58,7 +58,7 @@
                               <label for="jenisKelamin" class="font-medium">Jenis Kelamin</label>
                               <div>
                                   <select id="jenisKelamin" wire:model="jenisKelamin"
-                                      class="w-full px-3 py-2 text-black bg-white border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
+                                      class="w-full  text-black bg-white border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
                                       <option value="">Pilih jenis kelamin</option>
                                       <option value="L">Laki-laki</option>
                                       <option value="P">Perempuan</option>
@@ -74,7 +74,7 @@
                               <label for="tanggalLahir" class="font-medium">Tanggal Lahir</label>
                               <div>
                                   <input type="date" id="tanggalLahir" wire:model="tanggalLahir"
-                                      class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
+                                      class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
                                   @error('tanggalLahir')
                                       <p class="text-sm text-red-600">{{ $message }}</p>
                                   @enderror
@@ -86,7 +86,7 @@
                               <label for="statusKeluarga" class="font-medium">Hubungan Dalam Keluarga</label>
                               <div>
                                   <select name="statusKeluarga" id="statusKeluarga" wire:model="statusKeluarga"
-                                      class="w-full px-3 py-2 text-black bg-white border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
+                                      class="w-full  text-black bg-white border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
                                       <option value="">Pilih hubungan</option>
                                       @foreach ($statusKeluargaOptions as $status)
                                           <option value="{{ $status->id }}">{{ $status->nama_status }}</option>
@@ -103,7 +103,7 @@
                               <label for="statusKawin" class="font-medium">Status Perkawinan</label>
                               <div>
                                   <select id="statusKawin" wire:model="statusKawin"
-                                      class="w-full px-3 py-2 text-black bg-white border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
+                                      class="w-full  text-black bg-white border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
                                       <option value="">Pilih status</option>
                                       @foreach ($statusPerkawinanOptions as $status)
                                           <option value="{{ $status->id }}">{{ $status->nama_status }}</option>
@@ -120,7 +120,7 @@
                               <label for="agama" class="font-medium">Agama</label>
                               <div>
                                   <select id="agama" wire:model="agama"
-                                      class="w-full px-3 py-2 text-black bg-white border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
+                                      class="w-full  text-black bg-white border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
                                       <option value="">Pilih agama</option>
                                       @foreach ($agamaOptions as $agama)
                                           <option value="{{ $agama->id }}">{{ $agama->nama_agama }}</option>
@@ -138,7 +138,7 @@
                               <label for="pendidikan" class="font-medium">Pendidikan Terakhir</label>
                               <div>
                                   <select id="pendidikan" wire:model="pendidikan"
-                                      class="w-full px-3 py-2 text-black bg-white border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
+                                      class="w-full  text-black bg-white border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
                                       <option value="">Pilih pendidikan</option>
                                       @foreach ($pendidikanOptions as $pendidikan)
                                           <option value="{{ $pendidikan->id }}">{{ $pendidikan->nama_pendidikan }}
@@ -156,7 +156,7 @@
                               <label for="pekerjaan" class="font-medium">Pekerjaan</label>
                               <div>
                                   <select id="pekerjaan" wire:model="pekerjaan"
-                                      class="w-full px-3 py-2 text-black bg-white border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
+                                      class="w-full  text-black bg-white border rounded-md focus:ring-4 focus:ring-slate-200/75 border-slate-700 focus:border-black">
                                       <option value="">Pilih pekerjaan</option>
                                       @foreach ($pekerjaanOptions as $pekerjaan)
                                           <option value="{{ $pekerjaan->id }}">{{ $pekerjaan->nama_pekerjaan }}

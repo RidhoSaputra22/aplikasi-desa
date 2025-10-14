@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use Filament\Auth\Pages\EditProfile;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -29,6 +30,7 @@ class AdminPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Green,
             ])
+            ->profile(EditProfile::class, isSimple: false)
             ->brandLogo(fn() => view('components.logo'))
             ->brandLogoHeight('2rem')
             ->viteTheme('resources/css/filament/admin/theme.css')

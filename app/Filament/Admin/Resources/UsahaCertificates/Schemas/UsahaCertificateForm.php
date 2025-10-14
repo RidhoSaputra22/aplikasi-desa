@@ -2,11 +2,12 @@
 
 namespace App\Filament\Admin\Resources\UsahaCertificates\Schemas;
 
+use Filament\Schemas\Schema;
 use App\Enums\CertificateStatus;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
-use Filament\Schemas\Schema;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
 
 class UsahaCertificateForm
 {
@@ -14,6 +15,11 @@ class UsahaCertificateForm
     {
         return $schema
             ->components([
+                FileUpload::make('attachment')
+                    ->disk('local')
+                    ->directory('attachments/')
+                    ->columnSpanFull()
+                    ->openable(),
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('id_card_number')
@@ -40,7 +46,6 @@ class UsahaCertificateForm
                     ->required(),
                 TextInput::make('used_for')
                     ->required(),
-                TextInput::make('attachment'),
                 TextInput::make('code')
                     ->required(),
                 Select::make('confirmation_status')

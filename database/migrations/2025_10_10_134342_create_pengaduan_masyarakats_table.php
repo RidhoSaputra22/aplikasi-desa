@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('no_hp');
             $table->string('alamat')->nullable();
             $table->text('isi_laporan');
-            $table->string('foto')->nullable();
+            $table->json('foto')->nullable();
 
             // Status dan kode surat
             $table->string('code')->unique();

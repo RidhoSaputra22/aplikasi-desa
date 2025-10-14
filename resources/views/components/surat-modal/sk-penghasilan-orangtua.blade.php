@@ -15,7 +15,7 @@
                         </label>
                         <div>
                             <input type="text"
-                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('name') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('name') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="name" wire:model="name">
                             @error('name')
                                 <span class="text-sm text-red-500">{{ $message }}</span>
@@ -28,7 +28,7 @@
                         </label>
                         <div>
                             <input type="text"
-                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('placeOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('placeOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="place-of-birth" wire:model="placeOfBirth">
                             @error('placeOfBirth')
                                 <span class="text-sm text-red-500">{{ $message }}</span>
@@ -43,7 +43,7 @@
                             <div class="flex items-center space-x-3">
                                 <div>
                                     <select
-                                        class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('dayOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                        class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('dayOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                         id="day-of-birth" wire:model="dayOfBirth">
                                         <option value=""></option>
                                         @for ($i = 1; $i <= 31; $i++)
@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="flex-1">
                                     <select
-                                        class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('monthOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                        class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('monthOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                         id="month-of-birth" wire:model="monthOfBirth">
                                         <option value=""></option>
                                         <option value="1">Januari</option>
@@ -72,7 +72,7 @@
                                 </div>
                                 <div>
                                     <select
-                                        class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('yearOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                        class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('yearOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                         id="year-of-birth" wire:model="yearOfBirth">
                                         <option value=""></option>
                                         @for ($i = 1900; $i <= 2025; $i++)
@@ -98,7 +98,7 @@
                         </label>
                         <div>
                             <select
-                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('religion') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('religion') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="religion" wire:model="religion">
                                 <option value=""></option>
                                 <option value="Islam">Islam</option>
@@ -119,7 +119,7 @@
                         </label>
                         <div>
                             <input type="text"
-                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('profession') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('profession') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="profession" wire:model="profession">
                             @error('profession')
                                 <span class="text-sm text-red-500">{{ $message }}</span>
@@ -132,7 +132,7 @@
                         </label>
                         <div>
                             <textarea
-                                class="w-full px-3 py-2 min-h-[100px] text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('address') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                class="w-full  min-h-[100px] text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('address') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="address" wire:model="address"></textarea>
                             @error('address')
                                 <span class="text-sm text-red-500">{{ $message }}</span>
@@ -152,7 +152,7 @@
                         </label>
                         <div>
                             <input type="text"
-                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('parentName') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('parentName') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="parent-name" wire:model="parentName">
                             @error('parentName')
                                 <span class="text-sm text-red-500">{{ $message }}</span>
@@ -165,7 +165,7 @@
                         </label>
                         <div>
                             <input type="text"
-                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('parentPlaceOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('parentPlaceOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="parent-place-of-birth" wire:model="parentPlaceOfBirth">
                             @error('parentPlaceOfBirth')
                                 <span class="text-sm text-red-500">{{ $message }}</span>
@@ -180,7 +180,7 @@
                             <div class="flex items-center space-x-3">
                                 <div>
                                     <select
-                                        class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('parentDayOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                        class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('parentDayOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                         id="parent-day-of-birth" wire:model="parentDayOfBirth">
                                         <option value=""></option>
                                         @for ($i = 1; $i <= 31; $i++)
@@ -190,7 +190,7 @@
                                 </div>
                                 <div class="flex-1">
                                     <select
-                                        class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('parentMonthOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                        class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('parentMonthOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                         id="parent-month-of-birth" wire:model="parentMonthOfBirth">
                                         <option value=""></option>
                                         <option value="1">Januari</option>
@@ -209,7 +209,7 @@
                                 </div>
                                 <div>
                                     <select
-                                        class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('parentYearOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                        class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('parentYearOfBirth') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                         id="parent-year-of-birth" wire:model="parentYearOfBirth">
                                         <option value=""></option>
                                         @for ($i = 1900; $i <= 2025; $i++)
@@ -235,7 +235,7 @@
                         </label>
                         <div>
                             <select
-                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('parentReligion') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('parentReligion') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="parent-religion" wire:model="parentReligion">
                                 <option value=""></option>
                                 <option value="Islam">Islam</option>
@@ -256,7 +256,7 @@
                         </label>
                         <div>
                             <input type="text"
-                                class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('parentProfession') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('parentProfession') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="parent-profession" wire:model="parentProfession">
                             @error('parentProfession')
                                 <span class="text-sm text-red-500">{{ $message }}</span>
@@ -269,7 +269,7 @@
                         </label>
                         <div>
                             <textarea
-                                class="w-full px-3 py-2 min-h-[100px] text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('parentAddress') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                class="w-full  min-h-[100px] text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('parentAddress') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="parent-address" wire:model="parentAddress"></textarea>
                             @error('parentAddress')
                                 <span class="text-sm text-red-500">{{ $message }}</span>
@@ -293,7 +293,7 @@
                                     Rp
                                 </span>
                                 <input type="number"
-                                    class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('nominalIncome') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                    class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('nominalIncome') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                     id="nominal-income" wire:model="nominalIncome">
                             </div>
                             @error('nominalIncome')
@@ -309,7 +309,7 @@
                             <div class="flex items-center space-x-3">
                                 <div class="flex-1">
                                     <input type="number"
-                                        class="w-full px-3 py-2 text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('numberDepandent') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                        class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('numberDepandent') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                         id="number-depandent" wire:model="numberDepandent">
                                 </div>
                                 <span class="flex-shrink-0 px-4 py-2 border rounded-md border-slate-700">
@@ -327,7 +327,7 @@
                         </label>
                         <div>
                             <textarea
-                                class="w-full px-3 py-2 min-h-[100px] text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('usedFor') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                class="w-full  min-h-[100px] text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('usedFor') border-red-500 @else border-slate-700 @enderror focus:border-black"
                                 id="usef-for" wire:model="usedFor"></textarea>
                             @error('usedFor')
                                 <span class="text-sm text-red-500">{{ $message }}</span>

@@ -42,15 +42,15 @@ class Birth extends ModalComponent
 
     public function mount()
     {
-        if (1) {
+        if (env('APP_DEBUG')) {
             // Data bayi
             $this->babyName = 'Ahmad Rizki Pratama';
             $this->placeOfBirth = 'Jakarta';
-            // $this->dayOfBirth = 15;
-            // $this->monthOfBirth = 8;
-            // $this->yearOfBirth = 2024;
-            // $this->hourOfBirth = 14;
-            // $this->minuteOfBirth = 30;
+            $this->dayOfBirth = 15;
+            $this->monthOfBirth = 8;
+            $this->yearOfBirth = 2024;
+            $this->hourOfBirth = 14;
+            $this->minuteOfBirth = 30;
             $this->gender = 'L';
 
             // Data ibu

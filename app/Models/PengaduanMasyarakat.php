@@ -22,6 +22,7 @@ class PengaduanMasyarakat extends Model
 
     protected $casts = [
         'confirmation_status' => PengaduanStatus::class,
+        'foto' => 'array',
     ];
 
     protected static function boot()

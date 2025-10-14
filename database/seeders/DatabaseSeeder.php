@@ -16,25 +16,20 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Admin',
-            'email' => 'admin@gmail.com',
-            'password' => bcrypt('admin'),
-        ]);
 
-        KategoriUmkm::create([
-            'nama_kategori' => 'TEST'
-        ]);
+
+
 
 
 
 
         $this->call([
-            ProfilSeeder::class,
+
             LookupDataSeeder::class,
-            // UmkmSeeder::class,
+            PariwisataSeeder::class,
+            BeritaSeeder::class,
+            UmkmSeeder::class,
             // pendudukSeeder::class
-            // pendudukSeeder::class,
         ]);
     }
 }

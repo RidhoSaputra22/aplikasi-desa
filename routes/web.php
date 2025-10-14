@@ -6,6 +6,7 @@ use App\Models\DataPenduduk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuestController;
+use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\SuratOnlineController;
 use App\Livewire\Guest\Publikasi\Pencarian;
 
@@ -36,6 +37,11 @@ Route::get('/parawisata/{slug}', [GuestController::class, 'parawisataDetail'])->
 
 Route::get('/produk-umkm', [GuestController::class, 'produkUmkm'])->name('produk-umkm');
 
-Route::get('/pengaduan-masyarakat', [GuestController::class, 'pengaduanMasyarakat'])->name('pengaduan-masyarakat');
+Route::group(['prefix' => 'pengaduan-masyarakat'], function () {
+    Route::get('/', [PengaduanController::class, 'index'])->name('pengaduan-masyarakat');
+    Route::get('bukti/{code}', [PengaduanController::class, 'bukti'])->name('pengaduan-masyarakat.bukti');
+    Route::get('status/{code}', [PengaduanController::class, 'status'])->name('pengaduan-masyarakat.status');
+});
+
 
 Route::get('/kontak', [GuestController::class, 'kontak'])->name('kontak');

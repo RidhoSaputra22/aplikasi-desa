@@ -10,7 +10,7 @@
                 <div class="w-full h-full swiper">
                     <div class="w-full h-full swiper-wrapper">
                         <div class="relative w-full h-full swiper-slide">
-                            <img src="https://kotomesjid.com/storage/image/hero/desa-koto-mesjid.jpg" alt="kelurahan tuwung"
+                            <img src="{{ asset('storage/banner/banner-1.jpg') }}" alt="kelurahan tuwung"
                                 class="object-cover w-full h-full">
                             <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-black/30 to-transparent">
                             </div>
@@ -24,8 +24,8 @@
                             </div>
                         </div>
                         <div class="relative w-full h-full swiper-slide">
-                            <img src="https://kotomesjid.com/storage/image/hero/kantor-desa-koto-mesjid.jpg"
-                                alt="kantor kelurahan tuwung" class="object-cover w-full h-full">
+                            <img src="{{ asset('storage/banner/banner-2.jpg') }}" alt="kantor kelurahan tuwung"
+                                class="object-cover w-full h-full">
                             <div
                                 class="absolute inset-0 w-full h-full bg-gradient-to-r from-black/50 via-black/50 to-black/25">
                             </div>
@@ -57,7 +57,7 @@
                             </div>
                         </div>
                         <div class="relative w-full h-full swiper-slide">
-                            <img src="https://kotomesjid.com/storage/image/hero/public-complaint.jpg"
+                            <img src="{{ asset('storage/banner/banner-3.jpg') }}"
                                 alt="salah satu bangunan di kelurahan tuwung" class="object-cover w-full h-full">
                             <div
                                 class="absolute inset-0 w-full h-full bg-gradient-to-l from-black/50 via-black/50 to-black/25">
@@ -87,8 +87,8 @@
                             </div>
                         </div>
                         <div class="relative w-full h-full swiper-slide">
-                            <img src="https://kotomesjid.com/storage/image/hero/desa-wisata-kampung-patin.jpg"
-                                alt="kantor kelurahan tuwung" class="object-cover w-full h-full">
+                            <img src="{{ asset('storage/banner/banner-1.jpg') }}" alt="kantor kelurahan tuwung"
+                                class="object-cover w-full h-full">
                             <div
                                 class="absolute inset-0 w-full h-full bg-gradient-to-r from-black/50 via-black/50 to-black/25">
                             </div>
@@ -120,7 +120,7 @@
                             </div>
                         </div>
                         <div class="relative w-full h-full swiper-slide">
-                            <img src="https://kotomesjid.com/storage/image/hero/umkm.jpg" alt="produk umkm"
+                            <img src="{{ asset('storage/banner/banner-2.jpg') }}" alt="produk umkm"
                                 class="object-cover w-full h-full">
                             <div
                                 class="absolute inset-0 w-full h-full bg-gradient-to-l from-black/50 via-black/50 to-black/25">
@@ -359,7 +359,8 @@
                                             <a href="{{ route('publikasi.berita', ['slug' => $latest[0]->slug]) }}"
                                                 class="sequenced">
                                                 <div class="relative w-full overflow-hidden rounded-xl h-96">
-                                                    <img src="{{ $latest[0]->gambar }}" class="object-cover w-full h-full"
+                                                    <img src="{{ $latest[0]->gambar }}"
+                                                        class="object-cover w-full h-full"
                                                         alt="tim-ppk-ormawa-bem-fikom-umri-ciptakan-inovasi-pengolahan-limbah-menjadi-produk-bernilai-jual">
                                                     <div
                                                         class="absolute inset-0 w-full h-full bg-gradient-to-br from-black/10 via-black/40 to-black/60">
@@ -472,7 +473,7 @@
                                     <a href="{{ route('parawisata.detail', $item->slug) }}">
                                         <div class="space-y-3">
                                             <div class="relative w-full overflow-hidden h-80 rounded-xl">
-                                                <img src="{{ $item->gambar }}" alt="puncak-kobe"
+                                                <img src="{{ asset('storage/' . $item->gambar) }}" alt="puncak-kobe"
                                                     class="relative object-cover w-full h-full">
                                                 <div
                                                     class="absolute inset-0 grid w-full h-full rounded-xl bg-black/30 place-content-center">

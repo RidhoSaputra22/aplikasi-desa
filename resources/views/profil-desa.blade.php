@@ -17,8 +17,7 @@
                         profil desa
                     </h1>
                     <p class="text-xl font-light leading-relaxed text-center description">
-                        Informasi mengenai sejarah, visi, misi desa beserta lebih mengenal aparatur-aparatur
-                        desa kelurahan tuwung
+                        {{ $profil->sub_judul }}
                     </p>
                 </div>
             </section>

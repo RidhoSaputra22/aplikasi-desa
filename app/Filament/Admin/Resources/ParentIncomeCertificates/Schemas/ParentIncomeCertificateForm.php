@@ -2,11 +2,12 @@
 
 namespace App\Filament\Admin\Resources\ParentIncomeCertificates\Schemas;
 
+use Filament\Schemas\Schema;
 use App\Enums\CertificateStatus;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
-use Filament\Schemas\Schema;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
 
 class ParentIncomeCertificateForm
 {
@@ -14,6 +15,11 @@ class ParentIncomeCertificateForm
     {
         return $schema
             ->components([
+                FileUpload::make('attachment')
+                    ->disk('local')
+                    ->directory('attachments/')
+                    ->columnSpanFull()
+                    ->openable(),
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('place_of_birth')
@@ -56,7 +62,7 @@ class ParentIncomeCertificateForm
                     ->numeric(),
                 TextInput::make('used_for')
                     ->required(),
-                TextInput::make('attachment'),
+
                 TextInput::make('code')
                     ->required(),
                 Select::make('confirmation_status')

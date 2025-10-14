@@ -2,11 +2,13 @@
 
 namespace App\Filament\Admin\Resources\PengaduanMasyarakats\Tables;
 
+use Filament\Tables\Table;
+use App\Enums\PengaduanStatus;
+use Filament\Actions\EditAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
+use Filament\Tables\Columns\SelectColumn;
 
 class PengaduanMasyarakatsTable
 {
@@ -20,12 +22,10 @@ class PengaduanMasyarakatsTable
                     ->searchable(),
                 TextColumn::make('alamat')
                     ->searchable(),
-                TextColumn::make('foto')
-                    ->searchable(),
                 TextColumn::make('code')
                     ->searchable(),
-                TextColumn::make('confirmation_status')
-                    ->badge(),
+                SelectColumn::make('confirmation_status')
+                    ->options(PengaduanStatus::class),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
