@@ -555,7 +555,7 @@
                 data: {
                     labels: {!! $byStatusKawin->pluck('label') !!},
                     datasets: [{
-                        data: {{ $byStatusKawin->pluck('total') }},
+                        data: {!! $byStatusKawin->pluck('total') !!},
                         backgroundColor: 'rgb(48, 163, 73, .8)',
                         labelFormated: {!! $byStatusKawin->pluck('label') !!},
                         valueFormated: {!! $byStatusKawin->pluck('total')->map(fn($val) => $val . ' orang') !!},
@@ -640,7 +640,7 @@
                 data: {
                     labels: {!! $byPekerjaan->pluck('label') !!},
                     datasets: [{
-                        data: {{ $byPekerjaan->pluck('total') }},
+                        data: {!! $byPekerjaan->pluck('total') !!},
                         labelFormated: {!! $byPekerjaan->pluck('label') !!},
                         valueFormated: {!! $byPekerjaan->pluck('total')->map(fn($val) => $val . ' orang') !!},
                         percentase: {!! $byPekerjaan->pluck('total')->map(fn($val) => $val . ' orang') !!},
