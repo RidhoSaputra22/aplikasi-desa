@@ -5,7 +5,7 @@
         <p style="font-size: 1.5rem; font-weight: 600;">Bukti Pembuatan {{ $jenisSurat }}</p>
         <p style="font-size: 1.1rem;">
             Pindai QRCode atau klik tautan di bawah ini untuk melakukan pemantauan status surat
-            keterangan yang telah dibuat sebelumnya.
+            keterangan yang telah dibuat sebelumnya. asd
         </p>
 
         <div style="margin: 1.5rem 0;">
