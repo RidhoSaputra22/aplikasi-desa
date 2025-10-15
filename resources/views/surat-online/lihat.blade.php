@@ -1,56 +1,59 @@
 @extends('layouts.pdf')
 
 @section('content')
+    @extends('layouts.pdf')
+
+@section('content')
     <!-- Judul Surat -->
-    <div class="text-center my-5    ">
-        <h2 class="text-lg font-bold underline mb-1">
+    <div style="text-align: center; margin-top: 1.25rem; margin-bottom: 1.25rem;">
+        <h2 style="font-size: 1.125rem; font-weight: bold; text-decoration: underline; margin-bottom: 0.25rem;">
             SURAT KETERANGAN USAHA
         </h2>
-        <p class="text-sm mt-1">
+        <p style="font-size: 0.875rem; margin-top: 0.25rem;">
             Nomor: {{ $certificate->code ?? '500/KESRA/KM/2022/01' }}
         </p>
     </div>
 
     <!-- Pembuka -->
-    <div class="my-5     leading-relaxed">
-        <p class=" text-justify mb-5">
+    <div style="margin-top: 1.25rem; margin-bottom: 1.25rem; line-height: 1.625;">
+        <p style="text-align: justify; margin-bottom: 1.25rem;">
             Yang bertanda tangan dibawah ini:
         </p>
 
-        <table class="ml-10 leading-loose">
+        <table style="margin-left: 2.5rem; line-height: 1.75;">
             <tr>
-                <td class="w-30 align-top">Nama</td>
-                <td class="w-5 text-center">:</td>
+                <td style="width: 7.5rem; vertical-align: top;">Nama</td>
+                <td style="width: 1.25rem; text-align: center;">:</td>
                 <td>{{ $certificate->village_head_name ?? 'Arjunalis' }}</td>
             </tr>
             <tr>
-                <td class="align-top">Jabatan</td>
-                <td class="text-center">:</td>
+                <td style="vertical-align: top;">Jabatan</td>
+                <td style="text-align: center;">:</td>
                 <td>{{ $certificate->village_head_position ?? 'Kepala Desa' }}</td>
             </tr>
         </table>
     </div>
 
     <!-- Isi Surat -->
-    <div class="my-5     leading-relaxed">
-        <p class="text-justify mb-5">
+    <div style="margin-top: 1.25rem; margin-bottom: 1.25rem; line-height: 1.625;">
+        <p style="text-align: justify; margin-bottom: 1.25rem;">
             Dengan ini menerangkan bahwa:
         </p>
 
-        <table class="ml-10 leading-loose">
+        <table style="margin-left: 2.5rem; line-height: 1.75;">
             <tr>
-                <td class="w-44 align-top">Nama</td>
-                <td class="w-5 text-center">:</td>
+                <td style="width: 11rem; vertical-align: top;">Nama</td>
+                <td style="width: 1.25rem; text-align: center;">:</td>
                 <td>{{ $certificate->name ?? 'Isly Suganda' }}</td>
             </tr>
             <tr>
-                <td class="align-top">NIK</td>
-                <td class="text-center">:</td>
+                <td style="vertical-align: top;">NIK</td>
+                <td style="text-align: center;">:</td>
                 <td>{{ $certificate->id_card_number ?? '1408012211950001' }}</td>
             </tr>
             <tr>
-                <td class="align-top">Tempat, Tanggal Lahir</td>
-                <td class="text-center">:</td>
+                <td style="vertical-align: top;">Tempat, Tanggal Lahir</td>
+                <td style="text-align: center;">:</td>
                 <td>
                     {{ $certificate->place_of_birth ?? 'Pekanbaru' }},
                     @if (isset($certificate->day_of_birth) && isset($certificate->month_of_birth) && isset($certificate->year_of_birth))
@@ -78,76 +81,76 @@
                 </td>
             </tr>
             <tr>
-                <td class="align-top">Agama</td>
-                <td class="text-center">:</td>
+                <td style="vertical-align: top;">Agama</td>
+                <td style="text-align: center;">:</td>
                 <td>{{ $certificate->religion ?? 'Islam' }}</td>
             </tr>
             <tr>
-                <td class="align-top">Jenis kelamin</td>
-                <td class="text-center">:</td>
+                <td style="vertical-align: top;">Jenis kelamin</td>
+                <td style="text-align: center;">:</td>
                 <td>{{ $certificate->gender ?? 'Laki-laki' }}</td>
             </tr>
             <tr>
-                <td class="align-top">Pekerjaan</td>
-                <td class="text-center">:</td>
+                <td style="vertical-align: top;">Pekerjaan</td>
+                <td style="text-align: center;">:</td>
                 <td>{{ $certificate->profession ?? 'Pedagang Buah' }}</td>
             </tr>
             <tr>
-                <td class="align-top">Alamat Sekarang</td>
-                <td class="text-center">:</td>
+                <td style="vertical-align: top;">Alamat Sekarang</td>
+                <td style="text-align: center;">:</td>
                 <td>{{ $certificate->address ?? 'Jl. Lorem Ipsum Dolor Sit Amet' }}</td>
             </tr>
         </table>
     </div>
 
     <!-- Keterangan Usaha -->
-    <div class="my-2 leading-relaxed">
-        <p class="text-justify mb-4">
+    <div style="margin-top: 0.5rem; margin-bottom: 0.5rem; line-height: 1.625;">
+        <p style="text-align: justify; margin-bottom: 1rem;">
             Adalah benar Penduduk Desa Kelurahan Tuwung Kecamatan XIII Koto Kampar Kabupaten
             Kampar, menurut sepengetahuan kami benar mempunyai/memiliki usaha uang bergerak
             dibidang:
         </p>
 
-        <div class="text-center my-5">
-            <h3 class="text-base font-bold underline">
+        <div style="text-align: center; margin-top: 1.25rem; margin-bottom: 1.25rem;">
+            <h3 style="font-size: 1rem; font-weight: bold; text-decoration: underline;">
                 {{ $certificate->business_type ?? 'Usaha Buah' }}
             </h3>
         </div>
 
-        <p class="text-justify mt-4">
+        <p style="text-align: justify; margin-top: 1rem;">
             Usaha uang dimiliki oleh yang bersangkutan benar berada di wilayah Desa Kelurahan Tuwung
             {{ $certificate->business_description ?? 'dengan alamat usaha di Jl. Poros Desa Kelurahan Tuwung.' }}
         </p>
     </div>
 
     <!-- Penutup -->
-    <div class="my-2 leading-relaxed">
-        <p class="text-justify">
+    <div style="margin-top: 0.5rem; margin-bottom: 0.5rem; line-height: 1.625;">
+        <p style="text-align: justify;">
             Demikian surat keterangan ini dibuat dengan sebenarnya untuk dapat dipergunakan
             sebagaimana mestinya.
         </p>
     </div>
 
     <!-- Tanggal dan Tanda Tangan -->
-    <div class="mt-10">
-        <div class="flex">
-            <div class="w-1/2"></div>
-            <div class="w-1/2 text-center">
+    <div style="margin-top: 2.5rem;">
+        <div style="display: flex;">
+            <div style="width: 50%;"></div>
+            <div style="width: 50%; text-align: center;">
                 <p>
                     Kelurahan Tuwung,
                     {{ $certificate->created_at ? $certificate->created_at->format('d F Y') : date('d F Y') }}
                 </p>
-                <p class="mt-1 font-bold">
+                <p style="margin-top: 0.25rem; font-weight: bold;">
                     Kepala Desa Kelurahan Tuwung
                 </p>
 
                 <!-- Space untuk tanda tangan -->
-                <div class="h-20"></div>
+                <div style="height: 5rem;"></div>
 
-                <p class="font-bold underline">
+                <p style="font-weight: bold; text-decoration: underline;">
                     {{ $certificate->village_head_name ?? 'Arjunalis' }}
                 </p>
-                <p class="mt-0.5">
+                <p style="margin-top: 0.125rem;">
                     NIP: {{ $certificate->village_head_nip ?? '-' }}
                 </p>
             </div>

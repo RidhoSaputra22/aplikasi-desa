@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Enums\CertificateStatus;
 use Illuminate\Http\Request;
 use App\Enums\CertificateType;
-use Spatie\LaravelPdf\Facades\Pdf;
+use Barryvdh\DomPDF\Facade\Pdf;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class SuratOnlineController extends Controller
 {
@@ -23,6 +24,17 @@ class SuratOnlineController extends Controller
             abort(404);
         }
 
+        $link = route('surat-online.status', ['jenis' => $jenis, 'code' => $code]);
+
+        $qrcode = base64_encode(
+            QrCode::format('svg')
+                ->size(200)
+                ->errorCorrection('M')
+                ->generate($link)
+        );
+
+        // dd($qrcode);
+
         $certificate = CertificateType::from($jenis)->modelClass()->where('code', $code)->first();
         $jenisSurat = CertificateType::from($jenis)->label();
 
@@ -31,13 +43,16 @@ class SuratOnlineController extends Controller
             abort(404);
         }
 
-        return Pdf::view('surat-online.bukti', [
+        $pdf = Pdf::loadView('surat-online.bukti', [
             'code' => $code,
-            'link' => route('surat-online.status', ['jenis' => $jenis, 'code' => $code]),
+            'link' => $link,
             'jenisSurat' => $jenisSurat,
-        ])
-            ->name("bukti-pembuatan-surat-{$jenis}-{$code}.pdf")
-            ->format('A4');
+            'qrcode' => $qrcode,
+        ]);
+
+        $pdf->setPaper('A4', 'portrait');
+
+        return $pdf->stream("bukti-pembuatan-surat-{$jenis}-{$code}.pdf");
     }
 
     public function status($jenis, $code)
@@ -75,13 +90,15 @@ class SuratOnlineController extends Controller
             abort(404);
         }
 
-        return Pdf::view('surat-online.lihat', [
+        $pdf = Pdf::loadView('surat-online.lihat', [
             'code' => $code,
             'certificate' => $certificate,
             'link' => route('surat-online.status', ['jenis' => $jenis, 'code' => $code]),
             'jenisSurat' => $jenisSurat,
-        ])
-            ->name("bukti-pembuatan-surat-{$jenis}-{$code}.pdf")
-            ->format('A4');
+        ]);
+
+        $pdf->setPaper('A4', 'portrait');
+
+        return $pdf->stream("bukti-pembuatan-surat-{$jenis}-{$code}.pdf");
     }
 }

@@ -1,16 +1,20 @@
 @extends('layouts.pdf')
 
 @section('content')
-    <div class="text-center my-12 space-y-2">
-        <p class="text-2xl font-semibold">Bukti Pembuatan {{ $jenisSurat }}</p>
-        <p class="text-xl font-normal">Pindai QRCode atau klik tautan di bawah ini untuk melakukan pemantauan status
+    <div
+        style="text-align: center; margin-top: 3rem; margin-bottom: 3rem; display: flex; flex-direction: column; gap: 0.5rem;">
+        <p style="font-size: 1.5rem; font-weight: 600;">Bukti Pembuatan {{ $jenisSurat }}</p>
+        <p style="font-size: 1.25rem; font-weight: 400;">Pindai QRCode atau klik tautan di bawah ini untuk melakukan
+            pemantauan status
             surat
             keterangan yang telah dibuat sebelumnya</p>
 
-        <div class="flex flex-col justify-center items-center-safe my-6 space-y-2">
+        <div
+            style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin-top: 1.5rem; margin-bottom: 1.5rem; gap: 0.5rem;">
             <div id="qrcode"></div>
-            <a class="text-[#0000ff] underline text-sm" href="{{ $link }}">{{ $link }}</a>
-            <p class="text-xl font-black">{{ $code }}</p>
+            <a style="color: #0000ff; text-decoration: underline; font-size: 0.875rem;"
+                href="{{ $link }}">{{ $link }}</a>
+            <p style="font-size: 1.25rem; font-weight: 900;">{{ $code }}</p>
         </div>
 
 

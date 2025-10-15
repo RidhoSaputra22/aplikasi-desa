@@ -7,11 +7,13 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "barryvdh/laravel-dompdf": "*",
+        "dompdf/dompdf": "*",
         "filament/filament": "^4.1",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "livewire/livewire": "^3.6",
-        "spatie/laravel-pdf": "^1.8",
+        "simplesoftwareio/simple-qrcode": "^4.2",
         "wire-elements/modal": "^3.0"
     },
     "require-dev": {

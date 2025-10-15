@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Enums\PengaduanStatus;
-use Spatie\LaravelPdf\Facades\Pdf;
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\PengaduanMasyarakat;
 
 class PengaduanController extends Controller
@@ -17,14 +17,15 @@ class PengaduanController extends Controller
 
     public function bukti($code)
     {
-        // return view('pengaduan.bukti', compact('code'));
-        return Pdf::view('pengaduan.bukti', [
+        $pdf = Pdf::loadView('pengaduan.bukti', [
             'code' => $code,
             'link' => route('pengaduan-masyarakat.status', ['code' => $code]),
             'jenisSurat' => 'Pengaduan Masyarakat',
-        ])
-            ->name("bukti-pengaduan-{$code}.pdf")
-            ->format('A4');
+        ]);
+
+        $pdf->setPaper('A4', 'portrait');
+
+        return $pdf->stream("bukti-pengaduan-{$code}.pdf");
     }
 
 
