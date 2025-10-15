@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Enums\PengaduanStatus;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\PengaduanMasyarakat;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class PengaduanController extends Controller
 {
@@ -17,9 +18,20 @@ class PengaduanController extends Controller
 
     public function bukti($code)
     {
+        $link = route('pengaduan-masyarakat.status', ['code' => $code]);
+
+        $qrcode = base64_encode(
+            QrCode::format('png')
+                ->size(200)
+                ->errorCorrection('M')
+                ->generate($link)
+        );
+
+
         $pdf = Pdf::loadView('pengaduan.bukti', [
             'code' => $code,
-            'link' => route('pengaduan-masyarakat.status', ['code' => $code]),
+            'link' => $link,
+            'qrcode' => $qrcode,
             'jenisSurat' => 'Pengaduan Masyarakat',
         ]);
 

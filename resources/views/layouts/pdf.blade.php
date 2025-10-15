@@ -7,11 +7,6 @@
     <title>Bukti Pembuatan {{ $jenisSurat }} - {{ $code }}</title>
 
     <style>
-        @page {
-            size: A4 portrait;
-            margin: 40px;
-        }
-
         * {
             /* outline: 1px solid red; */
         }
@@ -19,7 +14,7 @@
         body {
             font-family: "Times New Roman", serif;
             font-size: 12pt;
-            line-height: 1.5;
+            /* line-height: 0.05; */
             color: #000;
         }
 

@@ -1,13 +1,11 @@
 @extends('layouts.pdf')
 
-@section('content')
-    @extends('layouts.pdf')
 
 @section('content')
     <!-- Judul Surat -->
-    <div style="text-align: center; margin-top: 1.25rem; margin-bottom: 1.25rem;">
+    <div style="text-align: center; ">
         <h2 style="font-size: 1.125rem; font-weight: bold; text-decoration: underline; margin-bottom: 0.25rem;">
-            SURAT KETERANGAN USAHA
+            {{ $jenisSurat }}
         </h2>
         <p style="font-size: 0.875rem; margin-top: 0.25rem;">
             Nomor: {{ $certificate->code ?? '500/KESRA/KM/2022/01' }}
@@ -15,8 +13,8 @@
     </div>
 
     <!-- Pembuka -->
-    <div style="margin-top: 1.25rem; margin-bottom: 1.25rem; line-height: 1.625;">
-        <p style="text-align: justify; margin-bottom: 1.25rem;">
+    <div style="">
+        <p style="">
             Yang bertanda tangan dibawah ini:
         </p>
 
@@ -35,8 +33,8 @@
     </div>
 
     <!-- Isi Surat -->
-    <div style="margin-top: 1.25rem; margin-bottom: 1.25rem; line-height: 1.625;">
-        <p style="text-align: justify; margin-bottom: 1.25rem;">
+    <div style="">
+        <p style="">
             Dengan ini menerangkan bahwa:
         </p>
 
@@ -104,14 +102,14 @@
     </div>
 
     <!-- Keterangan Usaha -->
-    <div style="margin-top: 0.5rem; margin-bottom: 0.5rem; line-height: 1.625;">
-        <p style="text-align: justify; margin-bottom: 1rem;">
+    <div style="margin-top: 0.5rem;  line-height: 1.625;">
+        <p style="text-align: justify;">
             Adalah benar Penduduk Desa Kelurahan Tuwung Kecamatan XIII Koto Kampar Kabupaten
             Kampar, menurut sepengetahuan kami benar mempunyai/memiliki usaha uang bergerak
             dibidang:
         </p>
 
-        <div style="text-align: center; margin-top: 1.25rem; margin-bottom: 1.25rem;">
+        <div style="text-align: center; ">
             <h3 style="font-size: 1rem; font-weight: bold; text-decoration: underline;">
                 {{ $certificate->business_type ?? 'Usaha Buah' }}
             </h3>
@@ -133,27 +131,29 @@
 
     <!-- Tanggal dan Tanda Tangan -->
     <div style="margin-top: 2.5rem;">
-        <div style="display: flex;">
-            <div style="width: 50%;"></div>
-            <div style="width: 50%; text-align: center;">
-                <p>
-                    Kelurahan Tuwung,
-                    {{ $certificate->created_at ? $certificate->created_at->format('d F Y') : date('d F Y') }}
-                </p>
-                <p style="margin-top: 0.25rem; font-weight: bold;">
-                    Kepala Desa Kelurahan Tuwung
-                </p>
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <td style="width: 50%;"></td> <!-- Kosong di sisi kiri -->
+                <td style="width: 50%; text-align: center;">
+                    <p>
+                        Kelurahan Tuwung,
+                        {{ $certificate->created_at ? $certificate->created_at->format('d F Y') : date('d F Y') }}
+                    </p>
+                    <p style="margin-top: 0.25rem; font-weight: bold;">
+                        Kepala Desa Kelurahan Tuwung
+                    </p>
 
-                <!-- Space untuk tanda tangan -->
-                <div style="height: 5rem;"></div>
+                    <!-- Space untuk tanda tangan -->
+                    <div style="height: 5rem;"></div>
 
-                <p style="font-weight: bold; text-decoration: underline;">
-                    {{ $certificate->village_head_name ?? 'Arjunalis' }}
-                </p>
-                <p style="margin-top: 0.125rem;">
-                    NIP: {{ $certificate->village_head_nip ?? '-' }}
-                </p>
-            </div>
-        </div>
+                    <p style="font-weight: bold; text-decoration: underline;">
+                        {{ $certificate->village_head_name ?? 'Arjunalis' }}
+                    </p>
+                    <p style="margin-top: 0.125rem;">
+                        NIP: {{ $certificate->village_head_nip ?? '-' }}
+                    </p>
+                </td>
+            </tr>
+        </table>
     </div>
 @endsection

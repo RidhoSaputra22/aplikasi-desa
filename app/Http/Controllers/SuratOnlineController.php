@@ -97,7 +97,7 @@ class SuratOnlineController extends Controller
             'jenisSurat' => $jenisSurat,
         ]);
 
-        $pdf->setPaper('A4', 'portrait');
+        $pdf->setPaper(array(0, 0, 609.4488, 935.433), 'portrait');
 
         return $pdf->stream("bukti-pembuatan-surat-{$jenis}-{$code}.pdf");
     }

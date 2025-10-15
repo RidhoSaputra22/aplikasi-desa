@@ -9,11 +9,10 @@
         </p>
 
         <div style="margin: 1.5rem 0;">
-            {{-- ✅ Langsung tampilkan SVG QR --}}
-            <div style="width: 150px; margin: 0 auto;">
-                {!! $qrcode !!}
-            </div>
-
+            {{-- ✅ QR Code Image --}}
+            <img src="data:image/png;base64,{{ $qrcode }}" alt="QR Code"
+                style="width:150px; height:150px; margin-bottom: 10px;">
+            <br>
             <a href="{{ $link }}" style="color: #0000ff; text-decoration: underline; font-size: 0.9rem;">
                 {{ $link }}
             </a>
