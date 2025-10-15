@@ -1,4 +1,9 @@
-*
-!private/
-!public/
-!.gitignore
+# Ignore everything in public
+/public/*
+
+# But keep these exceptions:
+!/public/banner/
+!/public/banner/*
+!/public/user-default.png
+!/public/default-image.jpeg
+!/public/.gitignore
