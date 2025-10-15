@@ -27,7 +27,7 @@ class SuratOnlineController extends Controller
         $link = route('surat-online.status', ['jenis' => $jenis, 'code' => $code]);
 
         $qrcode = base64_encode(
-            QrCode::format('svg')
+            QrCode::format('png')
                 ->size(200)
                 ->errorCorrection('M')
                 ->generate($link)
