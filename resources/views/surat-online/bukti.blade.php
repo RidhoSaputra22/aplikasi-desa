@@ -1,7 +1,7 @@
 @extends('layouts.pdf')
 
 @section('content')
-    <div style="text-align: center; margin-top: 3rem;">
+    <div style="text-align: center; ">
         <p style="font-size: 1.5rem; font-weight: 600;">Bukti Pembuatan {{ $jenisSurat }}</p>
         <p style="font-size: 1.1rem;">
             Pindai QRCode atau klik tautan di bawah ini untuk melakukan pemantauan status surat
