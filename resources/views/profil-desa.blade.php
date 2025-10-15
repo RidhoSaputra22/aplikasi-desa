@@ -21,30 +21,30 @@
                     </p>
                 </div>
             </section>
-            <section class="relative content">
+            <section class="relative content text-center lg:text-left">
                 <div class="grid max-w-6xl grid-cols-1 gap-10 py-20 pt-0 mx-auto lg:gap-20 lg:pt-20 lg:grid-cols-5">
                     <div class="col-span-1 lg:col-span-2">
                         <img src="https://kotomesjid.com/storage/image/hero/desa-koto-mesjid.jpg" alt="desa-koto-mesjid"
                             class="object-cover w-full h-96 lg:h-[600px] rounded-xl">
                     </div>
                     <div class="col-span-1 space-y-10 lg:col-span-3">
-                        <h6 class="text-lg font-semibold tracking-widest text-left text-green-600 uppercase">
+                        <h6 class="text-lg font-semibold tracking-widest  text-green-600 uppercase">
                             sejarah desa
                         </h6>
-                        <div class="font-light leading-relaxed prose-xl ck-content ck-custom text-center lg:text-left">
+                        <div class="font-light leading-relaxed prose-xl ck-content ck-custom">
                             {!! $profil->sejarah_desa !!}
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="relative content">
+            <section class="relative content text-center lg:text-left">
                 <div class="grid max-w-6xl grid-cols-1 gap-10 py-20 pt-0 mx-auto lg:gap-20 lg:pt-20 lg:grid-cols-5">
                     <div class="col-span-1 space-y-20 lg:col-span-3">
                         <div class="space-y-10">
-                            <h6 class="text-lg font-semibold tracking-widest text-left text-green-600 uppercase">
+                            <h6 class="text-lg font-semibold tracking-widest  text-green-600 uppercase">
                                 visi
                             </h6>
-                            <div class="font-light leading-relaxed prose-xl ck-content ck-custom text-center lg:text-left">
+                            <div class="font-light leading-relaxed prose-xl ck-content ck-custom">
                                 {!! $profil->visi !!}
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                             <h6 class="text-lg font-semibold tracking-widest text-left text-green-600 uppercase">
                                 misi
                             </h6>
-                            <div class="font-light leading-relaxed prose-xl ck-content ck-custom text-center lg:text-left">
+                            <div class="font-light leading-relaxed prose-xl ck-content ck-custom">
                                 {!! $profil->misi !!}
                             </div>
                         </div>
@@ -63,9 +63,9 @@
                     </div>
                 </div>
             </section>
-            <section class="relative content">
+            <section class="relative content text-center lg:text-left">
                 <div class="max-w-6xl py-20 pt-0 mx-auto space-y-10">
-                    <h6 class="text-lg font-semibold tracking-widest text-left text-green-600 uppercase">
+                    <h6 class="text-lg font-semibold tracking-widest  text-green-600 uppercase">
                         aparatur desa
                     </h6>
                     <div class="grid grid-cols-2 gap-5 gap-y-8 md:grid-cols-3 lg:grid-cols-4 md:gap-10">
