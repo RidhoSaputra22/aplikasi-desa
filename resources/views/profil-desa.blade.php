@@ -31,7 +31,7 @@
                         <h6 class="text-lg font-semibold tracking-widest text-left text-green-600 uppercase">
                             sejarah desa
                         </h6>
-                        <div class="font-light leading-relaxed prose-xl ck-content ck-custom">
+                        <div class="font-light leading-relaxed prose-xl ck-content ck-custom text-center lg:text-left">
                             {!! $profil->sejarah_desa !!}
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                             <h6 class="text-lg font-semibold tracking-widest text-left text-green-600 uppercase">
                                 visi
                             </h6>
-                            <div class="font-light leading-relaxed prose-xl ck-content ck-custom">
+                            <div class="font-light leading-relaxed prose-xl ck-content ck-custom text-center lg:text-left">
                                 {!! $profil->visi !!}
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                             <h6 class="text-lg font-semibold tracking-widest text-left text-green-600 uppercase">
                                 misi
                             </h6>
-                            <div class="font-light leading-relaxed prose-xl ck-content ck-custom">
+                            <div class="font-light leading-relaxed prose-xl ck-content ck-custom text-center lg:text-left">
                                 {!! $profil->misi !!}
                             </div>
                         </div>
