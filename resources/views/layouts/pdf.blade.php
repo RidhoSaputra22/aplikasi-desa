@@ -70,7 +70,7 @@
                         <p style="font-size: 16pt;">KELURAHAN TUWUNG</p>
                     </div>
                     <div class="header-address">
-                        <p>Alamat: Tuwung, Kec. Barru, Kabupaten Barru, Sulawesi Selatan 90711</p>
+                        <p>Alamat: Jl. Andi Asiah, asia panrenge, Kec. Barru, Kabupaten Barru, Sulawesi Selatan</p>
                     </div>
                 </td>
             </tr>

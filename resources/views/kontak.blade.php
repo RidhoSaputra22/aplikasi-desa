@@ -33,8 +33,7 @@
                                 alamat dan kontak
                             </h6>
                             <p class="text-xl font-light leading-relaxed text-center lg:text-left content">
-                                Kantor kelurahan tuwung beralamatkan Jl. Poros Kelurahan Tuwung Kec. XIII Koto
-                                Kampar, Kabupaten Kampar, Riau
+                                Jl. Andi Asiah, asia panrenge, Kec. Barru, Kabupaten Barru, Sulawesi Selatan
                             </p>
                             <div
                                 class="flex items-center justify-center order-1 mb-10 space-x-4 lg:justify-start lg:order-2 lg:mb-0 content">
