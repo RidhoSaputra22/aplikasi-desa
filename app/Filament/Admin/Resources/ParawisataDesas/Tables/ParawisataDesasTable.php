@@ -18,6 +18,9 @@ class ParawisataDesasTable
                 TextColumn::make('title')
                     ->searchable(),
                 ImageColumn::make('gambar')
+                    ->label('Gambar')
+                    ->disk('public')
+                    ->visibility('public')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
