@@ -18,11 +18,11 @@ class ParawisataDesaForm
         return $schema
             ->components([
                 FileUpload::make('gambar')
-                    ->image()
                     ->columnSpanFull()
                     ->disk('public')
                     ->visibility('public')
                     ->required(),
+
                 TextInput::make('title')
                     ->required()
                     ->afterStateUpdated(function (Get $get, Set $set, ?string $state) {
@@ -38,7 +38,6 @@ class ParawisataDesaForm
                 RichEditor::make('deskripsi')
                     ->columnSpanFull(),
                 FileUpload::make('galeri')
-                    ->image()
                     ->multiple()
                     ->disk('public')
                     ->visibility('public')
