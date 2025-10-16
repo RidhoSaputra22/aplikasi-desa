@@ -9,14 +9,15 @@
             {{ $jenisSurat }}
         </h2>
         <p style="font-size: 0.875rem; margin-top: 0.25rem;">
-            Nomor: {{ $certificate->code ?? '500/KESRA/KM/2022/01' }}
+            Nomor:
         </p>
     </div>
 
     <!-- Pembuka -->
     <div style="">
         <p style="">
-            Yang bertanda tangan dibawah ini:
+            Yang bertanda tangan di bawah ini (JABATAN) Lurah Tuwung Kecamatan Barru Kabupaten
+            Barru menerangkan bahwa:
         </p>
 
         <table style="margin-left: 2.5rem; line-height: 1.75;">

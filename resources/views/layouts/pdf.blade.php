@@ -14,6 +14,7 @@
         body {
             font-family: "Times New Roman", serif;
             font-size: 12pt;
+            margin: 20px 30px;
             /* line-height: 0.05; */
             color: #000;
         }
@@ -21,10 +22,11 @@
         table {
             width: 100%;
             border-collapse: collapse;
+
         }
 
         .header-table {
-            border-bottom: 3px solid #000;
+            border-bottom: 2px solid #000;
         }
 
         .header-logo {
@@ -40,6 +42,7 @@
 
         .header-text p {
             margin: 2px 0;
+            font-size: 18pt;
         }
 
         .header-address {
@@ -47,6 +50,8 @@
             font-size: 11pt;
             font-style: italic;
         }
+
+
 
         hr {
             border: 1px solid #000;
@@ -65,17 +70,19 @@
                 </td>
                 <td>
                     <div class="header-text">
-                        <p style="font-size: 16pt;">PEMERINTAH KABUPATEN BARRU</p>
-                        <p style="font-size: 16pt;">KECAMATAN BARRU</p>
-                        <p style="font-size: 16pt;">KELURAHAN TUWUNG</p>
-                    </div>
-                    <div class="header-address">
-                        <p>Alamat: Jl. Andi Asiah, asia panrenge, Kec. Barru, Kabupaten Barru, Sulawesi Selatan</p>
+                        <p>PEMERINTAH KABUPATEN BARRU</p>
+                        <p>KECAMATAN BARRU</p>
+                        <p>KELURAHAN TUWUNG</p>
+                        <span class="header-address">Jl. Sultan Hasanuddin Nomor _ Tlp. (0427)21524 </span>
+
                     </div>
                 </td>
             </tr>
         </table>
-        <hr>
+        <div style="height: 3px; background-color: #000; margin-top: 2px;">
+
+        </div>
+        {{-- <hr> --}}
     </header>
 
     {{-- Konten surat --}}

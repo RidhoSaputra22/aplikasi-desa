@@ -90,6 +90,39 @@ class SuratOnlineController extends Controller
             abort(404);
         }
 
+        if ($jenis == CertificateType::KEMATIAN->value) {
+            return Pdf::loadView('surat-online.jenis-surat.kematian', [
+                'code' => $code,
+                'certificate' => $certificate,
+                'link' => route('surat-online.status', ['jenis' => $jenis, 'code' => $code]),
+                'jenisSurat' => $jenisSurat,
+            ])->setPaper(array(0, 0, 609.4488, 935.433), 'portrait')->stream("bukti-pembuatan-surat-{$jenis}-{$code}.pdf");
+        }
+
+        if ($jenis == CertificateType::USAHA->value) {
+            return Pdf::loadView('surat-online.jenis-surat.usaha', [
+                'code' => $code,
+                'certificate' => $certificate,
+                'link' => route('surat-online.status', ['jenis' => $jenis, 'code' => $code]),
+                'jenisSurat' => $jenisSurat,
+            ])->setPaper(array(0, 0, 609.4488, 935.433), 'portrait')->stream("bukti-pembuatan-surat-{$jenis}-{$code}.pdf");
+        }
+
+        if ($jenis == CertificateType::PENGHASILAN_ORANG_TUA->value) {
+            return Pdf::loadView('surat-online.jenis-surat.penghasilan-ortu', [
+                'code' => $code,
+                'certificate' => $certificate,
+                'link' => route('surat-online.status', ['jenis' => $jenis, 'code' => $code]),
+                'jenisSurat' => $jenisSurat,
+            ])->setPaper(array(0, 0, 609.4488, 945.433), 'portrait')->stream("bukti-pembuatan-surat-{$jenis}-{$code}.pdf");
+        }
+
+        if ($jenis == 'bantuan') {
+            return Pdf::loadView('surat-online.jenis-surat.bantuan', [
+                'code' => $code,
+            ])->setPaper(array(0, 0, 609.4488, 935.433), 'portrait')->stream("bukti-pembuatan-surat-{$jenis}-{$code}.pdf");
+        }
+
         $pdf = Pdf::loadView('surat-online.lihat', [
             'code' => $code,
             'certificate' => $certificate,

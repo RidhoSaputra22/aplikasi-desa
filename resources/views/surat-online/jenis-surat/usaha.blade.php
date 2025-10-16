@@ -105,29 +105,14 @@
     <!-- Keterangan Usaha -->
     <div style="margin-top: 0.5rem;  line-height: 1.625;">
         <p style="text-align: justify;">
-            Adalah benar Penduduk Desa Kelurahan Tuwung Kecamatan XIII Koto Kampar Kabupaten
-            Kampar, menurut sepengetahuan kami benar mempunyai/memiliki usaha uang bergerak
-            dibidang:
+            Bahwa tersebut namanya di atas adalah benar memiliki Usaha {{ $certificate->business_name ?? 'Usaha Buah' }},
+            yang terletak di
+            {{ $certificate->address ?? 'RW 01, Kelurahan Tuwung, Kecamatan Barru, Kabupaten Barru' }}.
+            Demikian Surat Keterangan ini dibuat dan diberikan kepada yang bersangkutan untuk
+            di pergunakan sebagaimana mestinya.
         </p>
 
-        <div style="text-align: center; ">
-            <h3 style="font-size: 1rem; font-weight: bold; text-decoration: underline;">
-                {{ $certificate->business_type ?? 'Usaha Buah' }}
-            </h3>
-        </div>
 
-        <p style="text-align: justify; margin-top: 1rem;">
-            Usaha uang dimiliki oleh yang bersangkutan benar berada di wilayah Desa Kelurahan Tuwung
-            {{ $certificate->business_description ?? 'dengan alamat usaha di Jl. Poros Desa Kelurahan Tuwung.' }}
-        </p>
-    </div>
-
-    <!-- Penutup -->
-    <div style="margin-top: 0.5rem; margin-bottom: 0.5rem; line-height: 1.625;">
-        <p style="text-align: justify;">
-            Demikian surat keterangan ini dibuat dengan sebenarnya untuk dapat dipergunakan
-            sebagaimana mestinya.
-        </p>
     </div>
 
     <!-- Tanggal dan Tanda Tangan -->

@@ -529,7 +529,8 @@
                                 data: @json($item) } })'>
                                         <div class="space-y-3">
                                             <div class="relative w-full overflow-hidden h-52 rounded-xl">
-                                                <img src="{{ $item->gambar }}" alt="gantungan-kunci-strowbery-rajut"
+                                                <img src="{{ Storage::url($item->gambar) }}"
+                                                    alt="gantungan-kunci-strowbery-rajut"
                                                     class="relative object-cover w-full h-full">
                                                 <span
                                                     class="absolute px-2 py-1 text-xs font-bold text-white capitalize rounded-md bg-slate-700/50 bottom-3 right-3">
