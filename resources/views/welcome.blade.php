@@ -201,8 +201,8 @@
                                 </div>
                             </div>
                             <div class="order-1 place-self-center lg:order-2 content">
-                                <img src="https://kotomesjid.com/storage/image/hero/kepala-desa-koto-mesjid.png"
-                                    class="w-64 lg:w-80 rounded-xl" alt="lurah-kelurahan-tuwung">
+                                <img src="{{ asset('storage/banner/kepdes.jpg') }}" class="w-64 lg:w-80 rounded-xl"
+                                    alt="lurah-kelurahan-tuwung">
                             </div>
                         </div>
                     </div>
