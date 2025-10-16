@@ -57,8 +57,10 @@ class ParawisataDesaForm
                         }
                     }),
                 TextInput::make('long')
+                    ->disabled()
                     ->label('Longitude'),
                 TextInput::make('lat')
+                    ->disabled()
                     ->label('Latitude'),
 
             ])
