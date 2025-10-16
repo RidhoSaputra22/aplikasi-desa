@@ -2,8 +2,7 @@
     <div
         class="absolute top-0 left-0 z-10 flex items-center justify-between w-full h-16 px-6 transition-all duration-150 md:px-10 lg:px-20 md:h-20">
         <a href="{{ route('home') }}">
-            <img src="https://kotomesjid.com/storage/image/logo/desa-koto-mesjid.svg" alt="logo desa koto mesjid"
-                class="w-12 md:w-14">
+            <img src="{{ asset('assets/logo.png') }}" alt="logo desa koto mesjid" class="w-10 md:w-10">
         </a>
         <div class="hidden lg:block">
             <div
