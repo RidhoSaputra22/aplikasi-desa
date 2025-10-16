@@ -40,19 +40,7 @@ class ParawisataDesaForm
                     ->placeholder('https://www.google.com/maps/place/...')
                     ->helperText('Masukkan link lokasi dari Google Maps')
                     ->columnSpanFull()
-                    ->reactive()
-                    ->afterStateUpdated(function (Get $get, Set $set, ?string $state) {
-                        if ($state && preg_match('/@([-+]?[0-9]*\.?[0-9]+),\s*([-+]?[0-9]*\.?[0-9]+)/', $state, $matches)) {
-                            $set('lat', $matches[1]);
-                            $set('long', $matches[2]);
-                        }
-                    }),
-                TextInput::make('long')
-                    ->disabled()
-                    ->label('Longitude'),
-                TextInput::make('lat')
-                    ->disabled()
-                    ->label('Latitude'),
+                    ->reactive(),
 
             ])
             ->columns(3);
