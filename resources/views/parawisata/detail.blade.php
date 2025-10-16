@@ -143,7 +143,7 @@
 
             const el = document.createElement('div');
             el.innerHTML = `<img
-                        src="{{ asset($data->gambar) }}"
+                        src="{{ Storage::url($data->gambar) }}"
                         alt="kantor-desa-koto-mesjid"
                         class="object-cover border-2 border-white rounded-full w-14 h-14"
                     >`;
