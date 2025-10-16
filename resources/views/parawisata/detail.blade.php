@@ -143,7 +143,7 @@
 
             const el = document.createElement('div');
             el.innerHTML = `<img
-                        src="{{ Storage::url($data->gambar) }}"
+                        src="{{ asset($data->gambar) }}"
                         alt="kantor-desa-koto-mesjid"
                         class="object-cover border-2 border-white rounded-full w-14 h-14"
                     >`;
@@ -155,7 +155,7 @@
                 .setLngLat([long, lat])
                 .setHTML(
                     `<p class="leading-tight">{{ $data->title }}, {{ $data->alamat }}</p>` +
-                    `<p>Lihat pada <a href="{{ $data->link_maps }}" target="_blank" class="text-green-600 underline">google map</a></p>`
+                    `<p>Lihat pada <a href="{!! $data->link_maps !!}" target="_blank" class="text-green-600 underline">google map</a></p>`
                 );
 
             new mapboxgl.Marker(el)

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('parawisata_desas', function (Blueprint $table) {
             //
-            $table->string('link_maps')->nullable();
+            $table->text('link_maps')->nullable();
         });
     }
 
