@@ -134,7 +134,7 @@
                 'pk.eyJ1IjoieW9hbm5vZmlzdXJ5YW5vIiwiYSI6ImNqdDNjenowMjB5OXY0OW9oeGg5NmRtNXgifQ.JO_TRyXVfzcZHf_y5dOGgQ';
             var map = new mapboxgl.Map({
                 container: 'map',
-                center: [lat, long],
+                center: [long, lat],
                 zoom: 15,
                 style: 'mapbox://styles/mapbox/satellite-streets-v11'
             });
@@ -152,14 +152,14 @@
                     closeOnClick: false,
                     offset: 25
                 })
-                .setLngLat([lat, long])
+                .setLngLat([long, lat])
                 .setHTML(
                     `<p class="leading-tight">{{ $data->title }}, {{ $data->alamat }}</p>
                                     <p>Lihat pada <a href="http://maps.google.com/maps?z=12&t=m&q=loc:long+lat" target="_blank" class="text-green-600 underline">google map</a></p>`
                 );
 
             new mapboxgl.Marker(el)
-                .setLngLat([lat, long])
+                .setLngLat([long, lat])
                 .setPopup(popup)
                 .addTo(map);
 

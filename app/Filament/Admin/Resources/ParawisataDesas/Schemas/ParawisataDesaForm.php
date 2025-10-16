@@ -43,8 +43,24 @@ class ParawisataDesaForm
                     ->disk('public')
                     ->visibility('public')
                     ->columnSpanFull(),
-                TextInput::make('lat'),
-                TextInput::make('long'),
+
+                TextInput::make('link_maps')
+                    ->label('Link Maps')
+                    ->placeholder('https://www.google.com/maps/place/...')
+                    ->helperText('Masukkan link lokasi dari Google Maps')
+                    ->columnSpanFull()
+                    ->reactive()
+                    ->afterStateUpdated(function (Get $get, Set $set, ?string $state) {
+                        if ($state && preg_match('/@([-+]?[0-9]*\.?[0-9]+),\s*([-+]?[0-9]*\.?[0-9]+)/', $state, $matches)) {
+                            $set('lat', $matches[1]);
+                            $set('long', $matches[2]);
+                        }
+                    }),
+                TextInput::make('long')
+                    ->label('Longitude'),
+                TextInput::make('lat')
+                    ->label('Latitude'),
+
             ])
             ->columns(3);
     }
