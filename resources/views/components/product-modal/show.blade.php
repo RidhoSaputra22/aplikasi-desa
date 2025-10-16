@@ -1,6 +1,6 @@
 <div class="px-6 py-6 space-y-6 lg:px-10 lg:py-10 lg:space-y-10">
     <div x-init="" @click.self="$wire.closeModal()" class="">
-        <img src="{{ $data['gambar'] }}" class="object-contain h-full w-full">
+        <img src="{{ Storage::url($data['gambar']) }}" class="object-contain h-full w-full">
     </div>
     <div class="">
         <h5 class="text-2xl font-semibold leading-tight capitalize lg:text-4xl">
