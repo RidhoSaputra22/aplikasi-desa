@@ -40,15 +40,15 @@
                 </section>
             </div>
         @elseif (session('success'))
-            {{-- {{ dd(session('success')) }} --}}
             <div class="flex-1">
                 <section class="">
                     <div class="flex justify-center">
-                        <div class=" py-32 pt-0 md:pt-20 mx-auto space-y-24 md:space-y-32 lg:space-y-40 relative z-[1]">
-                            >
+                        <div class="py-32 pt-0 md:pt-20 mx-auto space-y-24 md:space-y-32 lg:space-y-40 relative z-[1]">
                             <div class="">
                                 <h2 class="text-left text-4xl font-semibold mb-10">Data Ditemukan</h2>
-                                <div class="pt-4 overflow-x-auto border rounded-lg">
+
+                                <!-- TABLE VIEW (Desktop) -->
+                                <div class="pt-4 overflow-x-auto border rounded-lg hidden md:block">
                                     <table class="">
                                         <thead class="uppercase">
                                             <tr>
@@ -75,6 +75,42 @@
                                         </tbody>
                                     </table>
                                 </div>
+
+                                <!-- CARD VIEW (Mobile) -->
+                                <div class="block md:hidden">
+                                    <div class="border rounded-lg p-4 shadow-sm space-y-3">
+                                        <div>
+                                            <p class="text-xs text-gray-500 uppercase">NIK</p>
+                                            <p class="font-semibold">{{ session('success')['nik'] }}</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-gray-500 uppercase">Nama Lengkap</p>
+                                            <p class="font-semibold">{{ session('success')['nama_lengkap'] }}</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-gray-500 uppercase">Jenis Kelamin</p>
+                                            <p class="font-semibold">{{ session('success')['jenis_kelamin'] }}</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-gray-500 uppercase">Tanggal Lahir</p>
+                                            <p class="font-semibold">{{ session('success')['tanggal_lahir'] }}</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-gray-500 uppercase">Penghasilan Bulanan</p>
+                                            <p class="font-semibold">Rp.
+                                                {{ number_format(session('success')['penghasilan_bulanan']) }}</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-gray-500 uppercase">Kategori Kemiskinan</p>
+                                            <p class="font-semibold">{{ session('success')['kategori_kemiskinan'] }}</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-gray-500 uppercase">Jenis Bantuan</p>
+                                            <p class="font-semibold">{{ session('success')['jenis_bantuan'] }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
