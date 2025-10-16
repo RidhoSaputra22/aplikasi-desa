@@ -40,19 +40,42 @@
                 </section>
             </div>
         @elseif (session('success'))
+            {{-- {{ dd(session('success')) }} --}}
             <div class="flex-1">
-                <section class="relative content">
-                    <div
-                        class="max-w-6xl py-32 pt-0 md:pt-20 mx-auto space-y-24 md:space-y-32 lg:space-y-40 relative z-[1]">
-                        <div
-                            class="max-w-2xl px-6 md:px-10 lg:px-20 py-6 mx-auto space-y-4 border border-green-300 rounded-lg bg-green-50">
-                            <h1 class="text-2xl font-semibold text-green-800 title">Selamat</h1>
-                            <p class="text-lg font-light text-green-700 description">Kamu telah terdaftar dan menerima
-                                bantuan berupa
-                                {{-- {{ dd(session('success')) }} --}}
-                                {{ session('success')['data']->jenis_bantuan }} dengan kategori kemiskinan
-                                {{ session('success')['data']->kategori_kemiskinan }} dari
-                                kelurahan tuwung</p>
+                <section class="">
+                    <div class="flex justify-center">
+                        <div class=" py-32 pt-0 md:pt-20 mx-auto space-y-24 md:space-y-32 lg:space-y-40 relative z-[1]">
+                            >
+                            <div class="">
+                                <h2 class="text-left text-4xl font-semibold mb-10">Data Ditemukan</h2>
+                                <div class="pt-4 overflow-x-auto border rounded-lg">
+                                    <table class="">
+                                        <thead class="uppercase">
+                                            <tr>
+                                                <th class="px-4 py-3 text-left">NIK</th>
+                                                <th class="px-4 py-3 text-left">Nama Lengkap</th>
+                                                <th class="px-4 py-3 text-left">Jenis Kelamin</th>
+                                                <th class="px-4 py-3 text-left">Tanggal Lahir</th>
+                                                <th class="px-4 py-3 text-left">Penghasilan Bulanan</th>
+                                                <th class="px-4 py-3 text-left">Kategori Kemiskinan</th>
+                                                <th class="px-4 py-3 text-left">Jenis Bantuan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="border-b hover:bg-gray-50">
+                                                <td class="px-4 py-3">{{ session('success')['nik'] }}</td>
+                                                <td class="px-4 py-3">{{ session('success')['nama_lengkap'] }}</td>
+                                                <td class="px-4 py-3">{{ session('success')['jenis_kelamin'] }}</td>
+                                                <td class="px-4 py-3">{{ session('success')['tanggal_lahir'] }}</td>
+                                                <td class="px-4 py-3">Rp.
+                                                    {{ number_format(session('success')['penghasilan_bulanan']) }}</td>
+                                                <td class="px-4 py-3">{{ session('success')['kategori_kemiskinan'] }}</td>
+                                                <td class="px-4 py-3">{{ session('success')['jenis_bantuan'] }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -74,9 +97,24 @@
                 </section>
             </div>
         @endif
-
-
-
+        <section id="public-complaint" class="relative">
+            <div class="relative px-6 overflow-hidden bg-green-600 md:px-10">
+                <div class="max-w-6xl py-20 mx-auto relative z-[1]">
+                    <div class="w-full mx-auto lg:w-2/3">
+                        <h1 class="text-4xl font-light leading-tight text-center text-white title">
+                            Belum terdaftar sebagai Penduduk? Input Data Anda Sekarang
+                        </h1>
+                        <div class="flex justify-center mt-12 description">
+                            <a href="#"
+                                onclick="Livewire.dispatch('openModal', { component: 'guest.penduduk.input', arguments: { link: '/cek-data' }  })"
+                                class="px-6 py-3 text-lg text-green-600 bg-white rounded-lg hover:bg-white/95 focus:ring-4 focus:ring-white/20">
+                                Input Data
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         {{-- Include Footer Component --}}
         @include('layouts.footer')
     </div>

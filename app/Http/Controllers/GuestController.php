@@ -6,6 +6,7 @@ use App\Models\UmkmDesa;
 use App\Models\ProfilDesa;
 use App\Models\AparaturDesa;
 use App\Models\DataPenduduk;
+use App\Models\KategoriKemiskinan;
 use App\Models\LahanWilayah;
 use Illuminate\Http\Request;
 use App\Models\ParawisataDesa;
@@ -90,7 +91,7 @@ class GuestController extends Controller
         $lahanWilayah = LahanWilayah::all();
         $saranaPrasarana = SaranaPrasarana::all();
 
-        // dd($pendudukByGender);
+        // dd(KategoriKemiskinan::all());
 
 
 
@@ -111,15 +112,33 @@ class GuestController extends Controller
     public function cekData(Request $request)
     {
         $nik = $request->input('nik');
-        $data = null;
+        $dataPenduduk = null;
         if ($nik) {
-            $data = DataPenduduk::where('nik', $nik)->first();
-            if (!$data) {
+            $dataPenduduk = DataPenduduk::with([
+                'agama',
+                'jenisBantuan',
+                'kategoriKemiskinan',
+                'pendidikan',
+                'pekerjaan',
+                'statusKawin',
+                'statusKeluarga',
+            ])->where('nik', $nik)->first();
+            if (!$dataPenduduk) {
                 return redirect()->route('cek-data')->with('error', 'Data dengan NIK ' . $nik . ' tidak ditemukan.');
             }
-            return redirect()->route('cek-data')->with('success', ['data' => $data]);
+
+            return redirect()->route('cek-data')->with('success', [
+                'no_kk' => $dataPenduduk->no_kk,
+                'nik' => $dataPenduduk->nik,
+                'nama_lengkap' => $dataPenduduk->nama_lengkap,
+                'jenis_kelamin' => $dataPenduduk->jenis_kelamin,
+                'tanggal_lahir' => $dataPenduduk->tanggal_lahir,
+                'jenis_bantuan' => $dataPenduduk->jenisBantuan?->nama_bantuan ?? 'N/A',
+                'penghasilan_bulanan' => $dataPenduduk->penghasilan_bulanan,
+                'kategori_kemiskinan' => $dataPenduduk->kategoriKemiskinan?->nama_kategori ?? 'N/A',
+            ]);
         }
-        return view('cek-data', compact('data'));
+        return view('cek-data');
     }
 
     public function pengaduanMasyarakat()

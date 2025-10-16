@@ -3,15 +3,18 @@
 namespace App\Livewire\Guest\Penduduk;
 
 use App\Models\Agama;
-
 use App\Models\Pekerjaan;
 use App\Models\Pendidikan;
 use App\Models\StatusKawin;
+use App\Models\JenisBantuan;
+use App\Models\KategoriKemiskinan;
 use App\Models\StatusKeluarga;
 use LivewireUI\Modal\ModalComponent;
 
 class Input extends ModalComponent
 {
+    public $link;
+
     public $noKk;
     public $nik;
     public $namaLengkap;
@@ -22,6 +25,10 @@ class Input extends ModalComponent
     public $agama;
     public $pendidikan;
     public $pekerjaan;
+    public $bantuan;
+    public $kemiskinan;
+    public $pemasukanBulanan;
+
 
     protected $rules = [
         'noKk' => 'required|string|max:16',
@@ -29,11 +36,14 @@ class Input extends ModalComponent
         'namaLengkap' => 'required|string|max:255',
         'jenisKelamin' => 'required|in:L,P',
         'tanggalLahir' => 'required|date',
-        'statusKeluarga' => 'required|string|max:100',
-        'statusKawin' => 'required|string|max:50',
-        'agama' => 'nullable|string|max:50',
-        'pendidikan' => 'nullable|string|max:100',
-        'pekerjaan' => 'nullable|string|max:100',
+        'statusKeluarga' => 'required|integer|max:100',
+        'statusKawin' => 'required|integer|max:50',
+        'agama' => 'required|integer|max:50',
+        'pendidikan' => 'required|integer|max:100',
+        'pekerjaan' => 'required|integer|max:100',
+        'bantuan' => 'required|integer|exists:jenis_bantuans,id',
+        'kemiskinan' => 'required|integer|exists:kategori_kemiskinans,id',
+        'pemasukanBulanan' => 'required|numeric|min:0'
     ];
 
     protected $messages = [
@@ -52,26 +62,49 @@ class Input extends ModalComponent
         'statusKeluarga.max' => 'Hubungan dalam keluarga maksimal 100 karakter.',
         'statusKawin.required' => 'Status perkawinan wajib dipilih.',
         'statusKawin.max' => 'Status perkawinan maksimal 50 karakter.',
+        'agama.required' => 'Agama wajib dipilih.',
         'agama.max' => 'Agama maksimal 50 karakter.',
+        'pendidikan.required' => 'Pendidikan terakhir wajib dipilih.',
         'pendidikan.max' => 'Pendidikan terakhir maksimal 100 karakter.',
+        'pekerjaan.required' => 'Pekerjaan wajib dipilih.',
         'pekerjaan.max' => 'Pekerjaan maksimal 100 karakter.',
+        'bantuan.required' => 'Bantuan wajib dipilih.',
+        'bantuan.integer' => 'Bantuan tidak valid.',
+        'bantuan.exists' => 'Bantuan tidak ditemukan.',
+        'kemiskinan.required' => 'Kategori kemiskinan wajib dipilih.',
+        'kemiskinan.integer' => 'Kategori kemiskinan tidak valid.',
+        'kemiskinan.exists' => 'Kategori kemiskinan tidak ditemukan.',
+        'pemasukanBulanan.required' => 'pemasukan bulanan wajib diisi.',
+        'pemasukanBulanan.numeric' => 'pemasukan bulanan harus berupa angka.',
+        'pemasukanBulanan.min' => 'pemasukan bulanan tidak boleh kurang dari 0.'
     ];
 
-    public function mount()
+    public function mount($link)
     {
-        $this->noKk = '0234567890123456';
-        $this->nik = '1234567890123456';
-        $this->namaLengkap = 'John Doe';
-        $this->jenisKelamin = 'L';
-        $this->tanggalLahir = '2000-01-01';
-        $this->statusKeluarga = 'Anak';
-        $this->statusKawin = 'Belum Menikah';
-        $this->agama = 'Islam';
-        $this->pendidikan = 'SMA';
-        $this->pekerjaan = 'Pelajar';
+        $this->link = $link;
+        // Generate random data for all inputs
+        $this->noKk = str_pad(rand(1000000000000000, 9999999999999999), 16, '0', STR_PAD_LEFT);
+        $this->nik = str_pad(rand(1000000000000000, 9999999999999999), 16, '0', STR_PAD_LEFT);
+        $this->namaLengkap = $this->generateRandomName();
+        $this->jenisKelamin = rand(0, 1) ? 'L' : 'P';
+        $this->tanggalLahir = date('Y-m-d', rand(strtotime('1950-01-01'), strtotime('2005-12-31')));
+        $this->statusKeluarga = StatusKeluarga::inRandomOrder()->first()->id;
+        $this->statusKawin = StatusKawin::inRandomOrder()->first()->id;
+        $this->agama = Agama::inRandomOrder()->first()->id;
+        $this->pendidikan = Pendidikan::inRandomOrder()->first()->id;
+        $this->pekerjaan = Pekerjaan::inRandomOrder()->first()->id;
+        $this->bantuan = JenisBantuan::inRandomOrder()->first()->id;
+        $this->kemiskinan = KategoriKemiskinan::inRandomOrder()->first()->id;
+        $this->pemasukanBulanan = rand(500000, 10000000);
     }
 
+    private function generateRandomName()
+    {
+        $firstNames = ['Ahmad', 'Budi', 'Siti', 'Dewi', 'Andi', 'Maya', 'Rizki', 'Indah', 'Fajar', 'Lestari'];
+        $lastNames = ['Santoso', 'Wijaya', 'Kusuma', 'Pratama', 'Sari', 'Putra', 'Wati', 'Hakim', 'Firmansyah', 'Maharani'];
 
+        return $firstNames[array_rand($firstNames)] . ' ' . $lastNames[array_rand($lastNames)];
+    }
 
     public function submit()
     {
@@ -89,9 +122,11 @@ class Input extends ModalComponent
                 'agama_id' => $this->agama,
                 'pendidikan_id' => $this->pendidikan,
                 'pekerjaan_id' => $this->pekerjaan,
+                'jenis_bantuan_id' => $this->bantuan,
+                'kategori_kemiskinan_id' => $this->kemiskinan,
+                'penghasilan_bulanan' => $this->pemasukanBulanan,
             ]);
-
-            $this->dispatch('openModal', 'guest.penduduk.modal');
+            $this->dispatch('openModal', 'guest.penduduk.modal', ['link' => $this->link]);
         } catch (\Exception $e) {
             dd($e);
             $this->addError('form_error', 'Terjadi kesalahan saat menyimpan data: ' . $e->getMessage());
@@ -106,13 +141,22 @@ class Input extends ModalComponent
         $agamaOptions = Agama::all();
         $pendidikanOptions = Pendidikan::all();
         $pekerjaanOptions = Pekerjaan::all();
+        $jenisBantuan = JenisBantuan::all();
+        $kemiskinanOptions = KategoriKemiskinan::all();
+        $link = $this->link;
 
-        return view('components.penduduk.input', [
-            'statusKeluargaOptions' => $statusKeluargaOptions,
-            'statusPerkawinanOptions' => $statusPerkawinanOptions,
-            'agamaOptions' => $agamaOptions,
-            'pendidikanOptions' => $pendidikanOptions,
-            'pekerjaanOptions' => $pekerjaanOptions,
-        ]);
+        // dd(KategoriKemiskinan::all());
+        // dd($jenisBantuan);
+
+        return view('components.penduduk.input', compact(
+            'link',
+            'statusKeluargaOptions',
+            'statusPerkawinanOptions',
+            'agamaOptions',
+            'pendidikanOptions',
+            'pekerjaanOptions',
+            'jenisBantuan',
+            'kemiskinanOptions',
+        ));
     }
 }

@@ -215,7 +215,7 @@
                         </h1>
                         <div class="flex justify-center mt-12 description">
                             <a href="#"
-                                onclick="Livewire.dispatch('openModal', { component: 'guest.penduduk.input' })"
+                                onclick="Livewire.dispatch('openModal', { component: 'guest.penduduk.input', arguments: { link: '/data-desa' }  })"
                                 class="px-6 py-3 text-lg text-green-600 bg-white rounded-lg hover:bg-white/95 focus:ring-4 focus:ring-white/20">
                                 Input Data
                             </a>

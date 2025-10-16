@@ -15,8 +15,8 @@ class KategoriKemiskinan extends Model
         'nama_kategori' => 'string',
     ];
 
-    public function setNamaKategoriAttribute($value)
-    {
-        $this->attributes['nama_kategori'] = strtoupper($value);
-    }
+    // public function setNamaKategoriAttribute($value)
+    // {
+    //     $this->attributes['nama_kategori'] = strtoupper($value);
+    // }
 }

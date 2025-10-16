@@ -7,6 +7,13 @@ use LivewireUI\Modal\ModalComponent;
 class Modal extends ModalComponent
 {
 
+    public $link;
+
+    public function mount($link)
+    {
+        $this->link = $link;
+    }
+
     public function render()
     {
         return <<<'HTML'
@@ -31,7 +38,7 @@ class Modal extends ModalComponent
                     </div>
                 </div>
                 <div class="flex justify-center">
-                    <a href="/data-desa" class="flex items-center justify-center px-4 py-2 space-x-2 text-white transition bg-green-600 border border-green-600 rounded-md hover:bg-opacity-90 focus:ring-4 focus:focus:ring-slate-200/75">
+                    <a href="{{ $link }}" class="flex items-center justify-center px-4 py-2 space-x-2 text-white transition bg-green-600 border border-green-600 rounded-md hover:bg-opacity-90 focus:ring-4 focus:focus:ring-slate-200/75">
                         Tutup
                     </a>
                 </div>
