@@ -26,14 +26,13 @@ class BeritaDesaForm
                     ->required(),
                 TextInput::make('judul')
                     ->required()
-                    ->reactive()
                     ->afterStateUpdated(function (Get $get, Set $set, ?string $state) {
                         if ($get('slug') !== Str::slug($state)) {
                             $set('slug', Str::slug($state));
                         }
                     }),
                 TextInput::make('slug')
-                    ->reactive()
+                    ->disabled()
                     ->unique(table: 'berita_desas', ignorable: fn($record) => $record)
                     ->required(),
                 RichEditor::make('isi')
