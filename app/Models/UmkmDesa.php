@@ -19,13 +19,4 @@ class UmkmDesa extends Model
     {
         return $this->belongsTo(KategoriUmkm::class, 'kategori_umkm_id');
     }
-
-    public function getGambarAttribute()
-    {
-        if (!$this->attributes['gambar']) {
-            return null;
-        }
-
-        return asset('storage/' . $this->attributes['gambar']);
-    }
 }
