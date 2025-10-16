@@ -352,7 +352,7 @@
                                     Terhubung seputar informasi kegiatan dan berita desa terkini
                                 </h1>
                             </div>
-                            @if ($latest->isNotEmpty())
+                            @if ($latest->isNotEmpty() && $latest->count() >= 4)
                                 <div class="grid grid-cols-1 gap-8 md:gap-10 lg:grid-cols-2">
                                     <div class="row-span-1 lg:row-span-3">
                                         <div class="hidden lg:block">
