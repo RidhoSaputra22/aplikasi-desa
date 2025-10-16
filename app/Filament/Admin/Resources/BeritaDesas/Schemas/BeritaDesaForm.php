@@ -25,15 +25,6 @@ class BeritaDesaForm
                     ->visibility('public')
                     ->required(),
                 TextInput::make('judul')
-                    ->required()
-                    ->afterStateUpdated(function (Get $get, Set $set, ?string $state) {
-                        if ($get('slug') !== Str::slug($state)) {
-                            $set('slug', Str::slug($state));
-                        }
-                    }),
-                TextInput::make('slug')
-                    ->disabled()
-                    ->unique(table: 'berita_desas', ignorable: fn($record) => $record)
                     ->required(),
                 RichEditor::make('isi')
                     ->required()

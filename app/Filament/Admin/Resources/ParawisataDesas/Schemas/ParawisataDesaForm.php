@@ -24,17 +24,9 @@ class ParawisataDesaForm
                     ->required(),
 
                 TextInput::make('title')
-                    ->required()
-                    ->afterStateUpdated(function (Get $get, Set $set, ?string $state) {
-                        if ($get('slug') !== Str::slug($state)) {
-                            $set('slug', Str::slug($state));
-                        }
-                    }),
-                TextInput::make('slug')
-                    ->disabled()
-                    ->unique(table: 'parawisata_desas', ignorable: fn($record) => $record)
                     ->required(),
-                TextInput::make('alamat'),
+                TextInput::make('alamat')
+                    ->columnSpan(2),
                 RichEditor::make('deskripsi')
                     ->columnSpanFull(),
                 FileUpload::make('galeri')

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
 class BeritaDesa extends Model
@@ -20,5 +21,20 @@ class BeritaDesa extends Model
         }
 
         return asset('storage/' . $this->attributes['gambar']);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model) {
+            $model->slug = Str::slug($model->judul);
+        });
+
+        static::updating(function ($model) {
+            if ($model->isDirty('judul')) {
+                $model->slug = Str::slug($model->judul);
+            }
+        });
     }
 }
