@@ -92,6 +92,10 @@
                                 class="text-xl tracking-wide text-center capitalize transition md:text-2xl hover:text-green-600 text-black">
                                 data desa
                             </a>
+                            <a href="{{ route('cek-data') }}"
+                                class="text-xl tracking-wide text-center capitalize transition md:text-2xl hover:text-green-600 text-black">
+                                cek-data
+                            </a>
                             <a href="{{ route('surat-online') }}"
                                 class="text-xl tracking-wide text-center capitalize transition md:text-2xl hover:text-green-600 text-black">
                                 surat online
