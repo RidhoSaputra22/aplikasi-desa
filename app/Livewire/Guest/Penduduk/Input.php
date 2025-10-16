@@ -83,19 +83,21 @@ class Input extends ModalComponent
     {
         $this->link = $link;
         // Generate random data for all inputs
-        $this->noKk = str_pad(rand(1000000000000000, 9999999999999999), 16, '0', STR_PAD_LEFT);
-        $this->nik = str_pad(rand(1000000000000000, 9999999999999999), 16, '0', STR_PAD_LEFT);
-        $this->namaLengkap = $this->generateRandomName();
-        $this->jenisKelamin = rand(0, 1) ? 'L' : 'P';
-        $this->tanggalLahir = date('Y-m-d', rand(strtotime('1950-01-01'), strtotime('2005-12-31')));
-        $this->statusKeluarga = StatusKeluarga::inRandomOrder()->first()->id;
-        $this->statusKawin = StatusKawin::inRandomOrder()->first()->id;
-        $this->agama = Agama::inRandomOrder()->first()->id;
-        $this->pendidikan = Pendidikan::inRandomOrder()->first()->id;
-        $this->pekerjaan = Pekerjaan::inRandomOrder()->first()->id;
-        $this->bantuan = JenisBantuan::inRandomOrder()->first()->id;
-        $this->kemiskinan = KategoriKemiskinan::inRandomOrder()->first()->id;
-        $this->pemasukanBulanan = rand(500000, 10000000);
+        if (env('APP_DEBUG')) {
+            $this->noKk = str_pad(rand(1000000000000000, 9999999999999999), 16, '0', STR_PAD_LEFT);
+            $this->nik = str_pad(rand(1000000000000000, 9999999999999999), 16, '0', STR_PAD_LEFT);
+            $this->namaLengkap = $this->generateRandomName();
+            $this->jenisKelamin = rand(0, 1) ? 'L' : 'P';
+            $this->tanggalLahir = date('Y-m-d', rand(strtotime('1950-01-01'), strtotime('2005-12-31')));
+            $this->statusKeluarga = StatusKeluarga::inRandomOrder()->first()->id;
+            $this->statusKawin = StatusKawin::inRandomOrder()->first()->id;
+            $this->agama = Agama::inRandomOrder()->first()->id;
+            $this->pendidikan = Pendidikan::inRandomOrder()->first()->id;
+            $this->pekerjaan = Pekerjaan::inRandomOrder()->first()->id;
+            $this->bantuan = JenisBantuan::inRandomOrder()->first()->id;
+            $this->kemiskinan = KategoriKemiskinan::inRandomOrder()->first()->id;
+            $this->pemasukanBulanan = rand(500000, 10000000);
+        }
     }
 
     private function generateRandomName()
