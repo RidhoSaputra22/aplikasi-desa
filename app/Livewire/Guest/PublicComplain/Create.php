@@ -40,11 +40,11 @@ class Create extends ModalComponent
 
     public function mount()
     {
-        $this->name = "TEST";
-        $this->mobilePhoneNumber = "081234567890";
-        $this->address = "Jl. Contoh Alamat No.123, Kota Contoh";
-        $this->complaint = "Ini adalah contoh isi pengaduan masyarakat untuk keperluan testing aplikasi.";
-        $this->images = [];
+        // $this->name = "TEST";
+        // $this->mobilePhoneNumber = "081234567890";
+        // $this->address = "Jl. Contoh Alamat No.123, Kota Contoh";
+        // $this->complaint = "Ini adalah contoh isi pengaduan masyarakat untuk keperluan testing aplikasi.";
+        // $this->images = [];
     }
 
     public function submit()

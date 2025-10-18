@@ -71,7 +71,7 @@
                 <td style="width: 7.5rem; vertical-align: top;">Jenis Kelamin</td>
                 <td style="width: 1.25rem; text-align: center;">:</td>
                 <td>{{ $dataPenduduk->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
-            </tr>
+            </tr>n
             <tr>
                 <td style="width: 7.5rem; vertical-align: top;">Pekerjaan</td>
                 <td style="width: 1.25rem; text-align: center;">:</td>

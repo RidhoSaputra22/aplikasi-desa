@@ -164,8 +164,8 @@
                             </div>
                         </div>
                         <div class="order-1 hidden lg:block">
-                            <img src="https://kotomesjid.com/storage/image/hero/kantor-desa-koto-mesjid.jpg"
-                                alt="kantor-kelurahan-tuwung" class="object-cover w-full h-96 rounded-xl hero-image">
+                            <img src="{{ asset('storage/banner/banner-1.jpg') }}" alt="kantor-kelurahan-tuwung"
+                                class="object-cover w-full h-96 rounded-xl hero-image">
                         </div>
                     </div>
                 </div>

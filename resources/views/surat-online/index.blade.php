@@ -30,8 +30,7 @@
                     <div
                         class="max-w-6xl py-32 pt-0 md:pt-20 mx-auto space-y-24 md:space-y-32 lg:space-y-40 relative z-[1]">
                         <div class="grid grid-cols-1 gap-10 md:gap-20 lg:gap-40 ">
-                            <img src="https://kotomesjid.com/storage/image/hero/satu-tentukan-surat-online.png"
-                                alt="tentukan surat online"
+                            <img src="{{ asset('storage/assets/surat-0.png') }}" alt="tentukan surat online"
                                 class="object-cover w-full border-4 border-green-600 rounded-xl title h-80 lg:h-96">
                             <div class="place-self-center">
                                 <h1
@@ -40,8 +39,7 @@
                                 </h1>
                             </div>
                             <div class="grid grid-cols-1 gap-10 md:gap-20 lg:gap-40 lg:grid-cols-2">
-                                <img src="https://kotomesjid.com/storage/image/hero/dua-isi-formulir.png"
-                                    alt="tentukan surat online"
+                                <img src="{{ asset('storage/assets/surat-1.png') }}" alt="tentukan surat online"
                                     class="object-cover w-full border-4 border-green-600 rounded-xl title h-80 lg:h-96">
                                 <div class="place-self-center">
                                     <h1
@@ -51,8 +49,7 @@
                                 </div>
                             </div>
                             <div class="grid grid-cols-1 gap-10 md:gap-20 lg:gap-40 lg:grid-cols-2">
-                                <img src="https://kotomesjid.com/storage/image/hero/tiga-unduh-bukti-pembuatan-surat.png"
-                                    alt="tentukan surat online"
+                                <img src="{{ asset('storage/assets/surat-2.png') }}" alt="tentukan surat online"
                                     class="object-cover w-full border-4 border-green-600 rounded-xl title h-80 lg:h-96">
                                 <div class="place-self-center">
                                     <h1
@@ -63,8 +60,7 @@
                                 </div>
                             </div>
                             <div class="grid grid-cols-1 gap-10 md:gap-20 lg:gap-40 lg:grid-cols-2">
-                                <img src="https://kotomesjid.com/storage/image/hero/empat-monitoring-surat-online.png"
-                                    alt="tentukan surat online"
+                                <img src="{{ asset('storage/assets/surat-3.png') }}" alt="tentukan surat online"
                                     class="object-cover w-full border-4 border-green-600 rounded-xl title h-80 lg:h-96">
                                 <div class="place-self-center">
                                     <h1
@@ -75,8 +71,7 @@
                                 </div>
                             </div>
                             <div class="grid grid-cols-1 gap-10 md:gap-20 lg:gap-40 lg:grid-cols-2">
-                                <img src="https://kotomesjid.com/storage/image/hero/lima-unduh-surat-keterangan.png"
-                                    alt="tentukan surat online"
+                                <img src="{{ asset('storage/assets/surat-4.png') }}" alt="tentukan surat online"
                                     class="object-cover w-full border-4 border-green-600 rounded-xl title h-80 lg:h-96">
                                 <div class="place-self-center">
                                     <h1

@@ -24,7 +24,7 @@
             <section class="relative content text-center lg:text-left">
                 <div class="grid max-w-6xl grid-cols-1 gap-10 py-20 pt-0 mx-auto lg:gap-20 lg:pt-20 lg:grid-cols-5">
                     <div class="col-span-1 lg:col-span-2">
-                        <img src="https://kotomesjid.com/storage/image/hero/desa-koto-mesjid.jpg" alt="desa-koto-mesjid"
+                        <img src="{{ asset('storage/banner/banner-1.jpg') }}"
                             class="object-cover w-full h-96 lg:h-[600px] rounded-xl">
                     </div>
                     <div class="col-span-1 space-y-10 lg:col-span-3">
@@ -58,8 +58,8 @@
                         </div>
                     </div>
                     <div class="col-span-1 lg:col-span-2">
-                        <img src="https://kotomesjid.com/storage/image/hero/desa-wisata-kampung-patin.jpg"
-                            alt="desa-koto-mesjid" class="object-cover w-full h-96 lg:h-[600px] rounded-xl">
+                        <img src="{{ asset('storage/banner/banner-3.jpg') }}" alt="desa-koto-mesjid"
+                            class="object-cover w-full h-96 lg:h-[600px] rounded-xl">
                     </div>
                 </div>
             </section>

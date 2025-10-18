@@ -32,8 +32,7 @@
                     <div
                         class="max-w-6xl py-32 pt-0 md:pt-20 mx-auto space-y-24 md:space-y-32 lg:space-y-40 relative z-[1]">
                         <div class="grid grid-cols-1 gap-10 md:gap-20 lg:gap-40 lg:grid-cols-2">
-                            <img src="https://kotomesjid.com/storage/image/hero/public-complaint-step-1.png"
-                                alt="tentukan surat online"
+                            <img src="{{ asset('storage/assets/pengaduan-1.png') }}" alt="tentukan surat online"
                                 class="object-cover w-full border-4 border-black rounded-xl h-72 lg:h-80 title">
                             <div class="space-y-3 place-self-center description">
                                 <h1 class="text-4xl font-bold leading-tight text-center text-black capitalize md:text-left">
@@ -46,8 +45,7 @@
                             </div>
                         </div>
                         <div class="grid grid-cols-1 gap-10 md:gap-20 lg:gap-40 lg:grid-cols-2">
-                            <img src="https://kotomesjid.com/storage/image/hero/public-complaint-step-2.png"
-                                alt="tentukan surat online"
+                            <img src="{{ asset('storage/assets/pengaduan-2.png') }}" alt="tentukan surat online"
                                 class="object-cover w-full border-4 border-black rounded-xl h-72 lg:h-80 title">
                             <div class="space-y-3 place-self-center description">
                                 <h1 class="text-4xl font-bold leading-tight text-center text-black capitalize md:text-left">
@@ -60,8 +58,7 @@
                             </div>
                         </div>
                         <div class="grid grid-cols-1 gap-10 md:gap-20 lg:gap-40 lg:grid-cols-2">
-                            <img src="https://kotomesjid.com/storage/image/hero/public-complaint-step-3.png"
-                                alt="tentukan surat online"
+                            <img src="{{ asset('storage/assets/pengaduan-3.png') }}" alt="tentukan surat online"
                                 class="object-cover w-full border-4 border-black rounded-xl h-72 lg:h-80 title">
                             <div class="space-y-3 place-self-center description">
                                 <h1 class="text-4xl font-bold leading-tight text-center text-black capitalize md:text-left">
