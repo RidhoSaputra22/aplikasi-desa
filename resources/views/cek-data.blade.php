@@ -59,6 +59,7 @@
                                                 <th class="px-4 py-3 text-left">Penghasilan Bulanan</th>
                                                 <th class="px-4 py-3 text-left">Kategori Kemiskinan</th>
                                                 <th class="px-4 py-3 text-left">Jenis Bantuan</th>
+                                                <th class="px-4 py-3 text-left">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -71,6 +72,13 @@
                                                     {{ number_format(session('success')['penghasilan_bulanan']) }}</td>
                                                 <td class="px-4 py-3">{{ session('success')['kategori_kemiskinan'] }}</td>
                                                 <td class="px-4 py-3">{{ session('success')['jenis_bantuan'] }}</td>
+                                                <td class="px-4 py-3">
+                                                    <a href="{{ route('surat-online.surat-bantuan', ['nik' => session('success')['nik']]) }}"
+                                                        target="_blank"
+                                                        class="px-4 py-2 text-sm text-white bg-green-600 rounded-lg hover:bg-green-700">
+                                                        Unduh Surat
+                                                    </a>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -108,12 +116,17 @@
                                             <p class="text-xs text-gray-500 uppercase">Jenis Bantuan</p>
                                             <p class="font-semibold">{{ session('success')['jenis_bantuan'] }}</p>
                                         </div>
+                                        <div>
+                                            <a href="{{ route('surat-online.surat-bantuan', ['nik' => session('success')['nik']]) }}"
+                                                target="_blank"
+                                                class="inline-block px-4 py-2 text-sm text-white bg-green-600 rounded-lg hover:bg-green-700">
+                                                Unduh Surat
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-                    </div>
                 </section>
             </div>
         @else

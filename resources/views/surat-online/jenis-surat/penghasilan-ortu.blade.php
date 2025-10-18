@@ -188,10 +188,10 @@
                     <div style="height: 3rem;"></div>
 
                     <p style="font-weight: bold; text-decoration: underline;">
-                        {{ $certificate->village_head_name ?? 'Arjunalis' }}
+                        {{ $certificate->name ?? 'Arjunalis' }}
                     </p>
                     <p style="margin-top: 0.125rem;">
-                        NIP: {{ $certificate->village_head_nip ?? '-' }}
+                        {{-- NIP: {{ $certificate->village_head_nip ?? '-' }} --}}
                     </p>
                 </td>
             </tr>

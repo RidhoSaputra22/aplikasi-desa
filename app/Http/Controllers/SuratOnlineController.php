@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Enums\CertificateStatus;
+use App\Models\DataPenduduk;
 use Illuminate\Http\Request;
 use App\Enums\CertificateType;
 use Barryvdh\DomPDF\Facade\Pdf;
+use App\Enums\CertificateStatus;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class SuratOnlineController extends Controller
@@ -133,5 +134,17 @@ class SuratOnlineController extends Controller
         $pdf->setPaper(array(0, 0, 609.4488, 935.433), 'portrait');
 
         return $pdf->stream("bukti-pembuatan-surat-{$jenis}-{$code}.pdf");
+    }
+
+    public function suratBantuan($nik)
+    {
+
+        $dataPenduduk = DataPenduduk::where('nik', $nik)->first();
+        $now = now()->format('Y-m-d_H-i-s');
+
+        return Pdf::loadView('surat-online.jenis-surat.terima-bantuan', [
+            'dataPenduduk' => $dataPenduduk,
+            'jenisSurat' => 'SURAT KETERANGAN PENERIMAAN BANTUAN',
+        ])->setPaper(array(0, 0, 609.4488, 945.433), 'portrait')->stream("surat-bantuan-{$now}.pdf");
     }
 }

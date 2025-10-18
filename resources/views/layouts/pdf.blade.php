@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Bukti Pembuatan {{ $jenisSurat }} - {{ $code }}</title>
+    <title>Bukti Pembuatan {{ $jenisSurat ?? '' }} - {{ $code ?? '' }}</title>
 
     <style>
         * {

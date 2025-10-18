@@ -25,6 +25,7 @@ Route::group(['prefix' => 'surat-online'], function () {
     Route::get('bukti-pembuatan-surat/{jenis}/{code}', [SuratOnlineController::class, 'buktiPembuatanSurat'])->name('surat-online.bukti-pembuatan-surat');
     Route::get('status/{jenis}/{code}', [SuratOnlineController::class, 'status'])->name('surat-online.status');
     Route::get('lihat/{jenis}/{code}', [SuratOnlineController::class, 'lihat'])->name('surat-online.lihat');
+    Route::get('surat-bantuan/{nik}', [SuratOnlineController::class, 'suratBantuan'])->name('surat-online.surat-bantuan');
 });
 
 Route::get('/publikasi', [GuestController::class, 'publikasi'])->name('publikasi');
