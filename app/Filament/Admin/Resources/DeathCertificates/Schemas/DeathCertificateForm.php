@@ -14,6 +14,9 @@ class DeathCertificateForm
     {
         return $schema
             ->components([
+                TextInput::make('no_surat')
+                    ->label('Nomor Surat')
+                    ->required(),
                 TextInput::make('name')
                     ->label('Nama')
                     ->required(),

@@ -9,7 +9,7 @@
             {{ $jenisSurat }}
         </h2>
         <p style="font-size: 0.875rem; margin-top: 0.25rem;">
-            Nomor:
+            Nomor: {{ $certificate->no_surat }}
         </p>
     </div>
 
@@ -105,22 +105,7 @@
 
     <!-- Keterangan Usaha -->
     <div style="margin-top: 0.5rem;  line-height: 1.625;">
-        <p style="text-align: justify;">
-            Adalah benar Penduduk Desa Kelurahan Tuwung Kecamatan XIII Koto Kampar Kabupaten
-            Kampar, menurut sepengetahuan kami benar mempunyai/memiliki usaha uang bergerak
-            dibidang:
-        </p>
 
-        <div style="text-align: center; ">
-            <h3 style="font-size: 1rem; font-weight: bold; text-decoration: underline;">
-                {{ $certificate->business_type ?? 'Usaha Buah' }}
-            </h3>
-        </div>
-
-        <p style="text-align: justify; margin-top: 1rem;">
-            Usaha uang dimiliki oleh yang bersangkutan benar berada di wilayah Desa Kelurahan Tuwung
-            {{ $certificate->business_description ?? 'dengan alamat usaha di Jl. Poros Desa Kelurahan Tuwung.' }}
-        </p>
     </div>
 
     <!-- Penutup -->
@@ -145,14 +130,16 @@
                         Kepala Desa Kelurahan Tuwung
                     </p>
 
-                    <!-- Space untuk tanda tangan -->
-                    <div style="height: 5rem;"></div>
+                    <div style="margin: 1.5rem 0;">
+                        <img src="data:image/png;base64,{{ $qrcode }}" alt="QR Code"
+                            style="width:100px; height:100px; margin-bottom: 10px;">
+                    </div>
 
                     <p style="font-weight: bold; text-decoration: underline;">
-                        {{ $certificate->village_head_name ?? 'Arjunalis' }}
+                        {{ $kepalaLurah->nama }}
                     </p>
                     <p style="margin-top: 0.125rem;">
-                        NIP: {{ $certificate->village_head_nip ?? '-' }}
+                        NIP: {{ $kepalaLurah->nip ?? '-' }}
                     </p>
                 </td>
             </tr>

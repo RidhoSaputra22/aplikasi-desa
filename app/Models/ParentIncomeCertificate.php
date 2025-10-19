@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class ParentIncomeCertificate extends Model
 {
     protected $fillable = [
+        'no_surat',
+
         // Data diri
         'name',
         'place_of_birth',

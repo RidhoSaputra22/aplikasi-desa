@@ -3,6 +3,7 @@
 namespace App\Filament\Admin\Resources\AparaturDesas\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\ImageColumn;
@@ -37,10 +38,23 @@ class AparaturDesasTable
             ])
             ->recordActions([
                 EditAction::make(),
+
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
-                    DeleteBulkAction::make(),
+                    DeleteBulkAction::make()
+                        ->action(function (\Illuminate\Support\Collection $records) {
+                            $toDelete = $records->reject(fn($record) => $record->jabatan === 'Kepala Lurah');
+                            $skipped = $records->count() - $toDelete->count();
+
+                            $toDelete->each->delete();
+
+                            if ($skipped > 0) {
+                                \Filament\Notifications\Notification::make()
+                                    ->warning("{$skipped} item(s) tidak dihapus karena jabatan 'Kepala Lurah'.")
+                                    ->send();
+                            }
+                        }),
                 ]),
             ]);
     }

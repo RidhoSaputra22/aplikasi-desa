@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class DeathCertificate extends Model
 {
     protected $fillable = [
+        'no_surat',
+
         // Data diri almarhum
         'name',
         'place_of_birth',

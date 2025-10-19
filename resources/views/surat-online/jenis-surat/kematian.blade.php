@@ -9,7 +9,7 @@
             {{ $jenisSurat }}
         </h2>
         <p style="font-size: 0.875rem; margin-top: 0.25rem;">
-            Nomor: {{ $certificate->code ?? '500/KESRA/KM/2022/01' }}
+            Nomor: {{ $certificate->no_surat ?? '-' }}
         </p>
     </div>
 
@@ -68,14 +68,16 @@
                         Kepala Desa Kelurahan Tuwung
                     </p>
 
-                    <!-- Space untuk tanda tangan -->
-                    <div style="height: 5rem;"></div>
+                    <div style="margin: 1.5rem 0;">
+                        <img src="data:image/png;base64,{{ $qrcode }}" alt="QR Code"
+                            style="width:100px; height:100px; margin-bottom: 10px;">
+                    </div>
 
                     <p style="font-weight: bold; text-decoration: underline;">
-                        {{ $certificate->village_head_name ?? 'Arjunalis' }}
+                        {{ $kepalaLurah->nama }}
                     </p>
                     <p style="margin-top: 0.125rem;">
-                        NIP: {{ $certificate->village_head_nip ?? '-' }}
+                        NIP: {{ $kepalaLurah->nip ?? '-' }}
                     </p>
                 </td>
             </tr>

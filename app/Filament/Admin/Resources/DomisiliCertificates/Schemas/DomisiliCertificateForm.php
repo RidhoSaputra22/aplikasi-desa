@@ -15,6 +15,9 @@ class DomisiliCertificateForm
     {
         return $schema
             ->components([
+                TextInput::make('no_surat')
+                    ->label('Nomor Surat')
+                    ->required(),
                 FileUpload::make('attachment')
                     ->label('Lampiran')
                     ->disk('local')

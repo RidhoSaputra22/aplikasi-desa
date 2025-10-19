@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class BirthCertificate extends Model
 {
     protected $fillable = [
+        'no_surat',
+
         // Data bayi
         'baby_name',
         'place_of_birth',

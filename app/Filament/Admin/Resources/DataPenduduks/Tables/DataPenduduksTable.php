@@ -2,11 +2,12 @@
 
 namespace App\Filament\Admin\Resources\DataPenduduks\Tables;
 
+use Filament\Tables\Table;
+use Filament\Actions\Action;
+use Filament\Actions\EditAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
 
 class DataPenduduksTable
 {
@@ -55,6 +56,12 @@ class DataPenduduksTable
             ])
             ->recordActions([
                 EditAction::make(),
+                Action::make('view')
+                    ->label('Lihat Surat')
+                    ->url(fn($record) => route('surat-online.surat-bantuan', $record->nik))
+                    ->openUrlInNewTab()
+                    ->color('info')
+                    ->icon('heroicon-o-eye'),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Model;
 class TidakMampuCertificate extends Model
 {
     protected $fillable = [
+        'no_surat',
+
         // Data diri
         'name',
         'id_card_number',

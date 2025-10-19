@@ -9,7 +9,7 @@
             {{ $jenisSurat }}
         </h2>
         <p style="font-size: 0.875rem; margin-top: 0.25rem;">
-            Nomor: {{ $certificate->code ?? '500/KESRA/KM/2022/01' }}
+            Nomor: {{ $dataPenduduk->no_surat ?? '-' }}
         </p>
     </div>
 
@@ -23,17 +23,19 @@
             <tr>
                 <td style="width: 10.5rem; vertical-align: top;">Nama</td>
                 <td style="width: 4.25rem; text-align: center;">:</td>
-                <td></td>
+                <td>{{ $kepalaLurah->nama }}</td>
             </tr>
             <tr>
                 <td style="width: 7.5rem; vertical-align: top;">NIP</td>
                 <td style="width: 1.25rem; text-align: center;">:</td>
-                <td></td>
+                <td>{{ $kepalaLurah->nip }}</td>
+
             </tr>
             <tr>
                 <td style="width: 7.5rem; vertical-align: top;">Jabatan</td>
                 <td style="width: 1.25rem; text-align: center;">:</td>
-                <td></td>
+                <td>{{ $kepalaLurah->jabatan }}</td>
+
             </tr>
 
 
@@ -60,12 +62,13 @@
             <tr>
                 <td style="width: 10.5rem; vertical-align: top;">Tanggal Lahir</td>
                 <td style="width: 4.25rem; text-align: center;">:</td>
-                <td>{{ \Carbon\Carbon::parse($dataPenduduk->tanggal_lahir)->locale() }}</td>
+                <td>{{ \Carbon\Carbon::parse($dataPenduduk->tanggal_lahir)->locale('id')->translatedFormat('l, d F Y') }}
+                </td>
             </tr>
             <tr>
                 <td style="width: 7.5rem; vertical-align: top;">Alamat</td>
                 <td style="width: 1.25rem; text-align: center;">:</td>
-                <td>{{ $dataPenduduk->alamat }}</td>
+                <td>{{ $dataPenduduk->alamat ?? 'Kelurahan Tuwung' }}</td>
             </tr>
             <tr>
                 <td style="width: 7.5rem; vertical-align: top;">Jenis Kelamin</td>
@@ -85,8 +88,8 @@
     <div style="margin-top: 0.5rem;  line-height: 1.625;">
         <p style="text-align: justify;">
             Bahwa yang tersebut namanya diatas benar warga Kelurahan Tuwung, Kecamatan
-            Barru, Kabupaten Barru, benar telah menerima bantuan (JENIS BANTUAN YANG TELAH
-            DITERIMA) sesuai dengan ketentuan yang berlaku.
+            Barru, Kabupaten Barru, benar telah menerima bantuan
+            {{ $dataPenduduk->jenisBantuan->nama_bantuan ?? 'Bantuan Sosial' }} sesuai dengan ketentuan yang berlaku.
         </p>
 
         <p style="text-align: justify;">
@@ -106,14 +109,17 @@
                     <p style="margin: 0 0 0 10px; font-weight: bold;">An. LURAH TUWUNG</p>
 
 
-                    <!-- Space untuk tanda tangan -->
-                    <div style="height: 3rem;"></div>
+                    <div style="margin: 1.5rem 0;">
+                        <img src="data:image/png;base64,{{ $qrcode }}" alt="QR Code"
+                            style="width:100px; height:100px; margin-bottom: 10px;">
+                    </div>
+
 
                     <p style="font-weight: bold; text-decoration: underline;">
-                        {{ $certificate->village_head_name ?? 'Arjunalis' }}
+                        {{ $kepalaLurah->nama ?? 'Arjunalis' }}
                     </p>
                     <p style="margin-top: 0.125rem;">
-                        NIP: {{ $certificate->village_head_nip ?? '-' }}
+                        NIP: {{ $kepalaLurah->nip ?? '-' }}
                     </p>
                 </td> <!-- Kosong di sisi kiri -->
                 <td style="width: 50%; text-align: start;">
@@ -124,15 +130,16 @@
                         Yang Membuat Pernyataan,
                     </p>
 
-                    <!-- Space untuk tanda tangan -->
-                    <div style="height: 3rem;"></div>
+                    <div style="margin: 1.5rem 0;">
+                        <div style="width:100px; height:100px; margin-bottom: 10px;">
+                        </div>
 
-                    <p style="font-weight: bold; text-decoration: underline;">
-                        {{ $certificate->name ?? 'Arjunalis' }}
-                    </p>
-                    <p style="margin-top: 0.125rem;">
-                        {{-- NIP: {{ $certificate->village_head_nip ?? '-' }} --}}
-                    </p>
+                        <p style="font-weight: bold; text-decoration: underline;">
+                            {{ $certificate->name ?? 'Arjunalis' }}
+                        </p>
+                        <p style="margin-top: 0.125rem;">
+                            {{-- NIP: {{ $certificate->village_head_nip ?? '-' }} --}}
+                        </p>
                 </td>
             </tr>
         </table>

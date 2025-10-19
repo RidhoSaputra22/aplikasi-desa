@@ -14,8 +14,6 @@
         body {
             font-family: "Times New Roman", serif;
             font-size: 12pt;
-            margin: 20px 30px;
-            /* line-height: 0.05; */
             color: #000;
         }
 

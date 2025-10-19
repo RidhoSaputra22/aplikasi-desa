@@ -14,6 +14,9 @@ class BirthCertificateForm
     {
         return $schema
             ->components([
+                TextInput::make('no_surat')
+                    ->label('Nomor Surat')
+                    ->required(),
                 TextInput::make('baby_name')
                     ->label('Nama Bayi')
                     ->required(),

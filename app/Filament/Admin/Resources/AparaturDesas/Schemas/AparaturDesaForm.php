@@ -2,6 +2,7 @@
 
 namespace App\Filament\Admin\Resources\AparaturDesas\Schemas;
 
+use App\Models\AparaturDesa;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;

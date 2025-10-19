@@ -129,8 +129,10 @@
                         Kepala Desa Kelurahan Tuwung
                     </p>
 
-                    <!-- Space untuk tanda tangan -->
-                    <div style="height: 5rem;"></div>
+                    <div style="margin: 1.5rem 0;">
+                        <img src="data:image/png;base64,{{ $qrcode }}" alt="QR Code"
+                            style="width:100px; height:100px; margin-bottom: 10px;">
+                    </div>
 
                     <p style="font-weight: bold; text-decoration: underline;">
                         {{ $certificate->village_head_name ?? 'Arjunalis' }}
