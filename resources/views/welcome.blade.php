@@ -179,7 +179,7 @@
                             <div class="order-2 space-y-10 lg:order-1">
                                 <h3
                                     class="text-lg font-bold tracking-widest text-center text-green-600 uppercase lg:text-left title">
-                                    selayang pandang
+                                    Sappo-sappo ripaommu
                                 </h3>
                                 <div class="space-y-5 text-center divide-y divide-slate-200 lg:text-left description">
                                     <p class="text-xl font-light leading-relaxed">
@@ -192,7 +192,7 @@
                                     </p>
                                     <div class="pt-5 space-y-1">
                                         <h6 class="text-xl font-semibold">
-                                            Arjunalis
+                                            Iin Anggraini, S.STP
                                         </h6>
                                         <p class="text-lg font-light">
                                             Lurah Kelurahan Tuwung
