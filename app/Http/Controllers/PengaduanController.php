@@ -20,6 +20,7 @@ class PengaduanController extends Controller
     {
         $link = route('pengaduan-masyarakat.status', ['code' => $code]);
 
+
         $qrcode = base64_encode(
             QrCode::format('png')
                 ->size(200)

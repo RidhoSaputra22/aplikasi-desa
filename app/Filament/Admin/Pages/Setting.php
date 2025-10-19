@@ -42,6 +42,19 @@ class Setting extends Page
                             ->success()
                             ->send();
                     }),
+                Action::make('Composer Update')
+                    ->action('composerUpdate')
+                    ->color('primary')
+                    ->icon(Heroicon::OutlinedArrowPath)
+                    ->label('Composer Update')
+                    ->action(function () {
+                        // Logic to run composer update
+                        Artisan::call('composer:update');
+                        Notification::make()
+                            ->title('Composer packages updated successfully.')
+                            ->success()
+                            ->send();
+                    }),
 
             ])
             ->columns(3)
