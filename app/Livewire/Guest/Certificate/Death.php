@@ -56,7 +56,7 @@ class Death extends ModalComponent
         'yearOfBirth' => 'required|integer|min:1900|max:2024',
         'religion' => 'required|string|min:2|max:50',
         'profession' => 'required|string|min:2|max:100',
-        'address' => 'required|string|min:10|max:500',
+        'address' => 'required|string|max:500',
 
         // Data keterangan kematian
         'placeOfDeath' => 'required|string|min:2|max:100',

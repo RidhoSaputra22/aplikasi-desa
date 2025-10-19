@@ -17,10 +17,13 @@ class ParentIncomeCertificatesTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label('Nama')
                     ->searchable(),
                 TextColumn::make('code')
+                    ->label('Kode')
                     ->searchable(),
                 SelectColumn::make('confirmation_status')
+                    ->label('Status Konfirmasi')
                     ->options(CertificateStatus::class)
                     ->sortable()
                     ->searchable(),

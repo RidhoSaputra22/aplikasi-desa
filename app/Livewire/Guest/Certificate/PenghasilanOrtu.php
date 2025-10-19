@@ -80,7 +80,7 @@ class PenghasilanOrtu extends ModalComponent
         'yearOfBirth' => 'required|integer|min:1900|max:2025',
         'religion' => 'required|string|min:2|max:50',
         'profession' => 'required|string|min:2|max:100',
-        'address' => 'required|string|min:10|max:500',
+        'address' => 'required|string|max:500',
 
         // Data orang tua atau wali
         'parentName' => 'required|string|min:2|max:100',
@@ -90,7 +90,7 @@ class PenghasilanOrtu extends ModalComponent
         'parentYearOfBirth' => 'required|integer|min:1900|max:2024',
         'parentReligion' => 'required|string|min:2|max:50',
         'parentProfession' => 'required|string|min:2|max:100',
-        'parentAddress' => 'required|string|min:10|max:500',
+        'parentAddress' => 'required|string|max:500',
 
         // Data keterangan penghasilan
         'nominalIncome' => 'required|numeric|min:0|max:999999999',

@@ -17,10 +17,13 @@ class BirthCertificatesTable
         return $table
             ->columns([
                 TextColumn::make('baby_name')
+                    ->label('Nama bayi')
                     ->searchable(),
                 TextColumn::make('code')
+                    ->label('Kode Surat')
                     ->searchable(),
                 SelectColumn::make('confirmation_status')
+                    ->label('Status Konfirmasi')
                     ->options(CertificateStatus::class)
                     ->sortable()
                     ->searchable(),

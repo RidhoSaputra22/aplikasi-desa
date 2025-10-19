@@ -62,7 +62,7 @@ class TidakMampu extends ModalComponent
         'religion' => 'required|string|min:2|max:50',
         'gender' => 'required|in:L,P',
         'profession' => 'required|string|min:2|max:100',
-        'address' => 'required|string|min:10|max:500',
+        'address' => 'required|string|max:500',
 
         // Data keterangan
         'usedFor' => 'required|string|min:5|max:200',

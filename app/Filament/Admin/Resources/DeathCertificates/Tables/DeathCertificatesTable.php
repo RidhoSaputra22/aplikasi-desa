@@ -17,10 +17,13 @@ class DeathCertificatesTable
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label('Nama almarhum/almarhumah')
                     ->searchable(),
                 TextColumn::make('code')
+                    ->label('Kode Surat')
                     ->searchable(),
                 SelectColumn::make('confirmation_status')
+                    ->label('Status Konfirmasi')
                     ->options(CertificateStatus::class)
                     ->sortable()
                     ->searchable(),

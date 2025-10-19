@@ -64,7 +64,7 @@ class Domisili extends ModalComponent
         'neighbourhood' => 'required|string|min:1|max:50',
         'hamlet' => 'required|string|min:2|max:100',
         'village' => 'required|string|min:2|max:100',
-        'address' => 'required|string|min:10|max:500',
+        'address' => 'required|string|max:500',
 
         // Lampiran persyaratan
         'attachment' => 'required|file|mimes:pdf,jpg,jpeg,png|max:2048',

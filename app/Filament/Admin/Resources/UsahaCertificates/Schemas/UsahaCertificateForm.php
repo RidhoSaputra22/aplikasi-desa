@@ -16,39 +16,61 @@ class UsahaCertificateForm
         return $schema
             ->components([
                 FileUpload::make('attachment')
+                    ->label('Lampiran')
                     ->disk('local')
                     ->directory('attachments/')
                     ->columnSpanFull()
                     ->openable(),
                 TextInput::make('name')
+                    ->label('Nama')
                     ->required(),
                 TextInput::make('id_card_number')
+                    ->label('Nomor KTP')
                     ->required(),
                 TextInput::make('place_of_birth')
+                    ->label('Tempat Lahir')
                     ->required(),
                 TextInput::make('day_of_birth')
+                    ->label('Tanggal Lahir (Hari)')
                     ->required(),
                 TextInput::make('month_of_birth')
+                    ->label('Tanggal Lahir (Bulan)')
                     ->required(),
                 TextInput::make('year_of_birth')
+                    ->label('Tanggal Lahir (Tahun)')
                     ->required(),
-                TextInput::make('religion')
+                Select::make('religion')
+                    ->options([
+                        'Islam' => 'Islam',
+                        'Kristen' => 'Kristen',
+                        'Hindu' => 'Hindu',
+                        'Buddha' => 'Buddha',
+                        'Konghucu' => 'Konghucu',
+                    ])
+                    ->label('Agama')
                     ->required(),
                 Select::make('gender')
-                    ->options(['L' => 'L', 'P' => 'P'])
+                    ->label('Jenis Kelamin')
+                    ->options(['L' => 'Laki-laki', 'P' => 'Perempuan'])
                     ->required(),
                 TextInput::make('profession')
+                    ->label('Pekerjaan')
                     ->required(),
                 Textarea::make('address')
+                    ->label('Alamat')
                     ->required()
                     ->columnSpanFull(),
                 TextInput::make('business_type')
+                    ->label('Jenis Usaha')
                     ->required(),
                 TextInput::make('used_for')
+                    ->label('Digunakan Untuk')
                     ->required(),
                 TextInput::make('code')
+                    ->label('Kode')
                     ->required(),
                 Select::make('confirmation_status')
+                    ->label('Status Konfirmasi')
                     ->options(CertificateStatus::class)
                     ->default('pending')
                     ->required(),

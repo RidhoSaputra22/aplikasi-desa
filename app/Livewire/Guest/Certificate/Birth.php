@@ -92,21 +92,21 @@ class Birth extends ModalComponent
         'motherIdCardNumber' => 'required|string|size:16|regex:/^[0-9]+$/',
         'motherAge' => 'required|integer|min:15|max:60',
         'motherProfession' => 'required|string|min:2|max:100',
-        'motherAddress' => 'required|string|min:10|max:500',
+        'motherAddress' => 'required|string|max:500',
 
         // Data ayah
         'fatherName' => 'required|string|min:2|max:100',
         'fatherIdCardNumber' => 'required|string|size:16|regex:/^[0-9]+$/',
         'fatherAge' => 'required|integer|min:18|max:80',
         'fatherProfession' => 'required|string|min:2|max:100',
-        'fatherAddress' => 'required|string|min:10|max:500',
+        'fatherAddress' => 'required|string|max:500',
 
         // Data pelapor
         'reporterName' => 'required|string|min:2|max:100',
         'reporterIdCardNumber' => 'required|string|size:16|regex:/^[0-9]+$/',
         'reporterAge' => 'required|integer|min:17|max:100',
         'reporterProfession' => 'required|string|min:2|max:100',
-        'reporterAddress' => 'required|string|min:10|max:500',
+        'reporterAddress' => 'required|string|max:500',
     ];
 
     protected $messages = [
