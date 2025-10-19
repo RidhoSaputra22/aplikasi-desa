@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('parawisata_desas', function (Blueprint $table) {
+        Schema::table('aparatur_desas', function (Blueprint $table) {
             //
-            $table->text('link_maps')->nullable();
+            $table->string('nip')->after('nama')->nullable();
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('parawisata_desas', function (Blueprint $table) {
+        Schema::table('aparatur_desas', function (Blueprint $table) {
             //
         });
     }

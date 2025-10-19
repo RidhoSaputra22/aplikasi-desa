@@ -15,6 +15,9 @@ class AparaturDesasTable
     {
         return $table
             ->columns([
+                TextColumn::make('nip')
+                    ->label('NIP')
+                    ->searchable(),
                 TextColumn::make('nama')
                     ->searchable(),
                 TextColumn::make('jabatan')

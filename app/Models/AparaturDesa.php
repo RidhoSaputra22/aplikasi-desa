@@ -9,6 +9,7 @@ class AparaturDesa extends Model
     protected $fillable = [
         'nama',
         'jabatan',
-        'foto'
+        'foto',
+        'nip',
     ];
 }

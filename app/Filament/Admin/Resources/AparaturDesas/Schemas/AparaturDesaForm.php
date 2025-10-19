@@ -14,6 +14,9 @@ class AparaturDesaForm
             ->components([
                 TextInput::make('nama')
                     ->required(),
+                TextInput::make('nip')
+                    ->label('NIP')
+                    ->required(),
                 TextInput::make('jabatan')
                     ->required(),
                 FileUpload::make('foto')
