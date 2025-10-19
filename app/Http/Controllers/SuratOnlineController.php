@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Enums\CertificateType;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Enums\CertificateStatus;
+use Illuminate\Support\Facades\Auth;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class SuratOnlineController extends Controller
@@ -78,12 +79,16 @@ class SuratOnlineController extends Controller
 
     public function lihat($jenis, $code)
     {
+        $certificate = CertificateType::from($jenis)->modelClass()->where('code', $code)->first();
         // Validate the certificate type
         if (!in_array($jenis, CertificateType::route())) {
             abort(404);
         }
 
-        $certificate = CertificateType::from($jenis)->modelClass()->where('code', $code)->first();
+        if ($certificate->confirmation_status !== CertificateStatus::SUCCESS && !Auth::check()) {
+            abort(404);
+        }
+
         $jenisSurat = CertificateType::from($jenis)->label();
         $kepalaLurah = AparaturDesa::where('jabatan', 'Kepala Lurah')->first();
 
@@ -172,6 +177,10 @@ class SuratOnlineController extends Controller
         $dataPenduduk = DataPenduduk::where('nik', $nik)->first();
 
         if ($dataPenduduk === null) {
+            abort(404);
+        }
+
+        if ($dataPenduduk->confirmation_status !== CertificateStatus::SUCCESS && !Auth::check()) {
             abort(404);
         }
 

@@ -60,8 +60,8 @@ class DomisiliCertificatesTable
                     ->color('success')
                     ->icon('heroicon-o-check')
                     ->disabled(fn($record) => $record->confirmation_status === CertificateStatus::SUCCESS)
-                    ->modalHeading('Konfirmasi Surat Kelahiran')
-                    ->modalDescription('Pastikan data sudah benar sebelum melakukan konfirmasi surat kelahiran ini.')
+                    ->modalHeading('Konfirmasi Surat ')
+                    ->modalDescription('Pastikan data sudah benar sebelum melakukan konfirmasi surat ini.')
                     ->schema([
                         TextInput::make('no_surat')
                             ->label('No Surat')

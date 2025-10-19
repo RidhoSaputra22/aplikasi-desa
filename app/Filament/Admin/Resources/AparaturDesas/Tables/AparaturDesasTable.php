@@ -23,7 +23,9 @@ class AparaturDesasTable
                     ->searchable(),
                 TextColumn::make('jabatan')
                     ->searchable(),
-                ImageColumn::make('foto'),
+                ImageColumn::make('foto')
+                    ->disk('public')
+                    ->visibility('public'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

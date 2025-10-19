@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class DataPenduduk extends Model
 {
     protected $fillable = [
+        'no_surat',
         'no_kk',
         'nik',
         'nama_lengkap',
@@ -20,6 +21,8 @@ class DataPenduduk extends Model
         'jenis_bantuan_id',
         'penghasilan_bulanan',
         'kategori_kemiskinan_id',
+
+        'confirmation_status',
     ];
 
     // Define relationships if necessary

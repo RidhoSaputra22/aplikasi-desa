@@ -5,6 +5,7 @@ namespace App\Filament\Admin\Resources\UmkmDesas\Tables;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -19,7 +20,9 @@ class UmkmDesasTable
                 TextColumn::make('harga')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('gambar')
+                ImageColumn::make('gambar')
+                    ->disk('public')
+                    ->visibility('public')
                     ->searchable(),
                 TextColumn::make('no_hp')
                     ->searchable(),
