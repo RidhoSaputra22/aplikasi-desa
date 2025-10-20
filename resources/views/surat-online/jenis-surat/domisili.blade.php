@@ -87,7 +87,7 @@
             <tr>
                 <td style="vertical-align: top;">Jenis kelamin</td>
                 <td style="text-align: center;">:</td>
-                <td>{{ $certificate->gender ?? 'Laki-laki' }}</td>
+                <td>{{ $certificate->gender == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
             </tr>
             <tr>
                 <td style="vertical-align: top;">Pekerjaan</td>
