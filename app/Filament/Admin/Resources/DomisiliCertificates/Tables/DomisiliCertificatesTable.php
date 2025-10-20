@@ -53,7 +53,6 @@ class DomisiliCertificatesTable
                     ->label('Status Konfirmasi')
                     ->options(CertificateStatus::options())
                     ->placeholder('Semua Status'),
-
                 Filter::make('created_from')
                     ->schema([
                         DatePicker::make('created_from')->label('Dari Tanggal'),
@@ -67,8 +66,8 @@ class DomisiliCertificatesTable
                     ])
                     ->query(fn($query, $data) => empty($data['created_until']) ? $query : $query->whereDate('created_at', '<=', $data['created_until']))
                     ->label('Sampai Tanggal'),
-            ])
-            ->filtersLayout(FiltersLayout::AboveContent)
+
+            ], layout: FiltersLayout::AboveContent)
             ->filtersFormColumns(3)
             ->recordActions([
                 EditAction::make(),

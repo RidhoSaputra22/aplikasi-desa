@@ -27,6 +27,9 @@ class UsahaCertificateForm
                 TextInput::make('name')
                     ->label('Nama')
                     ->required(),
+                TextInput::make('no_hp')
+                    ->label('No. HP')
+                    ->required(),
                 TextInput::make('id_card_number')
                     ->label('Nomor KTP')
                     ->required(),
@@ -65,6 +68,12 @@ class UsahaCertificateForm
                     ->columnSpanFull(),
                 TextInput::make('business_type')
                     ->label('Jenis Usaha')
+                    ->required(),
+                TextInput::make('nama_usaha')
+                    ->label('Nama Usaha')
+                    ->required(),
+                TextInput::make('bussiness_address')
+                    ->label('Alamat Usaha')
                     ->required(),
                 TextInput::make('used_for')
                     ->label('Digunakan Untuk')

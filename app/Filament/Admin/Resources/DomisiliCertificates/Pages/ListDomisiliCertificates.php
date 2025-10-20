@@ -2,9 +2,10 @@
 
 namespace App\Filament\Admin\Resources\DomisiliCertificates\Pages;
 
-use App\Filament\Admin\Resources\DomisiliCertificates\DomisiliCertificateResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Admin\Resources\DomisiliCertificates\Widgets\DomisiliCertStat;
+use App\Filament\Admin\Resources\DomisiliCertificates\DomisiliCertificateResource;
 
 class ListDomisiliCertificates extends ListRecords
 {
@@ -14,6 +15,13 @@ class ListDomisiliCertificates extends ListRecords
     {
         return [
             CreateAction::make(),
+        ];
+    }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            DomisiliCertStat::class,
         ];
     }
 }

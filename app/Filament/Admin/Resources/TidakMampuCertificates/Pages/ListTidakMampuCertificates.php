@@ -2,9 +2,10 @@
 
 namespace App\Filament\Admin\Resources\TidakMampuCertificates\Pages;
 
-use App\Filament\Admin\Resources\TidakMampuCertificates\TidakMampuCertificateResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Admin\Resources\TidakMampuCertificates\Widgets\TidakMampuCertStat;
+use App\Filament\Admin\Resources\TidakMampuCertificates\TidakMampuCertificateResource;
 
 class ListTidakMampuCertificates extends ListRecords
 {
@@ -14,6 +15,13 @@ class ListTidakMampuCertificates extends ListRecords
     {
         return [
             CreateAction::make(),
+        ];
+    }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            TidakMampuCertStat::class,
         ];
     }
 }

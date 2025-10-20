@@ -27,16 +27,29 @@ class ParentIncomeCertificateForm
                 TextInput::make('name')
                     ->label('Nama')
                     ->required(),
+                Select::make('gender')
+                    ->label('Jenis Kelamin')
+                    ->options(['L' => 'Laki-laki', 'P' => 'Perempuan'])
+                    ->required(),
+                TextInput::make('anak_ke')
+                    ->label('Anak Ke-')
+                    ->required(),
+                TextInput::make('nama_sekolah')
+                    ->label('Nama Sekolah')
+                    ->required(),
                 TextInput::make('place_of_birth')
                     ->label('Tempat Lahir')
                     ->required(),
                 TextInput::make('day_of_birth')
                     ->label('Hari Lahir')
+                    ->numeric()
                     ->required(),
                 TextInput::make('month_of_birth')
+                    ->numeric()
                     ->label('Bulan Lahir')
                     ->required(),
                 TextInput::make('year_of_birth')
+                    ->numeric()
                     ->label('Tahun Lahir')
                     ->required(),
                 Select::make('religion')
@@ -63,12 +76,15 @@ class ParentIncomeCertificateForm
                     ->label('Tempat Lahir Orang Tua')
                     ->required(),
                 TextInput::make('parent_day_of_birth')
+                    ->numeric()
                     ->label('Hari Lahir Orang Tua')
                     ->required(),
                 TextInput::make('parent_month_of_birth')
+                    ->numeric()
                     ->label('Bulan Lahir Orang Tua')
                     ->required(),
                 TextInput::make('parent_year_of_birth')
+                    ->numeric()
                     ->label('Tahun Lahir Orang Tua')
                     ->required(),
                 TextInput::make('parent_religion')

@@ -13,6 +13,9 @@ class ParentIncomeCertificate extends Model
 
         // Data diri
         'name',
+        'gender',
+        'anak_ke',
+        'nama_sekolah',
         'place_of_birth',
         'day_of_birth',
         'month_of_birth',

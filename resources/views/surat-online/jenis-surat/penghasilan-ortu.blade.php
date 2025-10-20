@@ -120,19 +120,19 @@
                 </td>
             </tr>
             <tr>
-                <td style="vertical-align: top;">Agama</td>
+                <td style="vertical-align: top;">Jenis Kelamin</td>
                 <td style="text-align: center;">:</td>
-                <td>{{ $certificate->religion ?? 'Islam' }}</td>
+                <td>{{ $certificate->gender == 'p' ? 'Perempuan' : 'Laki-laki' }}</td>
             </tr>
             <tr>
-                <td style="vertical-align: top;">Pekerjaan</td>
+                <td style="vertical-align: top;">Anak Ke</td>
                 <td style="text-align: center;">:</td>
-                <td>{{ $certificate->profession ?? 'Pedagang Buah' }}</td>
+                <td>{{ $certificate->anak_ke ?? '1' }} Orang</td>
             </tr>
             <tr>
-                <td style="vertical-align: top;">Alamat Sekarang</td>
+                <td style="vertical-align: top;">Nama Sekolah</td>
                 <td style="text-align: center;">:</td>
-                <td>{{ $certificate->address ?? 'Jl. Lorem Ipsum Dolor Sit Amet' }}</td>
+                <td>{{ $certificate->nama_sekolah ?? 'SDN 1 Tuwung' }}</td>
             </tr>
         </table>
     </div>

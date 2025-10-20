@@ -9,7 +9,7 @@
             {{ $jenisSurat }}
         </h2>
         <p style="font-size: 0.875rem; margin-top: 0.25rem;">
-            Nomor: {{ $certificate->no_surat ?? '-' }}
+            Nomor: {{ $certificate->no_surat ?? '-' }}/Kel. Tuwung
         </p>
     </div>
 

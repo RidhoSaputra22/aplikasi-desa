@@ -22,10 +22,13 @@ class Usaha extends ModalComponent
     public $gender;
     public $profession;
     public $address;
+    public $noHp;
 
     // Data keterangan properties
     public $businessType;
     public $usedFor;
+    public $namaUsaha;
+    public $bussinessAddress;
 
     // Lampiran persyaratan properties
     public $attachment;
@@ -44,10 +47,13 @@ class Usaha extends ModalComponent
             $this->gender = 'L';
             $this->profession = 'Wiraswasta';
             $this->address = 'Jl. Dagang No. 456, RT 003/RW 007, Kelurahan Bisnis Center, Kecamatan Tambun Timur, Kabupaten Bekasi, Jawa Barat';
+            $this->noHp = '081234567890';
 
             // Data keterangan
             $this->businessType = 'Warung Makan dan Katering';
             $this->usedFor = 'Pengajuan izin usaha mikro dan perizinan BPOM';
+            $this->namaUsaha = 'Warung Makan Sari Rasa';
+            $this->bussinessAddress = 'Jl. Dagang No. 456, RT 003/RW 007, Kelurahan Bisnis Center, Kecamatan Tambun Timur, Kabupaten Bekasi, Jawa Barat';
         }
     }
 
@@ -63,11 +69,13 @@ class Usaha extends ModalComponent
         'gender' => 'required|in:L,P',
         'profession' => 'required|string|min:2|max:100',
         'address' => 'required|string|max:500',
+        'noHp' => 'required|string|max:15',
 
         // Data keterangan
         'businessType' => 'required|string|min:5|max:100',
         'usedFor' => 'required|string|min:5|max:200',
-
+        'namaUsaha' => 'required|string|min:2|max:100',
+        'bussinessAddress' => 'required|string|min:10|max:500',
         // Lampiran persyaratan
         'attachment' => 'required|file|mimes:pdf,jpg,jpeg,png|max:2048',
     ];
@@ -121,6 +129,10 @@ class Usaha extends ModalComponent
         'address.min' => 'Alamat lengkap minimal 10 karakter.',
         'address.max' => 'Alamat lengkap maksimal 500 karakter.',
 
+        'noHp.required' => 'Nomor HP wajib diisi.',
+        'noHp.string' => 'Nomor HP harus berupa teks.',
+        'noHp.max' => 'Nomor HP maksimal 15 karakter.',
+
         // Business type
         'businessType.required' => 'Jenis usaha wajib diisi.',
         'businessType.string' => 'Jenis usaha harus berupa teks.',
@@ -132,6 +144,16 @@ class Usaha extends ModalComponent
         'usedFor.string' => 'Kegunaan usaha harus berupa teks.',
         'usedFor.min' => 'Kegunaan usaha minimal 5 karakter.',
         'usedFor.max' => 'Kegunaan usaha maksimal 200 karakter.',
+
+        'namaUsaha.required' => 'Nama usaha wajib diisi.',
+        'namaUsaha.string' => 'Nama usaha harus berupa teks.',
+        'namaUsaha.min' => 'Nama usaha minimal 2 karakter.',
+        'namaUsaha.max' => 'Nama usaha maksimal 100 karakter.',
+
+        'bussinessAddress.required' => 'Alamat usaha wajib diisi.',
+        'bussinessAddress.string' => 'Alamat usaha harus berupa teks.',
+        'bussinessAddress.min' => 'Alamat usaha minimal 10 karakter.',
+        'bussinessAddress.max' => 'Alamat usaha maksimal 500 karakter.',
 
         // Lampiran persyaratan
         'attachment.required' => 'Lampiran wajib diunggah.',
@@ -165,10 +187,13 @@ class Usaha extends ModalComponent
                 'gender' => $this->gender,
                 'profession' => $this->profession,
                 'address' => $this->address,
+                'no_hp' => $this->noHp,
 
                 // Data keterangan
                 'business_type' => $this->businessType,
                 'used_for' => $this->usedFor,
+                'nama_usaha' => $this->namaUsaha,
+                'bussiness_address' => $this->bussinessAddress,
 
                 // Lampiran persyaratan
                 'attachment' => $attachmentPath,

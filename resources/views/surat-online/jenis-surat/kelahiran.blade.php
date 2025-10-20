@@ -9,14 +9,14 @@
             {{ $jenisSurat }}
         </h2>
         <p style="font-size: 0.875rem; margin-top: 0.25rem;">
-            Nomor: {{ $certificate->no_surat }}
+            Nomor: {{ $certificate->no_surat ?? '-' }}/Kel. Tuwung
         </p>
     </div>
 
     <!-- Pembuka -->
     <div style="">
         <p style="">
-            Yang bertanda tangan di bawah ini (JABATAN) Lurah Tuwung Kecamatan Barru Kabupaten
+            Yang bertanda tangan di bawah ini {{ $kepalaLurah->jabatan ?? 'Kepala Desa' }} Kecamatan Barru Kabupaten
             Barru menerangkan bahwa:
         </p>
 
@@ -24,12 +24,12 @@
             <tr>
                 <td style="width: 7.5rem; vertical-align: top;">Nama</td>
                 <td style="width: 1.25rem; text-align: center;">:</td>
-                <td>{{ $certificate->village_head_name ?? 'Arjunalis' }}</td>
+                <td>{{ $kepalaLurah->nama ?? 'Arjunalis' }}</td>
             </tr>
             <tr>
                 <td style="vertical-align: top;">Jabatan</td>
                 <td style="text-align: center;">:</td>
-                <td>{{ $certificate->village_head_position ?? 'Kepala Desa' }}</td>
+                <td>{{ $kepalaLurah->jabatan ?? 'Kepala Desa' }}</td>
             </tr>
         </table>
     </div>

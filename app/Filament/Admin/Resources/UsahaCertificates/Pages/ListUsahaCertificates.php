@@ -2,9 +2,10 @@
 
 namespace App\Filament\Admin\Resources\UsahaCertificates\Pages;
 
-use App\Filament\Admin\Resources\UsahaCertificates\UsahaCertificateResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Admin\Resources\UsahaCertificates\Widgets\UsahaCertStat;
+use App\Filament\Admin\Resources\UsahaCertificates\UsahaCertificateResource;
 
 class ListUsahaCertificates extends ListRecords
 {
@@ -14,6 +15,13 @@ class ListUsahaCertificates extends ListRecords
     {
         return [
             CreateAction::make(),
+        ];
+    }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            UsahaCertStat::class,
         ];
     }
 }

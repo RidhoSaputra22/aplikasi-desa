@@ -9,7 +9,7 @@
             {{ $jenisSurat }}
         </h2>
         <p style="font-size: 0.875rem; margin-top: 0.25rem;">
-            Nomor: {{ $dataPenduduk->no_surat ?? '-' }}
+            Nomor: {{ $dataPenduduk->no_surat ?? '-' }}/Kel. Tuwung
         </p>
     </div>
 
@@ -99,50 +99,32 @@
     </div>
 
     <!-- Tanggal dan Tanda Tangan -->
-    <div style="">
+    <div style="margin-top: 2.5rem;">
         <table style="width: 100%; border-collapse: collapse;">
             <tr>
-                <td style="width: 50%;">
-                    <p style="margin: 0;">
-                        Mengetahui,
+                <td style="width: 50%;"></td> <!-- Kosong di sisi kiri -->
+                <td style="width: 50%; text-align: center;">
+                    <p>
+                        Kelurahan Tuwung,
+                        {{ $dataPenduduk->created_at ? $dataPenduduk->created_at->format('d F Y') : date('d F Y') }}
                     </p>
-                    <p style="margin: 0 0 0 10px; font-weight: bold;">An. LURAH TUWUNG</p>
-
+                    <p style="margin-top: 0.25rem; font-weight: bold;">
+                        Kepala Desa Kelurahan Tuwung
+                    </p>
 
                     <div style="margin: 1.5rem 0;">
                         <img src="data:image/png;base64,{{ $qrcode }}" alt="QR Code"
                             style="width:100px; height:100px; margin-bottom: 10px;">
                     </div>
 
-
                     <p style="font-weight: bold; text-decoration: underline;">
-                        {{ $kepalaLurah->nama ?? 'Arjunalis' }}
+                        {{ $kepalaLurah->nama }}
                     </p>
                     <p style="margin-top: 0.125rem;">
                         NIP: {{ $kepalaLurah->nip ?? '-' }}
                     </p>
-                </td> <!-- Kosong di sisi kiri -->
-                <td style="width: 50%; text-align: start;">
-                    <p style="margin: 0;">
-                        Tuwung,
-                    </p>
-                    <p style="margin: 0; font-weight: bold;">
-                        Yang Membuat Pernyataan,
-                    </p>
-
-                    <div style="margin: 1.5rem 0;">
-                        <div style="width:100px; height:100px; margin-bottom: 10px;">
-                        </div>
-
-                        <p style="font-weight: bold; text-decoration: underline;">
-                            {{ $certificate->name ?? 'Arjunalis' }}
-                        </p>
-                        <p style="margin-top: 0.125rem;">
-                            {{-- NIP: {{ $certificate->village_head_nip ?? '-' }} --}}
-                        </p>
                 </td>
             </tr>
         </table>
-
     </div>
 @endsection

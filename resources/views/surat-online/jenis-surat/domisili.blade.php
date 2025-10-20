@@ -9,7 +9,7 @@
             {{ $jenisSurat }}
         </h2>
         <p style="font-size: 0.875rem; margin-top: 0.25rem;">
-            Nomor: {{ $certificate->no_surat ?? '-' }}
+            Nomor: {{ $certificate->no_surat ?? '-' }}/Kel. Tuwung
         </p>
     </div>
 
@@ -23,12 +23,12 @@
             <tr>
                 <td style="width: 7.5rem; vertical-align: top;">Nama</td>
                 <td style="width: 1.25rem; text-align: center;">:</td>
-                <td>{{ $certificate->village_head_name ?? 'Arjunalis' }}</td>
+                <td>{{ $kepalaLurah->nama ?? 'Arjunalis' }}</td>
             </tr>
             <tr>
                 <td style="vertical-align: top;">Jabatan</td>
                 <td style="text-align: center;">:</td>
-                <td>{{ $certificate->village_head_position ?? 'Kepala Desa' }}</td>
+                <td>{{ $kepalaLurah->jabatan ?? 'Kepala Desa' }}</td>
             </tr>
         </table>
     </div>
@@ -105,9 +105,11 @@
     <!-- Keterangan Usaha -->
     <div style="margin-top: 0.5rem;  line-height: 1.625;">
         <p style="text-align: justify;">
-            Adalah benar Penduduk Desa Kelurahan Tuwung Kecamatan XIII Koto Kampar Kabupaten
-            Kampar, menurut sepengetahuan kami benar mempunyai/memiliki usaha uang bergerak
-            dibidang:
+            Bahwa tersebut namanya di atas adalah benar saat ini berdomisili di
+            {{ $certificate->address ?? 'Jl. Lorem Ipsum Dolor Sit Amet' }}, Kelurahan Tuwung, Kecamatan Barru, Kabupaten
+            Barru dan berlaku Sejak dikeluarkannya pada
+            {{ $certificate->created_at ? $certificate->created_at->format('d F Y') : date('d F Y') }} sampai dengan
+            {{ \Carbon\Carbon::parse($certificate->created_at)->addYear()->format('d F Y') }}.
         </p>
 
     </div>

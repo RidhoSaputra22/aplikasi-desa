@@ -36,6 +36,32 @@ class BeritaDesasTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
+                SelectFilter::make('periode')
+                    ->label('Periode')
+                    ->options([
+                        'today' => 'Hari Ini',
+                        'this_week' => 'Minggu Ini',
+                        'this_month' => 'Bulan Ini',
+                    ])
+                    ->query(function ($query, $value) {
+                        if ($value === 'today') {
+                            return $query->whereDate('created_at', \Carbon\Carbon::today());
+                        }
+
+                        if ($value === 'this_week') {
+                            $start = \Carbon\Carbon::now()->startOfWeek();
+                            $end = \Carbon\Carbon::now()->endOfWeek();
+                            return $query->whereBetween('created_at', [$start, $end]);
+                        }
+
+                        if ($value === 'this_month') {
+                            $start = \Carbon\Carbon::now()->startOfMonth();
+                            $end = \Carbon\Carbon::now()->endOfMonth();
+                            return $query->whereBetween('created_at', [$start, $end]);
+                        }
+
+                        return $query;
+                    }),
                 Filter::make('created_from')
                     ->schema([
                         DatePicker::make('created_from')

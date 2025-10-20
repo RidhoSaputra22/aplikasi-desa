@@ -23,6 +23,49 @@
                         </div>
                     </div>
                     <div class="space-y-2">
+                        <label for="gender" class="font-medium">
+                            Jenis kelamin
+                        </label>
+                        <div>
+                            <select
+                                class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('gender') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                id="gender" wire:model="gender">
+                                <option value=""></option>
+                                <option value="L">Laki-laki</option>
+                                <option value="P">Perempuan</option>
+                            </select>
+                            @error('gender')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label for="anak-ke" class="font-medium">
+                            Anak ke
+                        </label>
+                        <div>
+                            <input type="text"
+                                class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('anak_ke') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                id="anak-ke" wire:model="anak_ke">
+                            @error('anak_ke')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label for="nama-sekolah" class="font-medium">
+                            Nama sekolah
+                        </label>
+                        <div>
+                            <input type="text"
+                                class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('nama_sekolah') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                id="nama_sekolah" wire:model="nama_sekolah">
+                            @error('nama_sekolah')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="space-y-2">
                         <label for="place-of-birth" class="font-medium">
                             Tempat lahir
                         </label>

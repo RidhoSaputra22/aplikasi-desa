@@ -157,6 +157,21 @@
                         </div>
                     </div>
                     <div class="space-y-2">
+                        <label for="noHp" class="font-medium">
+                            Nomor HP
+                        </label>
+                        <div>
+                            <input type="text"
+                                class="w-full  text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('noHp') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                id="noHp" wire:model="noHp">
+                            @error('noHp')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                    </div>
+
+                    <div class="space-y-2">
                         <label for="address" class="font-medium">
                             Alamat lengkap
                         </label>
@@ -176,6 +191,32 @@
                     data keterangan
                 </h5>
                 <div class="grid grid-cols-1 gap-6 gap-x-0 lg:gap-x-10 lg:grid-cols-2">
+                    <div class="space-y-2">
+                        <label for="nama-usaha" class="font-medium">
+                            Nama usaha
+                        </label>
+                        <div>
+                            <textarea
+                                class="w-full  min-h-[100px] text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('namaUsaha') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                id="nama-usaha" wire:model="namaUsaha"></textarea>
+                            @error('namaUsaha')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label for="bussiness-address" class="font-medium">
+                            Alamat Usaha
+                        </label>
+                        <div>
+                            <textarea
+                                class="w-full  min-h-[100px] text-black transition border rounded-md focus:ring-4 focus:ring-slate-200/75 @error('bussinessAddress') border-red-500 @else border-slate-700 @enderror focus:border-black"
+                                id="bussiness-address" wire:model="bussinessAddress"></textarea>
+                            @error('bussinessAddress')
+                                <span class="text-sm text-red-500">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    </div>
                     <div class="space-y-2">
                         <label for="business-type" class="font-medium">
                             Jenis usaha

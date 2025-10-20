@@ -15,6 +15,9 @@ class PenghasilanOrtu extends ModalComponent
 
     // Data diri
     public $name;
+    public $gender;
+    public $anak_ke;
+    public $nama_sekolah;
     public $placeOfBirth;
     public $dayOfBirth;
     public $monthOfBirth;
@@ -46,6 +49,9 @@ class PenghasilanOrtu extends ModalComponent
         if (env('APP_DEBUG')) {
             // Data diri
             $this->name = 'Fitri Handayani';
+            $this->gender = 'P';
+            $this->anak_ke = '2';
+            $this->nama_sekolah = 'SMA Negeri 1 Medan';
             $this->placeOfBirth = 'Medan';
             $this->dayOfBirth = 12;
             $this->monthOfBirth = 11;
@@ -74,6 +80,9 @@ class PenghasilanOrtu extends ModalComponent
     protected $rules = [
         // Data diri
         'name' => 'required|string|min:2|max:100',
+        'gender' => 'required|string|in:L,P',
+        'anak_ke' => 'required|string|min:1|max:100',
+        'nama_sekolah' => 'required|string|min:2|max:100',
         'placeOfBirth' => 'required|string|min:2|max:100',
         'dayOfBirth' => 'required|integer|min:1|max:31',
         'monthOfBirth' => 'required|integer|min:1|max:12',
@@ -107,6 +116,20 @@ class PenghasilanOrtu extends ModalComponent
         'name.string' => 'Nama pemohon harus berupa teks.',
         'name.min' => 'Nama pemohon minimal 2 karakter.',
         'name.max' => 'Nama pemohon maksimal 100 karakter.',
+
+        'gender.required' => 'Jenis kelamin wajib diisi.',
+        'gender.string' => 'Jenis kelamin harus berupa teks.',
+        'gender.in' => 'Jenis kelamin tidak valid.',
+
+        'anak_ke.required' => 'Anak ke wajib diisi.',
+        'anak_ke.string' => 'Anak ke harus berupa teks.',
+        'anak_ke.min' => 'Anak ke minimal 1 karakter.',
+        'anak_ke.max' => 'Anak ke maksimal 100 karakter.',
+
+        'nama_sekolah.required' => 'Nama sekolah wajib diisi.',
+        'nama_sekolah.string' => 'Nama sekolah harus berupa teks.',
+        'nama_sekolah.min' => 'Nama sekolah minimal 2 karakter.',
+        'nama_sekolah.max' => 'Nama sekolah maksimal 100 karakter.',
 
         'placeOfBirth.required' => 'Tempat lahir wajib diisi.',
         'placeOfBirth.string' => 'Tempat lahir harus berupa teks.',
@@ -223,6 +246,9 @@ class PenghasilanOrtu extends ModalComponent
             $ParentIncomeCert = ParentIncomeCertificate::create([
                 // Data diri
                 'name' => $this->name,
+                'gender' => $this->gender,
+                'anak_ke' => $this->anak_ke,
+                'nama_sekolah' => $this->nama_sekolah,
                 'place_of_birth' => $this->placeOfBirth,
                 'day_of_birth' => $this->dayOfBirth,
                 'month_of_birth' => $this->monthOfBirth,

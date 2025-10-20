@@ -9,7 +9,7 @@
             {{ $jenisSurat }}
         </h2>
         <p style="font-size: 0.875rem; margin-top: 0.25rem;">
-            Nomor: {{ $certificate->no_surat ?? '-' }}
+            Nomor: {{ $certificate->no_surat ?? '-' }}/Kel. Tuwung
         </p>
     </div>
 
@@ -23,12 +23,12 @@
             <tr>
                 <td style="width: 7.5rem; vertical-align: top;">Nama</td>
                 <td style="width: 1.25rem; text-align: center;">:</td>
-                <td>{{ $certificate->village_head_name ?? 'Arjunalis' }}</td>
+                <td>{{ $kepalaLurah->nama ?? 'Arjunalis' }}</td>
             </tr>
             <tr>
                 <td style="vertical-align: top;">Jabatan</td>
                 <td style="text-align: center;">:</td>
-                <td>{{ $certificate->village_head_position ?? 'Kepala Desa' }}</td>
+                <td>{{ $kepalaLurah->jabatan ?? 'Kepala Desa' }}</td>
             </tr>
         </table>
     </div>
@@ -87,7 +87,7 @@
             <tr>
                 <td style="vertical-align: top;">Jenis kelamin</td>
                 <td style="text-align: center;">:</td>
-                <td>{{ $certificate->gender ?? 'Laki-laki' }}</td>
+                <td>{{ $certificate->gender == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
             </tr>
             <tr>
                 <td style="vertical-align: top;">Pekerjaan</td>
@@ -105,9 +105,10 @@
     <!-- Keterangan Usaha -->
     <div style="margin-top: 0.5rem;  line-height: 1.625;">
         <p style="text-align: justify;">
-            Adalah benar Penduduk Desa Kelurahan Tuwung Kecamatan XIII Koto Kampar Kabupaten
-            Kampar, menurut sepengetahuan kami benar mempunyai/memiliki usaha uang bergerak
-            dibidang:
+            Yang tersebut namanya diatas adalah benar warga kami yang tergolong Keluarga
+            Kurang Mampu yang beralamat di {{ $certificate->address ?? 'Jl. Lorem Ipsum Dolor Sit Amet' }}, Kelurahan
+            Tuwung, Kecamatan Barru,
+            Kabupaten Barru. Surat Keterangan ini diperlukan untuk: {{ $certificate->used_for ?? '---' }}.
         </p>
 
     </div>

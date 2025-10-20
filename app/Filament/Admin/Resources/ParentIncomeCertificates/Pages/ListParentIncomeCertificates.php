@@ -2,9 +2,10 @@
 
 namespace App\Filament\Admin\Resources\ParentIncomeCertificates\Pages;
 
-use App\Filament\Admin\Resources\ParentIncomeCertificates\ParentIncomeCertificateResource;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Admin\Resources\ParentIncomeCertificates\Widgets\ParentIncomeCertStat;
+use App\Filament\Admin\Resources\ParentIncomeCertificates\ParentIncomeCertificateResource;
 
 class ListParentIncomeCertificates extends ListRecords
 {
@@ -14,6 +15,13 @@ class ListParentIncomeCertificates extends ListRecords
     {
         return [
             CreateAction::make(),
+        ];
+    }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            ParentIncomeCertStat::class,
         ];
     }
 }

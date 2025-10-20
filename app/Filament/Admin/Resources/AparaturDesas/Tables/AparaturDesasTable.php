@@ -44,6 +44,7 @@ class AparaturDesasTable
                     ->options(fn() => AparaturDesa::query()->distinct()->pluck('jabatan', 'jabatan')->toArray())
                     ->placeholder('Semua Jabatan'),
             ], layout: FiltersLayout::AboveContent)
+            ->filtersFormColumns(3)
             ->recordActions([
                 EditAction::make(),
 

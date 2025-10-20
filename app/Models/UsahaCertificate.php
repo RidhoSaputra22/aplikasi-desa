@@ -22,10 +22,13 @@ class UsahaCertificate extends Model
         'gender',
         'profession',
         'address',
+        'no_hp',
 
         // Data keterangan
         'business_type',
+        'nama_usaha',
         'used_for',
+        'bussiness_address',
 
         // Lampiran persyaratan
         'attachment',
