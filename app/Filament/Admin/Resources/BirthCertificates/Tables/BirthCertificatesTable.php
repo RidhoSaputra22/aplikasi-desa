@@ -12,7 +12,9 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Columns\SelectColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Schemas\Components\Utilities\Get;
 
 class BirthCertificatesTable
@@ -51,8 +53,11 @@ class BirthCertificatesTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
-            ])
+                SelectFilter::make('confirmation_status')
+                    ->label('Status Konfirmasi')
+                    ->options(CertificateStatus::options())
+                    ->placeholder('Semua Status'),
+            ], layout: FiltersLayout::AboveContent)
             ->recordActions([
                 EditAction::make(),
                 Action::make('view')

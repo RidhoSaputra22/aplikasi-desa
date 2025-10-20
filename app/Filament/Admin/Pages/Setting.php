@@ -13,6 +13,7 @@ use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\RichEditor;
 use Filament\Schemas\Components\Flex;
 use Filament\Schemas\Concerns\InteractsWithSchemas;
+use Illuminate\Support\Facades\Storage;
 
 class Setting extends Page
 {
@@ -37,7 +38,6 @@ class Setting extends Page
                     ->schema([
                         Flex::make([
                             Action::make('Migrate Database')
-                                ->action('migrateDatabase')
                                 ->color('success')
                                 ->icon(Heroicon::OutlinedServer)
                                 ->label('Migrate Database')
@@ -49,31 +49,73 @@ class Setting extends Page
                                         ->success()
                                         ->send();
                                 }),
-                            Action::make('Update Composer Packages')
-                                ->action('updateComposerPackages')
+                            Action::make('Backup Database')
                                 ->color('primary')
-                                ->icon(Heroicon::OutlinedArrowPath)
-                                ->label('Update Composer Packages')
+                                ->icon(Heroicon::OutlinedServerStack)
+                                ->label('Backup Database')
                                 ->action(function () {
-                                    // Logic to run composer update
-                                    $output = [];
-                                    $returnVar = null;
-                                    exec('cd ' . base_path() . ' && composer update 2>&1', $output, $returnVar);
+                                    Artisan::call('app:backup-databases', [
+                                        '--connection' => null, // default connection
+                                    ]);
+                                    Notification::make()
+                                        ->title('Database backup completed successfully.')
+                                        ->success()
+                                        ->send();
+                                }),
+                            Action::make('Download Backup Terakhir')
+                                ->color('primary')
+                                ->icon(Heroicon::OutlinedArrowDown)
+                                ->label('Download Backup Terakhir')
+                                ->action(function () {
+                                    $disk = Storage::disk('local');
+                                    // Try the directory where backups are written by the command
+                                    $dirsToCheck = ['private/backups', 'backups'];
 
-                                    if ($returnVar === 0) {
+                                    $files = [];
+                                    foreach ($dirsToCheck as $dir) {
+                                        $found = $disk->files($dir);
+                                        if (!empty($found)) {
+                                            $files = array_merge($files, $found);
+                                        }
+                                    }
+
+                                    if (empty($files)) {
                                         Notification::make()
-                                            ->title('Composer packages updated successfully.')
-                                            ->body(implode("\n", $output))
-                                            ->success()
-                                            ->send();
-                                    } else {
-                                        Notification::make()
-                                            ->title('Failed to update composer packages.')
-                                            ->body(implode("\n", $output))
+                                            ->title('No backup files found.')
                                             ->danger()
                                             ->send();
+                                        return null;
                                     }
+
+                                    // pick the most recently modified file
+                                    $latest = collect($files)->sortByDesc(function ($file) use ($disk) {
+                                        return $disk->lastModified($file);
+                                    })->first();
+
+                                    if (!$disk->exists($latest)) {
+                                        Notification::make()
+                                            ->title('Backup file not found on disk.')
+                                            ->danger()
+                                            ->send();
+                                        return null;
+                                    }
+
+                                    // Stream the file to the response to support older Laravel versions
+                                    $stream = $disk->readStream($latest);
+                                    if ($stream === false) {
+                                        Notification::make()
+                                            ->title('Failed to read backup file.')
+                                            ->danger()
+                                            ->send();
+                                        return null;
+                                    }
+
+                                    $basename = basename($latest);
+                                    return response()->streamDownload(function () use ($stream) {
+                                        fpassthru($stream);
+                                    }, $basename);
                                 }),
+
                         ])
                     ]),
                 Section::make('Web Optimizer')
@@ -81,21 +123,25 @@ class Setting extends Page
                     ->columnSpanFull()
                     ->schema([
                         Flex::make([
-                            Action::make('Optimize Application')
-                                ->action('optimizeApplication')
+                            Action::make('Optimize Images')
                                 ->color('primary')
-                                ->icon(Heroicon::OutlinedSparkles)
-                                ->label('Optimize Application')
+                                ->icon(Heroicon::OutlinedPhoto)
+                                ->label('Optimize Images')
                                 ->action(function () {
-                                    // Logic to optimize the application
-                                    Artisan::call('optimize');
+                                    // Logic to optimize images
+                                    Artisan::call('app:image-resizer', [
+                                        '--threshold' => 500, // in KB
+                                        '--max-width' => 1920,
+                                        '--max-height' => 1080,
+                                        '--quality' => 85,
+                                    ]);
+
                                     Notification::make()
-                                        ->title('Application optimized successfully.')
+                                        ->title('Image optimization completed successfully.')
                                         ->success()
                                         ->send();
                                 }),
                             Action::make('Clear Cache')
-                                ->action('clearCache')
                                 ->color('warning')
                                 ->icon(Heroicon::OutlinedTrash)
                                 ->label('Clear Cache')
@@ -107,14 +153,26 @@ class Setting extends Page
                                         ->success()
                                         ->send();
                                 }),
+                            Action::make('Clear View Cache')
+                                ->color('warning')
+                                ->icon(Heroicon::OutlinedTrash)
+                                ->label('Clear View Cache')
+                                ->action(function () {
+                                    // Logic to clear the view cache
+                                    Artisan::call('view:clear');
+                                    Notification::make()
+                                        ->title('View cache cleared successfully.')
+                                        ->success()
+                                        ->send();
+                                }),
                             Action::make('Clear Image Cache')
-                                ->action('clearImageCache')
                                 ->color('warning')
                                 ->icon(Heroicon::OutlinedTrash)
                                 ->label('Clear Image Cache')
                                 ->action(function () {
                                     // Logic to clear the cache
                                     Artisan::call('app:clear-cache');
+
                                     Notification::make()
                                         ->title('Cache cleared successfully.')
                                         ->success()

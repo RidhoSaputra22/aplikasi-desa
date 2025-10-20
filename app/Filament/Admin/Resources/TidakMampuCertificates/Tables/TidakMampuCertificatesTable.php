@@ -3,6 +3,10 @@
 namespace App\Filament\Admin\Resources\TidakMampuCertificates\Tables;
 
 use Filament\Tables\Table;
+use Filament\Tables\Filters\Filter;
+use Filament\Forms\Components\DatePicker;
+use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Enums\FiltersLayout;
 use Filament\Actions\Action;
 use App\Enums\CertificateType;
 use App\Enums\CertificateStatus;
@@ -48,8 +52,27 @@ class TidakMampuCertificatesTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make('confirmation_status')
+                    ->label('Status Konfirmasi')
+                    ->options(CertificateStatus::options())
+                    ->placeholder('Semua Status'),
+
+                Filter::make('created_from')
+                    ->schema([
+                        DatePicker::make('created_from')->label('Dari Tanggal'),
+                    ])
+                    ->query(fn($query, $data) => empty($data['created_from']) ? $query : $query->whereDate('created_at', '>=', $data['created_from']))
+                    ->label('Dari Tanggal'),
+
+                Filter::make('created_until')
+                    ->schema([
+                        DatePicker::make('created_until')->label('Sampai Tanggal'),
+                    ])
+                    ->query(fn($query, $data) => empty($data['created_until']) ? $query : $query->whereDate('created_at', '<=', $data['created_until']))
+                    ->label('Sampai Tanggal'),
             ])
+            ->filtersLayout(FiltersLayout::AboveContent)
+            ->filtersFormColumns(3)
             ->recordActions([
                 EditAction::make(),
                 Action::make('view')

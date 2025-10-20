@@ -3,6 +3,7 @@
 namespace App\Filament\Admin\Resources\DeathCertificates\Tables;
 
 use Filament\Tables\Table;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Actions\Action;
 use App\Enums\CertificateType;
 use App\Enums\CertificateStatus;
@@ -48,7 +49,10 @@ class DeathCertificatesTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make('confirmation_status')
+                    ->label('Status Konfirmasi')
+                    ->options(CertificateStatus::options())
+                    ->placeholder('Semua Status'),
             ])
             ->recordActions([
                 EditAction::make(),

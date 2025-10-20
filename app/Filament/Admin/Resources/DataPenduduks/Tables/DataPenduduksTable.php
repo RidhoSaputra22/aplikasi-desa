@@ -3,6 +3,7 @@
 namespace App\Filament\Admin\Resources\DataPenduduks\Tables;
 
 use Filament\Tables\Table;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Actions\Action;
 use App\Enums\CertificateStatus;
 use Filament\Actions\EditAction;
@@ -37,7 +38,10 @@ class DataPenduduksTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                SelectFilter::make('confirmation_status')
+                    ->label('Status Konfirmasi')
+                    ->options(CertificateStatus::options())
+                    ->placeholder('Semua Status'),
             ])
             ->recordActions([
                 EditAction::make(),

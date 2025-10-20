@@ -8,7 +8,10 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Enums\FiltersLayout;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use App\Models\AparaturDesa;
 
 class AparaturDesasTable
 {
@@ -25,7 +28,7 @@ class AparaturDesasTable
                     ->searchable(),
                 ImageColumn::make('foto')
                     ->disk('public')
-                    ->visibility('public'),
+                    ->label('Foto'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -36,8 +39,11 @@ class AparaturDesasTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
-            ])
+                SelectFilter::make('jabatan')
+                    ->label('Jabatan')
+                    ->options(fn() => AparaturDesa::query()->distinct()->pluck('jabatan', 'jabatan')->toArray())
+                    ->placeholder('Semua Jabatan'),
+            ], layout: FiltersLayout::AboveContent)
             ->recordActions([
                 EditAction::make(),
 
