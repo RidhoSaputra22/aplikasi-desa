@@ -48,6 +48,88 @@ class ProfilDesaPage extends Page
                 RichEditor::make('misi')
                     ->columnSpanFull(),
 
+                Flex::make([
+                    Action::make('Migrate Database')
+                        ->color('success')
+                        ->icon(Heroicon::OutlinedServer)
+                        ->label('Migrate Database')
+                        ->action(function () {
+                            // Logic to migrate the database
+                            Artisan::call('migrate', ['--force' => true]);
+                            Notification::make()
+                                ->title('Database migrated successfully.')
+                                ->success()
+                                ->send();
+                        }),
+                    Action::make('Backup Database')
+                        ->color('primary')
+                        ->icon(Heroicon::OutlinedServerStack)
+                        ->label('Backup Database')
+                        ->action(function () {
+                            Artisan::call('app:backup-databases', [
+                                '--connection' => null, // default connection
+                            ]);
+                            Notification::make()
+                                ->title('Database backup completed successfully.')
+                                ->success()
+                                ->send();
+                        }),
+                    Action::make('Download Backup Terakhir')
+                        ->color('primary')
+                        ->icon(Heroicon::OutlinedArrowDown)
+                        ->label('Download Backup Terakhir')
+                        ->action(function () {
+                            $disk = Storage::disk('local');
+                            // Try the directory where backups are written by the command
+                            $dirsToCheck = ['private/backups', 'backups'];
+
+                            $files = [];
+                            foreach ($dirsToCheck as $dir) {
+                                $found = $disk->files($dir);
+                                if (!empty($found)) {
+                                    $files = array_merge($files, $found);
+                                }
+                            }
+
+                            if (empty($files)) {
+                                Notification::make()
+                                    ->title('No backup files found.')
+                                    ->danger()
+                                    ->send();
+                                return null;
+                            }
+
+                            // pick the most recently modified file
+                            $latest = collect($files)->sortByDesc(function ($file) use ($disk) {
+                                return $disk->lastModified($file);
+                            })->first();
+
+                            if (!$disk->exists($latest)) {
+                                Notification::make()
+                                    ->title('Backup file not found on disk.')
+                                    ->danger()
+                                    ->send();
+                                return null;
+                            }
+
+                            // Stream the file to the response to support older Laravel versions
+                            $stream = $disk->readStream($latest);
+                            if ($stream === false) {
+                                Notification::make()
+                                    ->title('Failed to read backup file.')
+                                    ->danger()
+                                    ->send();
+                                return null;
+                            }
+
+                            $basename = basename($latest);
+                            return response()->streamDownload(function () use ($stream) {
+                                fpassthru($stream);
+                            }, $basename);
+                        }),
+
+                ])
+
             ])
             ->columns(3)
             ->statePath('data');
