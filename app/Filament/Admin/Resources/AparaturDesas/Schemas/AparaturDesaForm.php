@@ -21,9 +21,12 @@ class AparaturDesaForm
                 TextInput::make('jabatan')
                     ->required(),
                 FileUpload::make('foto')
+                    ->columnSpanFull()
                     ->visibility('public')
                     ->disk('public')
                     ->image()
+                    ->imageEditor()
+                    ->imageEditorMode(2)
                     ->required(),
             ]);
     }

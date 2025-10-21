@@ -36,6 +36,8 @@ class UmkmDesaForm
                     ->visibility('public')
                     ->disk('public')
                     ->image()
+                    ->imageEditor()
+                    ->imageEditorMode(2)
                     ->columnSpanFull(),
             ])->columns(3);
     }

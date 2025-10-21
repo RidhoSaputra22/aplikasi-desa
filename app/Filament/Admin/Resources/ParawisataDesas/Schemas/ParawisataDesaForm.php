@@ -21,6 +21,8 @@ class ParawisataDesaForm
                     ->columnSpanFull()
                     ->disk('public')
                     ->visibility('public')
+                    ->imageEditor()
+                    ->imageEditorMode(2)
                     ->required(),
 
                 TextInput::make('title')

@@ -21,6 +21,8 @@ class BeritaDesaForm
                 FileUpload::make('gambar')
                     ->disk('public')
                     ->image()
+                    ->imageEditor()
+                    ->imageEditorMode(2)
                     ->columnSpanFull()
                     ->visibility('public')
                     ->required(),

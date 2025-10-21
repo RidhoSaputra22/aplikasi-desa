@@ -42,9 +42,16 @@ class ClearCache extends Command
             // 'private' => [ 'some/dir/' ],
         ];
 
+
+
         // summary counters
         $deletedCount = 0;
         $checkedCount = 0;
+
+        // tables to exclude from DB scanning (filenames or large tables storing filenames)
+        $excludedTables = [
+            'file_management',
+        ];
 
         try {
             $dbName = DB::getDatabaseName();
@@ -58,6 +65,10 @@ class ClearCache extends Command
 
             $columnsByTable = [];
             foreach ($cols as $c) {
+                // skip excluded tables
+                if (in_array($c->TABLE_NAME, $excludedTables, true)) {
+                    continue;
+                }
                 $columnsByTable[$c->TABLE_NAME][] = $c->COLUMN_NAME;
             }
         } catch (\Throwable $e) {

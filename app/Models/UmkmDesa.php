@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\KategoriUmkm;
 use Illuminate\Database\Eloquent\Model;
 
 class UmkmDesa extends Model
