@@ -1,11 +1,2 @@
-# Ignore everything in public
-/public/*
-
-# But keep these exceptions:
-!/public/banner/
-!/public/banner/*
-!/public/assets/
-!/public/assets/*
-!/public/user-default.png
-!/public/default-image.jpeg
-!/public/.gitignore
+*
+.gitignore
