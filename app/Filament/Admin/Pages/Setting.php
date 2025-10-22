@@ -142,25 +142,11 @@ class Setting extends Page implements HasTable
                     ->schema([
                         Flex::make([
 
-                            Action::make('Optimize Application')
-                                ->color('success')
-                                ->icon(Heroicon::OutlinedSparkles)
-                                ->label('Optimize Application')
-                                ->action(function () {
-                                    // Logic to optimize the application
-                                    Artisan::call('optimize');
-                                    Notification::make()
-                                        ->title('Application optimized successfully.')
-                                        ->success()
-                                        ->send();
-                                }),
-
                             Action::make('Link Storage')
                                 ->color('success')
                                 ->icon(Heroicon::OutlinedLink)
                                 ->label('Link Storage')
                                 ->action(function () {
-                                    Artisan::call('storage:link');
                                     $target = '/home/wbcbbjhs/laravel2/storage/app/public';
                                     $shortcut = '/home/wbcbbjhs/public_html/storage';
                                     if (file_exists($shortcut)) {
@@ -177,6 +163,7 @@ class Setting extends Page implements HasTable
                                         ->success()
                                         ->send();
                                 }),
+
                             Action::make('Clear Cache')
                                 ->color('warning')
                                 ->icon(Heroicon::OutlinedTrash)
