@@ -213,6 +213,17 @@ class Setting extends Page implements HasTable
                                         ->success()
                                         ->send();
                                 }),
+                            Action::make('Route Clear Cache')
+                                ->color('warning')
+                                ->icon(Heroicon::OutlinedTrash)
+                                ->label('Clear Route Cache')
+                                ->action(function () {
+                                    Artisan::call('route:cache');
+                                    Notification::make()
+                                        ->title('Route cache cleared successfully.')
+                                        ->success()
+                                        ->send();
+                                }),
 
                         ])
 
