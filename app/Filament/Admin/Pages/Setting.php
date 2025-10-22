@@ -142,6 +142,19 @@ class Setting extends Page implements HasTable
                     ->schema([
                         Flex::make([
 
+                            Action::make('Optimize Application')
+                                ->color('success')
+                                ->icon(Heroicon::OutlinedSparkles)
+                                ->label('Optimize Application')
+                                ->action(function () {
+                                    // Logic to optimize the application
+                                    Artisan::call('optimize');
+                                    Notification::make()
+                                        ->title('Application optimized successfully.')
+                                        ->success()
+                                        ->send();
+                                }),
+
                             Action::make('Link Storage')
                                 ->color('success')
                                 ->icon(Heroicon::OutlinedLink)
