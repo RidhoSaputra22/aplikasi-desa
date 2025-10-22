@@ -160,7 +160,7 @@ class Setting extends Page implements HasTable
                                 ->icon(Heroicon::OutlinedLink)
                                 ->label('Link Storage')
                                 ->action(function () {
-
+                                    Artisan::call('storage:link');
                                     $target = '/home/wbcbbjhs/laravel2/storage/app/public';
                                     $shortcut = '/home/wbcbbjhs/public_html/storage';
                                     if (file_exists($shortcut)) {
