@@ -144,7 +144,7 @@ class Setting extends Page implements HasTable
 
                             Action::make('Link Storage')
                                 ->color('success')
-                                ->icon(Heroicon::OutlinedTrash)
+                                ->icon(Heroicon::OutlinedLink)
                                 ->label('Link Storage')
                                 ->action(function () {
 
