@@ -19,6 +19,9 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use App\Filament\Admin\Widgets\DashboardStats;
+use App\Filament\Admin\Widgets\DashboardStatsPenduduk;
+use App\Filament\Admin\Widgets\DashboardStatsSurat;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -32,7 +35,9 @@ class AdminPanelProvider extends PanelProvider
                 'primary' => Color::Green,
             ])
             ->profile(EditProfile::class, isSimple: false)
+            ->favicon(asset('assets/logo.png')) // ← Tambahkan baris ini
             ->brandLogo(fn() => view('components.logo'))
+            ->brandName('Admin Kelurahan Tuwung')
             ->brandLogoHeight('2rem')
             ->viteTheme('resources/css/filament/admin/theme.css')
             ->darkMode(false)
@@ -43,7 +48,10 @@ class AdminPanelProvider extends PanelProvider
                 Dashboard::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Admin/Widgets'), for: 'App\Filament\Admin\Widgets')
-            ->widgets([])
+            ->widgets([
+                DashboardStatsPenduduk::class,
+                DashboardStatsSurat::class,
+            ])
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
