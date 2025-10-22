@@ -189,6 +189,18 @@ class Setting extends Page implements HasTable
                                         ->success()
                                         ->send();
                                 }),
+                            Action::make('Clear Config')
+                                ->color('warning')
+                                ->icon(Heroicon::OutlinedTrash)
+                                ->label('Clear Config')
+                                ->action(function () {
+                                    // Logic to clear the config cache
+                                    Artisan::call('config:clear');
+                                    Notification::make()
+                                        ->title('Config cleared successfully.')
+                                        ->success()
+                                        ->send();
+                                }),
                             Action::make('Clear View Cache')
                                 ->color('warning')
                                 ->icon(Heroicon::OutlinedTrash)
