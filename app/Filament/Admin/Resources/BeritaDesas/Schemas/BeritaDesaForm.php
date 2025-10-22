@@ -24,6 +24,7 @@ class BeritaDesaForm
                     ->imageEditor()
                     ->imageEditorMode(2)
                     ->columnSpanFull()
+                    ->visibility('public')
                     ->required(),
                 TextInput::make('judul')
                     ->required(),
