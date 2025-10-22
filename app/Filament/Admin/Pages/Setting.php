@@ -145,10 +145,20 @@ class Setting extends Page implements HasTable
                             Action::make('Link Storage')
                                 ->color('success')
                                 ->icon(Heroicon::OutlinedTrash)
-                                ->label('Clear Cache')
+                                ->label('Link Storage')
                                 ->action(function () {
-                                    // Logic to clear the cache
-                                    Artisan::call('storage:link');
+
+                                    $target = '/home/wbcbbjhs/laravel2/storage/app/public';
+                                    $shortcut = '/home/wbcbbjhs/public_html/storage';
+                                    if (file_exists($shortcut)) {
+                                        Notification::make()
+                                            ->title('Storage already linked.')
+                                            ->success()
+                                            ->send();
+                                        return;
+                                    }
+                                    symlink($target, $shortcut);
+
                                     Notification::make()
                                         ->title('Storage linked successfully.')
                                         ->success()
