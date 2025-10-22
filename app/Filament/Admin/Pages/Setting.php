@@ -147,17 +147,7 @@ class Setting extends Page implements HasTable
                                 ->icon(Heroicon::OutlinedLink)
                                 ->label('Link Storage')
                                 ->action(function () {
-                                    $target = '/home/wbcbbjhs/laravel2/storage/app/public';
-                                    $shortcut = '/home/wbcbbjhs/public_html/storage';
-                                    if (file_exists($shortcut)) {
-                                        Notification::make()
-                                            ->title('Storage already linked.')
-                                            ->success()
-                                            ->send();
-                                        return;
-                                    }
-                                    symlink($target, $shortcut);
-
+                                    Artisan::call('storage:link');
                                     Notification::make()
                                         ->title('Storage linked successfully.')
                                         ->success()
@@ -197,17 +187,6 @@ class Setting extends Page implements HasTable
                                     Artisan::call('view:clear');
                                     Notification::make()
                                         ->title('View cache cleared successfully.')
-                                        ->success()
-                                        ->send();
-                                }),
-                            Action::make('Route Clear Cache')
-                                ->color('warning')
-                                ->icon(Heroicon::OutlinedTrash)
-                                ->label('Clear Route Cache')
-                                ->action(function () {
-                                    Artisan::call('route:cache');
-                                    Notification::make()
-                                        ->title('Route cache cleared successfully.')
                                         ->success()
                                         ->send();
                                 }),
