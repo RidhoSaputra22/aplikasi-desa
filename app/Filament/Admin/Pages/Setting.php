@@ -142,6 +142,18 @@ class Setting extends Page implements HasTable
                     ->schema([
                         Flex::make([
 
+                            Action::make('Link Storage')
+                                ->color('success')
+                                ->icon(Heroicon::OutlinedTrash)
+                                ->label('Clear Cache')
+                                ->action(function () {
+                                    // Logic to clear the cache
+                                    Artisan::call('storage:link');
+                                    Notification::make()
+                                        ->title('Storage linked successfully.')
+                                        ->success()
+                                        ->send();
+                                }),
                             Action::make('Clear Cache')
                                 ->color('warning')
                                 ->icon(Heroicon::OutlinedTrash)

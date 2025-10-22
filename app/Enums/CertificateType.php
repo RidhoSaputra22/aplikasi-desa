@@ -19,6 +19,7 @@ enum CertificateType: string
     case USAHA = 'usaha';
 
 
+
     public function label(): string
     {
         return match ($this) {

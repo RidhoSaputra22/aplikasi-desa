@@ -79,11 +79,17 @@ class SuratOnlineController extends Controller
 
     public function lihat($jenis, $code)
     {
-        $certificate = CertificateType::from($jenis)->modelClass()->where('code', $code)->first();
-        // Validate the certificate type
+
         if (!in_array($jenis, CertificateType::route())) {
             abort(404);
         }
+
+        $certificate = CertificateType::from($jenis)->modelClass()->where('code', $code)->first();
+
+        if (!$certificate) {
+            abort(404);
+        }
+
 
         if ($certificate->confirmation_status !== CertificateStatus::SUCCESS && !Auth::check()) {
             abort(404);
