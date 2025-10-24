@@ -19,7 +19,7 @@ class ParawisataDesaResource extends Resource
     protected static ?string $model = ParawisataDesa::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedPhoto;
-    protected static string|\UnitEnum|null $navigationGroup = 'Data Desa';
+    protected static string|\UnitEnum|null $navigationGroup = 'Data Lurah';
     protected static ?string $navigationLabel = 'Parawisata Tuwung';
     protected static ?string $pluralModelLabel = 'Parawisata Tuwung';
     protected static ?string $modelLabel = 'Parawisata Tuwung';

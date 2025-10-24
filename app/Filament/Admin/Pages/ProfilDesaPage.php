@@ -24,8 +24,6 @@ class ProfilDesaPage extends Page
     protected static ?string $pluralModelLabel = 'Profile Kelurahan';
     protected static ?string $modelLabel = 'Profile Kelurahan';
 
-
-
     public function mount(): void
     {
         $data = ProfilDesa::first();

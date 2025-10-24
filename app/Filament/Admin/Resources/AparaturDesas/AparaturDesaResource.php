@@ -19,7 +19,7 @@ class AparaturDesaResource extends Resource
     protected static ?string $model = AparaturDesa::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUserGroup;
-    protected static string|\UnitEnum|null $navigationGroup = 'Data Desa';
+    protected static string|\UnitEnum|null $navigationGroup = 'Data Lurah';
     protected static ?string $navigationLabel = 'Aparatur Lurah';
     protected static ?string $pluralModelLabel = 'Aparatur Lurah';
     protected static ?string $modelLabel = 'Aparatur Lurah';

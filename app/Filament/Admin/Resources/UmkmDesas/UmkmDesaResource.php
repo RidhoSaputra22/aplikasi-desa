@@ -19,7 +19,7 @@ class UmkmDesaResource extends Resource
     protected static ?string $model = UmkmDesa::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedShoppingBag;
-    protected static string|\UnitEnum|null $navigationGroup = 'Data Desa';
+    protected static string|\UnitEnum|null $navigationGroup = 'Data Lurah';
     protected static ?string $navigationLabel = 'UMKM Tuwung';
     protected static ?string $pluralModelLabel = 'UMKM Tuwung';
     protected static ?string $modelLabel = 'UMKM Tuwung';
