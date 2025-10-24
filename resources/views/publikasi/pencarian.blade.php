@@ -15,7 +15,7 @@
                 </h1>
                 <div class="space-y-5 description">
                     <p class="text-xl font-light leading-relaxed text-center">
-                        Cari dan temukan berbagai berita terbaru mengenai desa koto mesjid disini
+                        Cari dan temukan berbagai berita terbaru mengenai kelurahan Tuwung disini
                     </p>
                     <div
                         class="flex items-center w-full lg:w-[500px] mx-auto px-3 overflow-hidden border rounded-md h-11 border-slate-600 focus-within:ring-4 focus-within:border-slate-800 focus-within:ring-black/10">

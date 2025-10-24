@@ -18,7 +18,7 @@
                                 <div class="grid h-full max-w-4xl mx-auto place-content-center">
                                     <h1
                                         class="text-6xl font-semibold tracking-tighter text-center text-white capitalize break-words md:text-8xl">
-                                        selamat datang di website desa Kelurahan Tuwung
+                                        selamat datang di website Kelurahan Tuwung
                                     </h1>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@
                                                     class="text-xl font-light leading-snug text-center text-white md:text-2xl lg:text-left">
                                                     Dengan adanya surat online, sekarang jadi lebih mudah untuk
                                                     melakukan pengurusan berbagai surat tanpa harus pergi
-                                                    kekantor desa
+                                                    kekantor lurah
                                                 </p>
                                             </div>
                                         </div>
@@ -216,7 +216,7 @@
                                 surat online
                             </h3>
                             <h1 class="text-4xl font-light leading-tight text-center text-white description">
-                                Dengan adanya surat online, sekarang tidak perlu lagi kekantor desa untuk
+                                Dengan adanya surat online, sekarang tidak perlu lagi kekantor lurah untuk
                                 pengurusan
                             </h1>
                         </div>
@@ -349,7 +349,7 @@
                             </h3>
                             <div class="w-full lg:max-w-xl description">
                                 <h1 class="text-4xl font-light leading-tight text-center lg:text-left">
-                                    Terhubung seputar informasi kegiatan dan berita desa terkini
+                                    Terhubung seputar informasi kegiatan dan berita lurah terkini
                                 </h1>
                             </div>
                             @if ($latest->isNotEmpty())
@@ -405,8 +405,7 @@
                                         <a href="{{ route('publikasi.berita', ['slug' => $latest[1]->slug]) }}"
                                             class="flex flex-row space-x-5 space-y-0 sequenced">
                                             <div class="flex-shrink-0 w-24 h-16 md:h-24 md:w-36">
-                                                <img src="{{ $latest[1]->gambar }}"
-                                                    alt="Kelurahan Tuwung Lolos 3 Besar Lomba Desa dan Kelurahan Regional 1 Wilayah Sumatera Tahun 2023"
+                                                <img src="{{ $latest[1]->gambar }}" alt=""
                                                     class="object-cover w-full h-full rounded-md md:rounded-lg lg:rounded-xl">
                                             </div>
                                             <div class="space-y-2">

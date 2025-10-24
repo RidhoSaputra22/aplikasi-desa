@@ -16,7 +16,7 @@
                 <div class="px-6 md:px-10 lg:px-20">
                     <div class="relative z-[1] py-20 pt-32 mx-auto space-y-8 md:max-w-xl lg:max-w-4xl lg:pt-44">
                         <h1 class="text-6xl font-bold text-center capitalize break-words md:text-8xl title">
-                            data desa
+                            data kelurahan
                         </h1>
                         <p class="text-xl font-light leading-relaxed text-center description">
                             Kami memiliki sistem yang memungkinkan untuk melakukan pendataan secara cepat,

@@ -20,9 +20,9 @@ class BeritaDesaResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedNewspaper;
     protected static string|\UnitEnum|null $navigationGroup = 'Data Desa';
-    protected static ?string $navigationLabel = 'Berita Desa';
-    protected static ?string $pluralModelLabel = 'Berita Desa';
-    protected static ?string $modelLabel = 'Berita Desa';
+    protected static ?string $navigationLabel = 'Berita Lurah';
+    protected static ?string $pluralModelLabel = 'Berita Lurah';
+    protected static ?string $modelLabel = 'Berita Lurah';
 
     protected static ?string $recordTitleAttribute = 'judul';
 

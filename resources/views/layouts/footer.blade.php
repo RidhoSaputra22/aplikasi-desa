@@ -21,7 +21,7 @@
                     <circle cx="12" cy="12" r="4"></circle>
                 </svg>
                 <a href="{{ route('data-desa') }}" class="tracking-wide capitalize transition hover:text-green-600">
-                    data desa
+                    data kelurahan
                 </a>
                 <svg xmlns="http://www.w3.org/2000/svg" class="block w-4 h-4 to-black lg:hidden" viewBox="0 0 24 24"
                     stroke-width="2" stroke="currentColor" fill="currentColor" stroke-linecap="round"
@@ -89,7 +89,7 @@
         <div class="flex flex-col items-center justify-between pt-4 pb-8 -space-y-16 lg:flex-row lg:-space-y-0">
             <div class="order-2 lg:order-1">
                 <p class="text-sm text-center lg:text-left">
-                    &copy; 2025 - <span class="font-semibold text-green-600">Desa Kelurahan Tuwung</span>,
+                    &copy; 2025 - <span class="font-semibold text-green-600">Kelurahan Tuwung</span>,
                     dan seluruh hak cipta
                 </p>
             </div>

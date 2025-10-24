@@ -20,7 +20,7 @@
                         </h1>
                         <p class="text-xl font-light leading-relaxed text-center description">
                             Dengan adanya surat online, sekarang jadi lebih mudah untuk melakukan pengurusan
-                            berbagai surat tanpa harus pergi kekantor desa
+                            berbagai surat tanpa harus pergi kekantor lurah
                         </p>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                                 <div class="place-self-center">
                                     <h1
                                         class="text-2xl font-light leading-snug text-center text-black lg:leading-tight lg:text-4xl lg:text-left description">
-                                        Sambil menunggu petugas desa melakukan verifikasi data, lakukan monitoring
+                                        Sambil menunggu petugas lurah melakukan verifikasi data, lakukan monitoring
                                         surat dengan scan qrcode yang ada pada bukti pembuatan surat
                                     </h1>
                                 </div>

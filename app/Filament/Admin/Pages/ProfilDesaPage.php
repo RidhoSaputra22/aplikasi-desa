@@ -20,9 +20,9 @@ class ProfilDesaPage extends Page
     public ?array $data = [];
     protected string $view = 'filament.admin.pages.profil-desa';
     protected static string|\BackedEnum|null $navigationIcon = Heroicon::OutlinedUserCircle;
-    protected static ?string $navigationLabel = 'Profile Desa';
-    protected static ?string $pluralModelLabel = 'Profile Desa';
-    protected static ?string $modelLabel = 'Profile Desa';
+    protected static ?string $navigationLabel = 'Profile Kelurahan';
+    protected static ?string $pluralModelLabel = 'Profile Kelurahan';
+    protected static ?string $modelLabel = 'Profile Kelurahan';
 
 
 

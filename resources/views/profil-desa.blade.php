@@ -14,7 +14,7 @@
                 </div>
                 <div class="relative z-[1] py-20 pt-32 mx-auto space-y-8 md:max-w-xl lg:max-w-4xl lg:pt-44">
                     <h1 class="text-6xl font-bold text-center capitalize break-words md:text-8xl title">
-                        profil desa
+                        profil Kelurahan Tuwung
                     </h1>
                     <p class="text-xl font-light leading-relaxed text-center description">
                         {{ $profil->sub_judul }}
@@ -29,7 +29,7 @@
                     </div>
                     <div class="col-span-1 space-y-10 lg:col-span-3">
                         <h6 class="text-lg font-semibold tracking-widest  text-green-600 uppercase">
-                            sejarah desa
+                            sejarah Kelurahan
                         </h6>
                         <div class="font-light leading-relaxed prose-xl ck-content ck-custom">
                             {!! $profil->sejarah_desa !!}
@@ -66,7 +66,7 @@
             <section class="relative content text-center lg:text-left">
                 <div class="max-w-6xl py-20 pt-0 mx-auto space-y-10">
                     <h6 class="text-lg font-semibold tracking-widest  text-green-600 uppercase">
-                        aparatur desa
+                        aparatur Kelurahan
                     </h6>
                     <div class="grid grid-cols-2 gap-5 gap-y-8 md:grid-cols-3 lg:grid-cols-4 md:gap-10">
                         @forelse ($aparaturDesa as $aparatur)
@@ -85,7 +85,7 @@
                             </div>
                         @empty
                             <p class="text-sm font-light leading-snug md:text-lg md:leading-tight">
-                                Belum ada data aparatur desa.
+                                Belum ada data aparatur lurah
                             </p>
                         @endforelse
 

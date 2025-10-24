@@ -109,7 +109,7 @@
                         {{ $dataPenduduk->created_at ? $dataPenduduk->created_at->format('d F Y') : date('d F Y') }}
                     </p>
                     <p style="margin-top: 0.25rem; font-weight: bold;">
-                        Kepala Desa Kelurahan Tuwung
+                        Kepala Lurah Kelurahan Tuwung
                     </p>
 
                     <div style="margin: 1.5rem 0;">

@@ -18,7 +18,7 @@
                 </a>
                 <a href="{{ route('data-desa') }}"
                     class="tracking-wide capitalize transition {{ request()->is('data-desa*') ? $activeClass : $inactiveClass }}">
-                    data desa
+                    data kelurahan
                 </a>
                 <a href="{{ route('cek-data') }}"
                     class="tracking-wide capitalize transition {{ request()->is('cek-data*') ? $activeClass : $inactiveClass }}">

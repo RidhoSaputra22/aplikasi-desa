@@ -65,7 +65,7 @@
                                     lakukan monitoring pengaduan
                                 </h1>
                                 <p class="text-xl font-light leading-relaxed text-center md:text-left">
-                                    Petugas desa akan mengkonfirmasi dan mengirimkan petugas untuk menyelesaian
+                                    Petugas lurah akan mengkonfirmasi dan mengirimkan petugas untuk menyelesaian
                                     pengaduan anda, dan anda dapat melakukan memantau status perkembangan
                                     pengaduan secara <span class="italic">real time</span>
                                 </p>

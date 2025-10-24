@@ -12,8 +12,8 @@ use Illuminate\Support\Str;
 class DashboardStatsPenduduk extends StatsOverviewWidget
 {
     protected ?string $pollingInterval = '30s';
-    protected ?string $heading = 'Statistik Penduduk Desa';
-    protected ?string $description = 'Informasi statistik penduduk desa secara keseluruhan.';
+    protected ?string $heading = 'Statistik Penduduk Kelurahan Tuwung';
+    protected ?string $description = 'Informasi statistik penduduk secara keseluruhan.';
     protected int|array|null $columns = 3;
 
     protected function getStats(): array
