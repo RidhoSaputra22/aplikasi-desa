@@ -21,6 +21,9 @@ class DataPenduduksTable
     {
         return $table
             ->columns([
+                TextColumn::make('nop')
+                    ->label('NOP')
+                    ->searchable(),
                 TextColumn::make('no_surat')
                     ->label('No Surat')
                     ->searchable(),

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class DataPenduduk extends Model
 {
     protected $fillable = [
+        'nop',
         'no_surat',
         'no_kk',
         'nik',

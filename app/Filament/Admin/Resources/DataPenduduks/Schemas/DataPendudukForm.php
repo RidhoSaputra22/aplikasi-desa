@@ -21,6 +21,8 @@ class DataPendudukForm
     {
         return $schema
             ->components([
+                TextInput::make('nop')
+                    ->required(),
                 TextInput::make('no_kk')
                     ->required(),
                 TextInput::make('nik')
@@ -31,7 +33,6 @@ class DataPendudukForm
                     ->options(['L' => 'Laki laki', 'P' => 'Perempuan'])
                     ->required(),
                 DatePicker::make('tanggal_lahir')
-                    ->columnSpan(2)
                     ->required(),
                 Flex::make([
                     Section::make([
