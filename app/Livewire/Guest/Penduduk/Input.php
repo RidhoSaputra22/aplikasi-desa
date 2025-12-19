@@ -41,8 +41,9 @@ class Input extends ModalComponent
         'agama' => 'required|integer|max:50',
         'pendidikan' => 'required|integer|max:100',
         'pekerjaan' => 'required|integer|max:100',
-        'bantuan' => 'required|integer|exists:jenis_bantuans,id',
-        'kemiskinan' => 'required|integer|exists:kategori_kemiskinans,id',
+        'bantuan'     => 'nullable|integer|exists:jenis_bantuans,id|required_unless:kemiskinan,4|prohibited_if:kemiskinan,4',
+        'kemiskinan'  => 'required|integer|exists:kategori_kemiskinans,id',
+
         'pemasukanBulanan' => 'required|numeric|min:0'
     ];
 
@@ -71,6 +72,8 @@ class Input extends ModalComponent
         'bantuan.required' => 'Bantuan wajib dipilih.',
         'bantuan.integer' => 'Bantuan tidak valid.',
         'bantuan.exists' => 'Bantuan tidak ditemukan.',
+        'bantuan.required_unless' => 'Bantuan wajib diisi jika kategori kemiskinan bukan "Tidak Miskin".',
+        'bantuan.prohibited_if' => 'Bantuan tidak boleh diisi jika kategori kemiskinan adalah "Tidak Miskin".',
         'kemiskinan.required' => 'Kategori kemiskinan wajib dipilih.',
         'kemiskinan.integer' => 'Kategori kemiskinan tidak valid.',
         'kemiskinan.exists' => 'Kategori kemiskinan tidak ditemukan.',
@@ -113,6 +116,10 @@ class Input extends ModalComponent
         $this->validate();
         try {
 
+            if (empty($this->bantuan)) {
+                $this->bantuan = null;
+            }
+
             \App\Models\DataPenduduk::create([
                 'no_kk' => $this->noKk,
                 'nik' => $this->nik,
@@ -124,13 +131,13 @@ class Input extends ModalComponent
                 'agama_id' => $this->agama,
                 'pendidikan_id' => $this->pendidikan,
                 'pekerjaan_id' => $this->pekerjaan,
-                'jenis_bantuan_id' => $this->bantuan,
+                'jenis_bantuan_id' => $this->bantuan ?? null,
                 'kategori_kemiskinan_id' => $this->kemiskinan,
                 'penghasilan_bulanan' => $this->pemasukanBulanan,
             ]);
             $this->dispatch('openModal', 'guest.penduduk.modal', ['link' => $this->link]);
         } catch (\Exception $e) {
-            dd($e);
+            // dd($e);
             $this->addError('form_error', 'Terjadi kesalahan saat menyimpan data: ' . $e->getMessage());
         }
     }

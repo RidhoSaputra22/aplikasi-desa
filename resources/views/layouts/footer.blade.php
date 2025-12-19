@@ -89,7 +89,8 @@
         <div class="flex flex-col items-center justify-between pt-4 pb-8 -space-y-16 lg:flex-row lg:-space-y-0">
             <div class="order-2 lg:order-1">
                 <p class="text-sm text-center lg:text-left">
-                    &copy; 2025 - <span class="font-semibold text-green-600">Kelurahan Tuwung</span>,
+                    &copy; 2025 - <span class="font-semibold text-green-600">KKN Tematik Universitas Dipa
+                        Makassar</span>,
                     dan seluruh hak cipta
                 </p>
             </div>
